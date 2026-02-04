@@ -1,11 +1,17 @@
 import Link from "next/link";
-import { navLinks } from "@/constants/constants";
+import { navLinks, socialLinks } from "@/constants/constants";
+
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
+
+
   return (
-    <footer className="bg-bg-page border-t border-primary/10 pt-16 pb-8">
+    <footer className="bg-bg-page border-t border-primary/10 pt-16 pb-8 relative overflow-hidden">
+      {/* Decorative Glow */}
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-2/3 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
+
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           
@@ -28,8 +34,9 @@ const Footer = () => {
                 <li key={link.label}>
                   <Link 
                     href={link.path} 
-                    className="text-text-muted hover:text-primary transition-colors duration-300"
+                    className="text-text-muted hover:text-primary transition-colors duration-300 flex items-center group"
                   >
+                    <span className="w-0 group-hover:w-2 h-px bg-primary mr-0 group-hover:mr-2 transition-all duration-300" />
                     {link.label}
                   </Link>
                 </li>
@@ -37,30 +44,38 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Connect */}
+
           <div>
             <h4 className="font-title font-bold text-lg mb-6 text-text-main">Connect</h4>
-            <div className="flex gap-4">
-              {/* Replace # with your actual links */}
-              {['LinkedIn', 'GitHub', 'Twitter'].map((platform) => (
-                <Link
-                  key={platform}
-                  href="#"
-                  className="w-10 h-10 rounded-xl bg-primary/5 border border-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all duration-300"
-                >
-                  <span className="sr-only">{platform}</span>
-                  {/* You can insert icons here */}
-                  {platform[0]}
-                </Link>
-              ))}
+            <p className="text-sm text-text-muted mb-4">Let&apos;s discuss your next big project.</p>
+            <div className="flex flex-wrap gap-3">
+              {socialLinks.map((social) => {
+                const Icon = social.icon;
+                return (
+                  <Link
+                    key={social.name}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-11 h-11 rounded-2xl bg-primary/5 border border-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white hover:-translate-y-1.5 transition-all duration-300 shadow-lg shadow-primary/5"
+                    title={social.name}
+                  >
+                    <span className="sr-only">{social.name}</span>
+                    <Icon size={20} strokeWidth={1.5} />
+                  </Link>
+                );
+              })}
             </div>
           </div>
         </div>
 
-        {/* Bottom Bar */}
         <div className="border-t border-primary/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-text-muted font-body">
           <p>© {currentYear} Franck Andritina. All rights reserved.</p>
-          <p>Designed & Built with <span className="text-primary">Passion</span></p>
+          <div className="flex items-center gap-1">
+            <span>Designed & Built with</span>
+            <span className="text-primary animate-pulse">💙</span>
+            <span>in Madagascar</span>
+          </div>
         </div>
       </div>
     </footer>

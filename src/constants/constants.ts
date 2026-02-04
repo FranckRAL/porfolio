@@ -9,7 +9,12 @@ import {
   LayoutDashboard,
   Terminal, 
   Workflow, 
-  Wrench       
+  Wrench, 
+  Linkedin, 
+  Facebook, 
+  Twitter, 
+  MessageCircle, 
+  Github      
 } from "lucide-react";
 import { SkillCategory } from "@/types/types";
 import { Service } from "@/types/types";
@@ -82,7 +87,7 @@ export const projects: Project[] = [
     title: "Abyss E-Commerce",
     description: "A high-performance online store for deep-sea diving gear.",
     longDescription: "A full-scale e-commerce platform built to handle high traffic. It features a custom-built cart system, real-time inventory tracking, and a sleek dark-themed UI that matches the brand's professional identity.",
-    thumbnail: "https://picsum.photos/id/20/200/300", // Taller image for asymmetry
+    thumbnail: "https://picsum.photos/400/500?random=2",
     category: "Web App",
     tech: ["Next.js", "Stripe", "Tailwind CSS", "PostgreSQL"],
     link: "https://demo.example.com",
@@ -94,7 +99,7 @@ export const projects: Project[] = [
     title: "Nova Mobile Wallet",
     description: "Secure cryptocurrency wallet with real-time tracking.",
     longDescription: "A mobile-first crypto wallet focusing on security and ease of use. Integrated with multiple blockchains to provide users with a unified view of their digital assets.",
-    thumbnail: "https://picsum.photos/id/26/200/300",
+    thumbnail: "https://picsum.photos/400/500?random=3",
     category: "Mobile App",
     tech: ["React Native", "Firebase", "Web3.js"],
     link: "#",
@@ -106,7 +111,7 @@ export const projects: Project[] = [
     title: "CloudSync Desktop",
     description: "Cross-platform file synchronization tool for teams.",
     longDescription: "A desktop application that allows seamless file sharing and synchronization across different operating systems, featuring end-to-end encryption.",
-    thumbnail: "https://picsum.photos/id/41/200/300",
+    thumbnail: "https://picsum.photos/400/500?random=4",
     category: "Desktop App",
     tech: ["Electron", "Node.js", "Rust"],
     link: "#",
@@ -118,7 +123,7 @@ export const projects: Project[] = [
     title: "Oceanic UI Kit",
     description: "A comprehensive design system for maritime applications.",
     longDescription: "A complete UI/UX overhaul for an oceanographic research firm. This project involved creating a custom design system and over 50+ reusable components.",
-    thumbnail: "https://picsum.photos/id/57/200/300", // Very tall image
+    thumbnail: "https://picsum.photos/400/500?random=5", 
     category: "UI/UX",
     tech: ["Figma", "Adobe XD", "Storybook"],
     link: "#",
@@ -129,7 +134,7 @@ export const projects: Project[] = [
     title: "Lumina Dashboard",
     description: "Real-time analytics dashboard for SaaS platforms.",
     longDescription: "A complex data visualization project that transforms raw server metrics into beautiful, interactive charts and actionable insights.",
-    thumbnail: "https://picsum.photos/id/48/200/300",
+    thumbnail: "https://picsum.photos/400/500?random=6",
     category: "Web App",
     tech: ["Next.js", "Chart.js", "Django API"],
     link: "https://lumina.example.com",
@@ -141,7 +146,7 @@ export const projects: Project[] = [
     title: "Pulse Fitness",
     description: "Workout tracking app with social features.",
     longDescription: "A mobile application designed to help fitness enthusiasts track their progress and share routines within a community.",
-    thumbnail: "https://picsum.photos/id/28/200/300",
+    thumbnail: "https://picsum.photos/400/500?random=7",
     category: "Mobile App",
     tech: ["Flutter", "GraphQL", "Supabase"],
     link: "#",
@@ -212,3 +217,11 @@ export const skillCategories: SkillCategory[] = [
     ]
   }
 ];
+
+ export const socialLinks = [
+    { name: "LinkedIn", icon: Linkedin, href: "https://linkedin.com/in/your-profile" },
+    { name: "GitHub", icon: Github, href: "https://github.com/your-username" },
+    { name: "Facebook", icon: Facebook, href: "https://facebook.com/your-profile" },
+    { name: "Twitter", icon: Twitter, href: "https://twitter.com/your-handle" },
+    { name: "WhatsApp", icon: MessageCircle, href: "https://wa.me/your-number" },
+  ];
