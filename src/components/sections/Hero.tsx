@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-[90vh] flex items-center overflow-hidden py-16 md:py-24">
+    <section className="relative min-h-[90vh] flex items-center overflow-hidden py-16 md:py-24" id="hero">
       {/* Background Decorative Halos */}
       <div className="absolute top-1/4 -left-20 w-80 h-80 bg-primary/10 rounded-full blur-[100px] -z-10" />
       <div className="absolute bottom-1/4 -right-20 w-80 h-80 bg-abyss-700/10 rounded-full blur-[100px] -z-10" />
@@ -65,8 +65,8 @@ const Hero = () => {
               <Image
                 src="/images/franck.png"
                 alt="Franck Andritina"
-                width={500}
-                height={600}
+                width={400}
+                height={500}
                 priority
                 className="w-full h-auto drop-shadow-2xl transition-transform duration-700 group-hover:scale-105 animate-float"
               />

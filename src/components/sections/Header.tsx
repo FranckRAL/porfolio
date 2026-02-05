@@ -1,6 +1,6 @@
 "use client"; // Obligatoire car on utilise useState
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { navLinks } from "@/constants/constants";
 import NavLink from "@/components/pieces/NavLink";
@@ -9,6 +9,27 @@ import MobileMenuButton from "@/components/pieces/MobileMenuButton";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
+
+useEffect(() => {
+  const handleIntersect = (entries: IntersectionObserverEntry[]) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        setActiveSection(entry.target.id);
+      }
+    });
+  };
+
+  const observer = new IntersectionObserver(handleIntersect, {
+    rootMargin: "-20% 0px -75% 0px", 
+    threshold: 0 
+  });
+
+  const sections = document.querySelectorAll("section[id]");
+  sections.forEach((section) => observer.observe(section));
+
+  return () => observer.disconnect();
+}, []);
 
   return (
     <header className="sticky top-0 w-full z-50 bg-bg-page/80 backdrop-blur-md border-b border-primary/10 py-4">
@@ -20,7 +41,7 @@ const Header = () => {
 
         <nav className="hidden md:flex gap-8">
           {navLinks.map((link) => (
-            <NavLink key={link.label} {...link} />
+            <NavLink key={link.label} {...link} isActive={activeSection === link.path.replace("#", "")} />
           ))}
         </nav>
 
@@ -39,11 +60,10 @@ const Header = () => {
         className={`absolute w-full h-screen top-0 inset-0 bg-bg-page/90 backdrop-blur-lg flex flex-col items-center justify-center gap-8 transition-all duration-1000 ease-in-out md:hidden z-40 ${
           isMenuOpen ? "translate-x-0 " : "hidden translate-x-full"
         }`}
-        // style={{ top: "200px" }}
       >
         {navLinks.map((link) => (
           <div key={link.label} onClick={() => setIsMenuOpen(false)}>
-            <NavLink {...link} />
+            <NavLink {...link} isActive={activeSection === link.path.replace("#", "")} />
           </div>
         ))}
         <Link 
