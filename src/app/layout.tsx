@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Quicksand, Inter } from "next/font/google";
-import "./globals.css";
+import "@/styles/globals.css";
 import { ThemeProvider } from "@/components/pieces/ThemeProvider";
 import BackToTop from "@/components/pieces/BackToTop";
 
@@ -17,8 +17,11 @@ const quicksand = Quicksand({
 });
 
 export const metadata: Metadata = {
-  title: "Franck Andritina | Portfolio",
-  description: "Développeur Fullstack - Deep Sea Abyss Design",
+  title: {
+    template: "%s | Admin Abyss",
+    default: "Franck andritina | Web developer and software engineer",
+  },
+  description: "Fullstack web developer and software engineer portfolio",
 };
 
 export default function RootLayout({
@@ -28,7 +31,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning className="scroll-smooth">
-      <body className={`${inter.variable} ${quicksand.variable} antialiased`}>
+      <body suppressHydrationWarning className={`${inter.variable} ${quicksand.variable} antialiased`}>
         <ThemeProvider>
           {children}
           <BackToTop />

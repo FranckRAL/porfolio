@@ -9,7 +9,7 @@ const ProjectCard = ({ project, onClick }: {project: Project, onClick: () => voi
     >
       <div className="relative aspect-video overflow-hidden">
         <Image 
-          src={project.thumbnail} 
+          src={project.imageUrl? project.imageUrl : null} 
           alt={project.title}
           width={800}
           height={800}
