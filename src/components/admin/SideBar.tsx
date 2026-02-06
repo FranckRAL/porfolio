@@ -2,7 +2,15 @@
 
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { LayoutDashboard, FolderGit2, HandPlatter, BookOpenCheck, Anchor } from "lucide-react";
+import { signOut } from "next-auth/react"; 
+import { 
+  LayoutDashboard, 
+  FolderGit2, 
+  HandPlatter, 
+  BookOpenCheck, 
+  Anchor, 
+  LogOut // 2. Import de l'icône
+} from "lucide-react";
 
 const navItems = [
   { name: "Dashboard", href: "/admin/dashboard", icon: LayoutDashboard },
@@ -15,7 +23,7 @@ export default function Sidebar() {
   const pathname = usePathname();
 
   return (
-    <aside className="group  h-screen w-20 hover:w-64 border-r border-abyss-800 bg-bg-card p-4 flex flex-col transition-all duration-500 ease-in-out z-50 overflow-hidden shadow-2xl">
+    <aside className="group h-screen w-20 hover:w-64 border-r border-abyss-800 bg-bg-card p-4 flex flex-col transition-all duration-500 ease-in-out z-50 overflow-hidden shadow-2xl">
       
       {/* Logo Section */}
       <div className="flex items-center gap-4 mb-10 pl-2">
@@ -49,7 +57,6 @@ export default function Sidebar() {
                 {item.name}
               </span>
 
-              {/* Tooltip simple pour mobile ou quand fermé (optionnel) */}
               {!isActive && (
                 <div className="absolute left-full ml-6 px-2 py-1 bg-primary text-abyss-900 text-xs rounded opacity-0 pointer-events-none group-hover:hidden">
                   {item.name}
@@ -59,6 +66,21 @@ export default function Sidebar() {
           );
         })}
       </nav>
+
+      {/* 3. Logout Button Section */}
+      <div className="mb-4">
+        <button
+          onClick={() => signOut({ callbackUrl: "/" })} // Redirige vers l'accueil après déco
+          className="w-full flex items-center gap-4 p-3 rounded-xl text-text-muted hover:text-red-500 hover:bg-red-500/10 transition-all duration-300 group/logout"
+        >
+          <div className="shrink-0 pl-1">
+            <LogOut size={22} className="group-hover/logout:rotate-12 transition-transform" />
+          </div>
+          <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap font-medium">
+            Surface (Exit)
+          </span>
+        </button>
+      </div>
 
       {/* Footer / Indicator */}
       <div className="pt-4 border-t border-abyss-800/50 flex items-center gap-4 pl-2">
