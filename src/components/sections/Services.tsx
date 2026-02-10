@@ -1,6 +1,15 @@
-import { services } from "@/constants/constants";
+import {SerializedService} from "@/types/types";
+import prisma from "@/lib/db";
+import  IconRenderer  from "@/components/pieces/IconRenderer";
 
-const Services = () => {
+const Services = async () => {
+  const rawServices = await prisma.service.findMany();
+  const services: SerializedService[]  = rawServices.map(service => ({
+    ...service,
+    createdAt: service.createdAt.toISOString(),
+    updatedAt: service.updatedAt.toISOString(),
+  }));
+
   return (
     <section id="services" className="py-24 bg-bg-page relative overflow-hidden">
       {/* Subtle background glow to enhance centering */}
@@ -27,14 +36,13 @@ const Services = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => {
-            const Icon = service.icon;
             return (
               <div 
                 key={index} 
                 className="group p-8 rounded-4xl bg-abyss-900/10 border border-primary/5 hover:border-primary/20 transition-all duration-300 backdrop-blur-sm"
               >
                 <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-all duration-500 shadow-lg shadow-primary/5">
-                  <Icon size={32} strokeWidth={1.5} />
+                  <IconRenderer name={service.icon} className="w-6 h-6 drop-shadow-[0_0_8px_rgba(var(--color-primary),0.5)]" />
                 </div>
                 
                 <h3 className="text-xl font-bold mb-4 group-hover:text-primary transition-colors">

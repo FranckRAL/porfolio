@@ -5,16 +5,19 @@ import { ThemeProvider } from "@/components/pieces/ThemeProvider";
 import { AuthProvider } from "@/components/providers/AuthProvider";
 import BackToTop from "@/components/pieces/BackToTop";
 
-
+// OPTIMIZE FONT LOADING:
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-body",
+  display: "swap", // Non-blocking font
+  preload: true,
 });
-
 
 const quicksand = Quicksand({
   subsets: ["latin"],
   variable: "--font-title",
+  display: "swap",
+  preload: true,
 });
 
 export const metadata: Metadata = {
