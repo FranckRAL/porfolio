@@ -53,29 +53,29 @@ export const services: TempService[] = [
   }
 ];
 
-export const navLinks = [
+export const NAV_LINKS = [
   {
-        'label': 'Home',
+        'id': 'home',
         'path': '#hero'
     },
     {
-        'label': 'About',
+        'id': 'about',
         'path': '#about'
     },
     {
-        'label': 'Services',
+        'id': 'services',
         'path': '#services'
     },
     {
-        'label': 'Projects',
+        'id': 'projects',
         'path': '#projects'
     },
     {
-        'label': 'Skills',
+        'id': 'skills',
         'path': '#skills'
     },
     {
-        'label': 'Contact',
+        'id': 'contact',
         'path': '#contact'
     },
 ]

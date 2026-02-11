@@ -27,7 +27,7 @@
   html {
     scroll-behavior: smooth;
   }
-  
+
   body {
     transition: background-color 0.3s ease, color 0.3s ease;
     background-color: var(--color-bg-page);
@@ -43,7 +43,7 @@
     --color-text-muted: #475569;
     --color-primary: #005b96;   /* On fonce un peu l'accent pour la lisibilité */
     --color-accent: #007bff;
-    --color-abyss-100: #001f3f; /* Inversion pour les éléments contrastés */
+    --color-abyss-100: #001f3f; 
   }
 
   svg.lucide {

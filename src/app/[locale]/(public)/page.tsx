@@ -2,12 +2,25 @@ import Header from "@/components/sections/Header";
 import Hero from "@/components/sections/Hero";
 import About from "@/components/sections/About";
 import Contact from "@/components/sections/Contact";
-import ProjectsSection from "@/components/sections/Project"; // Renommé pour plus de clarté
+import ProjectsSection from "@/components/sections/Project"; 
 import Services from "@/components/sections/Services";
 import Skills from "@/components/sections/Skills";
 import Footer from "@/components/sections/Footer";
 import prisma from '@/lib/db';
 import { SerializedProject } from '@/types/types';
+// import { getTranslations } from 'next-intl/server';
+
+
+// export async function generateMetadata({params}: {params: Promise<{locale: string}>}) {
+//   const {locale} = await params;
+//   const t = await getTranslations({locale, namespace: 'Metadata'});
+ 
+//   return {
+//     title: t('title').concat(' | Franck Andritina'),
+//     description: t('description'),
+//   };
+// }
+
 
 export default async function Home() {
     

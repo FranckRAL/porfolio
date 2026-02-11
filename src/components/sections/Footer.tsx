@@ -1,9 +1,11 @@
 import Link from "next/link";
-import { navLinks, socialLinks } from "@/constants/constants";
+import { NAV_LINKS, socialLinks } from "@/constants/constants";
+import {useTranslations} from 'next-intl';
 
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const translate = useTranslations('Nav')
 
 
 
@@ -30,14 +32,14 @@ const Footer = () => {
           <div>
             <h4 className="font-title font-bold text-lg mb-6 text-text-main">Navigation</h4>
             <ul className="space-y-4">
-              {navLinks.map((link) => (
-                <li key={link.label}>
+              {NAV_LINKS.map((link) => (
+                <li key={link.id}>
                   <Link 
                     href={link.path} 
                     className="text-text-muted hover:text-primary transition-colors duration-300 flex items-center group"
                   >
                     <span className="w-0 group-hover:w-2 h-px bg-primary mr-0 group-hover:mr-2 transition-all duration-300" />
-                    {link.label}
+                    {translate(link.id)}
                   </Link>
                 </li>
               ))}

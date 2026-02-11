@@ -1,0 +1,45 @@
+{
+  "Metadata": {
+    "title": "Développeur Web et Ingénieur Logiciel",
+    "description": "Découvrez le portfolio d'un passionné Développeur Fullstack, mettant en avant son expertise en développement web, gestion de projets et solutions innovantes."
+  },
+
+  "Nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "services": "Services",
+    "projects": "Projets",
+    "skills": "Compétences",
+    "contact": "Contact",
+    "cta_hire": "Me contacter"
+  },
+  "Hero": {
+    "badge": "Disponible pour de nouveaux défis",
+    "title": "Explorateur du <span class='text-primary italic'>Code</span>",
+    "subtitle": "Développeur Fullstack spécialisé dans la création d'architectures web robustes et d'expériences numériques immersives.",
+    "cta_projects": "Voir mes travaux",
+    "cta_contact": "Me contacter"
+  },
+  "About": {
+    "title": "Plongée dans mon parcours",
+    "description": "Passionné par l'informatique depuis mes premières lignes de code, j'aide les entreprises à transformer leurs idées en solutions réelles.",
+    "experience_years": "Années d'expérience",
+    "projects_completed": "Projets terminés"
+  },
+  "Projects": {
+    "badge": "Travaux sélectionnés",
+    "title": "Solutions <span class='text-primary italic'>Éprouvées</span>",
+    "description": "Une vitrine de mes projets récents, des architectures web complexes aux expériences mobiles intuitives.",
+    "filter_all": "Tous",
+    "view_details": "Détails du projet",
+    "visit_site": "Visiter le site"
+  },
+  "Contact": {
+    "title": "Envie de démarrer un projet ?",
+    "description": "Mon abysse est toujours ouvert à la discussion. Envoyez-moi un message !",
+    "placeholder_name": "Votre nom",
+    "placeholder_email": "Votre email",
+    "placeholder_message": "Votre message",
+    "button_send": "Envoyer le message"
+  }
+}

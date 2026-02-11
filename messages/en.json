@@ -1,0 +1,44 @@
+{
+  "Metadata": {
+    "title": "Web developer and software engineer",
+    "description": "Discover the portfolio of a passionate Fullstack Developer, showcasing expertise in web development, project management, and innovative solutions."
+  },
+  "Nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "projects": "Projects",
+    "skills": "Skills",
+    "contact": "Contact",
+    "cta_hire": "Hire me"
+  },
+  "Hero": {
+    "badge": "Available for new challenges",
+    "title": "Explorer of the <span class='text-primary italic'>Code</span>",
+    "subtitle": "Fullstack Developer specializing in building robust web architectures and immersive digital experiences.",
+    "cta_projects": "View my work",
+    "cta_contact": "Contact me"
+  },
+  "About": {
+    "title": "Diving into my background",
+    "description": "Passionate about computing since my first lines of code, I help companies turn their ideas into real-world solutions.",
+    "experience_years": "Years of experience",
+    "projects_completed": "Completed projects"
+  },
+  "Projects": {
+    "badge": "Selected Works",
+    "title": "Proven <span class='text-primary italic'>Solutions</span>",
+    "description": "A showcase of my recent projects, from complex web architectures to intuitive mobile experiences.",
+    "filter_all": "All",
+    "view_details": "Project details",
+    "visit_site": "Visit site"
+  },
+  "Contact": {
+    "title": "Want to start a project?",
+    "description": "My abyss is always open for discussion. Send me a message!",
+    "placeholder_name": "Your name",
+    "placeholder_email": "Your email",
+    "placeholder_message": "Your message",
+    "button_send": "Send message"
+  }
+}

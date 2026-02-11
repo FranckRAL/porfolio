@@ -4,9 +4,10 @@ import ToggleTheme from "@/components/pieces/ToggleTheme"
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | Abyss Admin",
+    template: "%s | Administration Page",
     default: "Dashboard | Abyss Admin",
   },
+  description: "Admin dashboard for managing projects, skills, and contact messages.",
 };
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
