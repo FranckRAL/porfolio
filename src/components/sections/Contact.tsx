@@ -1,17 +1,26 @@
-import { Mail, MapPin, Send } from "lucide-react"; // Or use standard SVGs
+import { Mail, MapPin, Send } from "lucide-react"; 
+import { useTranslations } from 'next-intl';
 
 const Contact = () => {
+
+  const t = useTranslations('Contact');
+
   return (
     <section id="contact" className="py-24 relative overflow-hidden bg-bg-page">
       <div className="container mx-auto px-6 relative z-10">
         
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
-          <span className="text-primary font-mono text-sm tracking-widest uppercase">Get in Touch</span>
-          <h2 className="font-title text-4xl md:text-5xl font-bold">Let&apos;s Build Something <span className="text-primary">Great</span></h2>
+          <span className="text-primary font-mono text-sm tracking-widest uppercase">{ t('subtitle')}</span>
+          <h2 className="font-title text-4xl md:text-5xl font-bold">
+            {
+              t.rich('title', {
+                em: (chunk) => <em className="text-primary">{chunk}</em>
+              })
+            }
+          </h2>
           <p className="text-text-muted font-body">
-            Whether you have a specific project in mind or just want to chat about 
-            software craftsmanship and collaboration, I&apos;m always open to new opportunities.
+            {t('description')}
           </p>
         </div>
 
@@ -27,7 +36,7 @@ const Contact = () => {
                   <Mail size={20} />
                 </div>
                 <div>
-                  <p className="text-sm text-text-muted uppercase font-bold tracking-tighter">Email Me</p>
+                  <p className="text-sm text-text-muted uppercase font-bold tracking-tighter">{t('contact_mail')}</p>
                   <p className="text-lg font-medium">rakotomavofranck007@gmail.com</p>
                 </div>
               </div>
@@ -37,7 +46,7 @@ const Contact = () => {
                   <MapPin size={20} />
                 </div>
                 <div>
-                  <p className="text-sm text-text-muted uppercase font-bold tracking-tighter">Location</p>
+                  <p className="text-sm text-text-muted uppercase font-bold tracking-tighter">{t('location')}</p>
                   <p className="text-lg font-medium">Antsirabe, Madagascar</p>
                 </div>
               </div>
@@ -50,7 +59,7 @@ const Contact = () => {
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
                 </span>
-                <p className="text-sm font-semibold italic text-text-main">Currently accepting new projects</p>
+                <p className="text-sm font-semibold italic text-text-main">{ t('contact_badge')}</p>
               </div>
             </div>
           </div>
@@ -59,7 +68,7 @@ const Contact = () => {
           <div className="w-full lg:w-7/12">
             <form className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div className="space-y-2">
-                <label className="text-sm font-bold text-text-main/70 ml-1">Full Name</label>
+                <label className="text-sm font-bold text-text-main/70 ml-1">{t('full_name_label')}</label>
                 <input 
                   type="text" 
                   placeholder="John Doe" 
@@ -67,7 +76,7 @@ const Contact = () => {
                 />
               </div>
               <div className="space-y-2">
-                <label className="text-sm font-bold text-text-main/70 ml-1">Email Address</label>
+                <label className="text-sm font-bold text-text-main/70 ml-1">{t('email_address_label')}</label>
                 <input 
                   type="email" 
                   placeholder="john@example.com" 
@@ -75,18 +84,18 @@ const Contact = () => {
                 />
               </div>
               <div className="sm:col-span-2 space-y-2">
-                <label className="text-sm font-bold text-text-main/70 ml-1">Subject</label>
+                <label className="text-sm font-bold text-text-main/70 ml-1">{t('mail_object_label')}</label>
                 <input 
                   type="text" 
-                  placeholder="Project Inquiry" 
+                  placeholder={t('mail_object_placeholder')} 
                   className="w-full bg-bg-page border border-primary/20 focus:border-primary focus:ring-1 focus:ring-primary rounded-xl px-5 py-4 outline-none transition-all placeholder:opacity-30"
                 />
               </div>
               <div className="sm:col-span-2 space-y-2">
-                <label className="text-sm font-bold text-text-main/70 ml-1">Message</label>
+                <label className="text-sm font-bold text-text-main/70 ml-1">{t('message_label')}</label>
                 <textarea 
                   rows={5} 
-                  placeholder="Tell me about your project..." 
+                  placeholder={t('message_placeholder')} 
                   className="w-full bg-bg-page border border-primary/20 focus:border-primary focus:ring-1 focus:ring-primary rounded-xl px-5 py-4 outline-none transition-all placeholder:opacity-30 resize-none"
                 ></textarea>
               </div>
@@ -95,7 +104,7 @@ const Contact = () => {
                 type="submit" 
                 className="sm:col-span-2 flex items-center justify-center gap-2 bg-primary text-white font-bold py-4 rounded-xl hover:bg-primary/90 transition-all shadow-xl shadow-primary/20 active:scale-[0.98] group"
               >
-                <span>Send Message</span>
+                <span>{t('cta_send')}</span>
                 <Send size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
               </button>
             </form>

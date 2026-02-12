@@ -5,14 +5,14 @@ import {useTranslations} from 'next-intl';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  const translate = useTranslations('Nav')
+  const t = useTranslations('Nav')
 
 
 
   return (
-    <footer className="bg-bg-page border-t border-primary/10 pt-16 pb-8 relative overflow-hidden">
+    <footer className="bg-bg-page  border-t border-primary/10 pt-16 pb-8 relative overflow-hidden">
       {/* Decorative Glow */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-2/3 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-2/3 h-px bg-linear-to-r from-transparent via-primary/50 to-transparent" />
 
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
@@ -23,14 +23,13 @@ const Footer = () => {
               Franck<span className="text-text-main">.A</span>
             </Link>
             <p className="text-text-muted max-w-xs leading-relaxed">
-              Building digital experiences with a focus on quality, 
-              collaboration, and scalable architecture.
+              {t('description')}
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-title font-bold text-lg mb-6 text-text-main">Navigation</h4>
+            <h4 className="font-title font-bold text-lg mb-6 text-text-main">{t('navigation_title_footer')}</h4>
             <ul className="space-y-4">
               {NAV_LINKS.map((link) => (
                 <li key={link.id}>
@@ -39,7 +38,7 @@ const Footer = () => {
                     className="text-text-muted hover:text-primary transition-colors duration-300 flex items-center group"
                   >
                     <span className="w-0 group-hover:w-2 h-px bg-primary mr-0 group-hover:mr-2 transition-all duration-300" />
-                    {translate(link.id)}
+                    {t(link.id)}
                   </Link>
                 </li>
               ))}
@@ -48,8 +47,8 @@ const Footer = () => {
 
 
           <div>
-            <h4 className="font-title font-bold text-lg mb-6 text-text-main">Connect</h4>
-            <p className="text-sm text-text-muted mb-4">Let&apos;s discuss your next big project.</p>
+            <h4 className="font-title font-bold text-lg mb-6 text-text-main">{t('connect_footer')}</h4>
+            <p className="text-sm text-text-muted mb-4">{t('social_intro_text')}</p>
             <div className="flex flex-wrap gap-3">
               {socialLinks.map((social) => {
                 const Icon = social.icon;
@@ -72,11 +71,11 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-primary/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-text-muted font-body">
-          <p>© {currentYear} Franck Andritina. All rights reserved.</p>
+          <p>© {currentYear} Franck Andritina. {t('copyright')}</p>
           <div className="flex items-center gap-1">
-            <span>Designed & Built with</span>
+            <span>{t('final_word')}</span>
             <span className="text-primary animate-pulse">💙</span>
-            <span>in Madagascar</span>
+            <span>{t('in')} Madagascar</span>
           </div>
         </div>
       </div>

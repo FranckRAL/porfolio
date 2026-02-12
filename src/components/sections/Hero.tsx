@@ -1,7 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslations } from 'next-intl';
 
 const Hero = () => {
+
+  const t = useTranslations('Hero');
+
   return (
     <section className="relative min-h-[90vh] flex items-center overflow-hidden py-16 md:py-24" id="hero">
       {/* Background Decorative Halos */}
@@ -19,18 +23,21 @@ const Hero = () => {
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
               </span>
               <span className="text-primary font-mono text-xs font-bold uppercase tracking-widest">
-                Available for new opportunities
+                {t('badge')}
               </span>
             </div>
 
             <h1 className="font-title text-5xl md:text-7xl font-bold mb-6 leading-[1.1] text-balance">
-              I&apos;m <span className="text-primary drop-shadow-sm">Franck</span> <br />
+              {t('person')} <span className="text-primary drop-shadow-sm">Franck</span> <br />
               <span className="text-text-main">Andritina</span>
             </h1>
 
             <p className="text-lg md:text-xl text-text-muted mb-10 max-w-xl leading-relaxed font-body">
-              A <span className="text-text-main font-semibold">Fullstack Web Developer</span> dedicated to crafting high-performance, 
-              scalable, and visually stunning digital solutions that solve real-world problems.
+              {
+                t.rich('subtitle', {
+                  em: (chunks) => <em className="text-text-main font-semibold">{chunks}</em>
+                })
+              }
             </p>
             
             <div className="flex flex-col sm:flex-row items-center gap-6">
@@ -38,13 +45,13 @@ const Hero = () => {
                 href="#contact"
                 className="w-full sm:w-auto bg-primary text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-primary/90 transition-all shadow-xl shadow-primary/20 active:scale-95 text-center"
               >
-                Hire me
+                {t('cta_projects')}
               </Link>
               <Link
                 href="/cv.pdf"
                 className="group flex items-center gap-2 text-text-main font-semibold hover:text-primary transition-colors py-2"
               >
-                <span>Download CV</span>
+                <span>{t('cta_cv')}</span>
                 <svg className="w-5 h-5 group-hover:translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
                 </svg>
@@ -77,7 +84,9 @@ const Hero = () => {
             {/* Projects Stats */}
             <div className="absolute -top-6 -left-8 md:-left-16 z-20 bg-bg-card/90 backdrop-blur-xl p-5 rounded-2xl shadow-2xl border border-primary/20 animate-bounce-slow">
               <p className="text-3xl font-bold text-primary font-title">15+</p>
-              <p className="text-[10px] uppercase font-bold tracking-[0.2em] opacity-60">Success Projects</p>
+              <p className="text-[10px] uppercase font-bold tracking-[0.2em] opacity-60">
+                {t('stat_success_projects')}
+                </p>
             </div>
 
             {/* Experience/Tech Stats */}

@@ -1,6 +1,10 @@
 import {SerializedService} from "@/types/types";
 import prisma from "@/lib/db";
 import  IconRenderer  from "@/components/pieces/IconRenderer";
+import { getTranslations } from 'next-intl/server';
+
+
+
 
 const Services = async () => {
   const rawServices = await prisma.service.findMany();
@@ -9,6 +13,8 @@ const Services = async () => {
     createdAt: service.createdAt.toISOString(),
     updatedAt: service.updatedAt.toISOString(),
   }));
+
+  const t = await getTranslations('Services')
 
   return (
     <section id="services" className="py-24 bg-bg-page relative overflow-hidden">
@@ -20,16 +26,18 @@ const Services = async () => {
         {/* --- CENTERED HEADER SECTION --- */}
         <div className="max-w-3xl mx-auto text-center mb-20 space-y-4">
           <span className="text-primary font-mono text-sm tracking-[0.3em] uppercase">
-            Specialized Solutions
+            {t('subtitle')}
           </span>
           <h2 className="text-4xl md:text-6xl font-bold font-title text-text-main">
-            Crafting Digital <span className="text-primary italic">Excellence</span>
+            {
+              t.rich('title', {
+                span: (chunk) => <span className="text-primary italic">{chunk}</span>
+              })
+            }
           </h2>
           <div className="w-20 h-1 bg-primary/30 mx-auto rounded-full mt-4" /> {/* Small accent line */}
           <p className="text-text-muted text-lg leading-relaxed pt-4">
-            Beyond just writing code, I build scalable digital ecosystems. 
-            From architecting robust backends to designing immersive user experiences, 
-            I focus on delivering high-performance solutions tailored to your unique vision.
+            {t('description')}
           </p>
         </div>
         {/* ------------------------------- */}

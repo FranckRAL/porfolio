@@ -2,8 +2,12 @@
 import { motion } from "framer-motion";
 import { skillCategories } from "@/constants/constants";
 import SkillCard from "@/components/pieces/SkillCard";
+import { useTranslations } from 'next-intl';
 
 const Skills = () => {
+
+  const t = useTranslations('Skills');
+
   return (
     <section id="skills" className="py-24 bg-bg-page relative overflow-hidden">
       {/* Decorative Abyss Glows */}
@@ -19,7 +23,7 @@ const Skills = () => {
             viewport={{ once: true }}
             className="text-primary font-mono text-sm tracking-[0.3em] uppercase"
           >
-            Technical Arsenal
+            {t('subtitle')}
           </motion.span>
           
           <motion.h2 
@@ -29,7 +33,12 @@ const Skills = () => {
             transition={{ delay: 0.1 }}
             className="font-title text-4xl md:text-6xl font-bold"
           >
-            Capabilities & <span className="text-primary italic">Expertise</span>
+            
+            {
+              t.rich('title', {
+                em: (chunks) => <span className="text-primary italic">{chunks}</span>
+              })
+            }
           </motion.h2>
           
           <motion.p 
@@ -39,7 +48,7 @@ const Skills = () => {
             transition={{ delay: 0.2 }}
             className="text-text-muted text-lg max-w-xl mx-auto"
           >
-            Hover over a category to reveal my proficiency levels and technical depth.
+            {t('description')}
           </motion.p>
         </div>
 

@@ -10,35 +10,77 @@
     "projects": "Projects",
     "skills": "Skills",
     "contact": "Contact",
-    "cta_hire": "Hire me"
+    "cta_hire": "Hire me",
+    "copyright": "All Rights Reserved.",
+    "navigation_title_footer": "Navigation",
+    "description": "Building digital experiences with a focus on quality,collaboration, and scalable architecture.",
+    "connect_footer": "Connect",
+    "social_intro_text": "Let's discuss your next big project.",
+    "final_word": "Designed & Built with",
+    "in": "in"
+
   },
   "Hero": {
     "badge": "Available for new challenges",
+    "person": "I'm",
     "title": "Explorer of the <span class='text-primary italic'>Code</span>",
-    "subtitle": "Fullstack Developer specializing in building robust web architectures and immersive digital experiences.",
+    "subtitle": "A <em>Fullstack Web Developer</em> dedicated to crafting high-performance, scalable, and visually stunning digital solutions that solve real-world problems.",
     "cta_projects": "View my work",
-    "cta_contact": "Contact me"
+    "cta_cv": "Download CV",
+    "stat_success_projects": "Completed projects"
   },
   "About": {
-    "title": "Diving into my background",
-    "description": "Passionate about computing since my first lines of code, I help companies turn their ideas into real-world solutions.",
-    "experience_years": "Years of experience",
-    "projects_completed": "Completed projects"
+    "years_experience": "2+ Years",
+    "experience_domain": "Experience in Tech",
+    "subtitle": "Biography",
+    "title": "Beyond the <em>Code</em>",
+    "description": "<p>Hello! I'm <strong>Franck Andritina</strong>, a Web Developer who believes that building great software is as much about <em>human connection</em> as it is about syntax.</p><p>My approach goes beyond just writing lines of code. I focus on <b>software craftsmanship</b>—ensuring every solution is scalable, maintainable, and high-performing. For me, quality isn't an afterthought; it's the foundation of the entire development process.</p><p>I thrive in <b>collaborative environments</b>. Whether it's leading a project, participating in code reviews, or brainstorming with a team, I leverage my <em>soft skills</em> and <b>Agile management</b> experience to bridge the gap between technical requirements and business goals.</p>",
+    "highlights": {
+      "quality": {
+        "label": "Quality First",
+        "desc": "Clean, testable code"
+      },
+      "team": {
+        "label": "Team Player",
+        "desc": "Active communicator"
+      },
+      "lead": {
+        "label": "Project Lead",
+        "desc": "Goal-oriented mindset"
+      }
+    }
+    
+  },
+  "Services": {
+    "subtitle": "Specialized Solutions",
+    "title": "Crafting Digital <span>Excellence</span>",
+    "description": "Beyond just writing code, I build scalable digital ecosystems. From architecting robust backends to designing immersive user experiences, I focus on delivering high-performance solutions tailored to your unique vision."
   },
   "Projects": {
-    "badge": "Selected Works",
-    "title": "Proven <span class='text-primary italic'>Solutions</span>",
-    "description": "A showcase of my recent projects, from complex web architectures to intuitive mobile experiences.",
-    "filter_all": "All",
-    "view_details": "Project details",
-    "visit_site": "Visit site"
+    "subtitle": "Selected Works",
+    "title": "Proven <em>Solutions</em>",
+    "description": "A showcase of my recent projects, spanning from complex web architectures to intuitive mobile experiences. Each one is a balance of code quality and user impact.",
+
+    "features_title": "Core Features"
+  },
+  "Skills": {
+    "subtitle": "Technical Arsenal",
+    "title": "Capabilities & <em>Expertise</em>",
+    "description": "Hover over a category to reveal my proficiency levels and technical depth."
   },
   "Contact": {
-    "title": "Want to start a project?",
-    "description": "My abyss is always open for discussion. Send me a message!",
-    "placeholder_name": "Your name",
-    "placeholder_email": "Your email",
-    "placeholder_message": "Your message",
-    "button_send": "Send message"
+    "subtitle": "Get in Touch",
+    "title": "Let's Build Something <em>Great</em>",
+    "description": "Whether you have a specific project in mind or just want to chat about software craftsmanship and collaboration, I&apos;m always open to new opportunities.",
+    "contact_mail": "Email Me",
+    "location": "Location",
+    "contact_badge": "Currently accepting new projects",
+    "full_name_label": "Full Name",
+    "email_address_label": "Email Address",
+    "mail_object_label": "Subject",
+    "mail_object_placeholder": "Project Inquiry",
+    "message_label": "Message",
+    "message_placeholder": "Tell me about your project...",
+    "cta_send": "Send Message"
   }
 }

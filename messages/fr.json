@@ -11,35 +11,77 @@
     "projects": "Projets",
     "skills": "Compétences",
     "contact": "Contact",
-    "cta_hire": "Me contacter"
+    "cta_hire": "Me contacter",
+    "copyright": "Tous droits réservés.",
+    "description": "Bâtir des expériences numériques en mettant l'accent sur la qualité, la collaboration et une architecture évolutive.",
+    "connect_footer": "Me suivre",
+    "navigation_title_footer": "Plan du site",
+    "social_intro_text": "Discutons de votre prochain grand projet.",
+    "final_word": "Conçu & Réalisé avec",
+    "in": "à"
   },
   "Hero": {
     "badge": "Disponible pour de nouveaux défis",
+    "person": "Je suis",
     "title": "Explorateur du <span class='text-primary italic'>Code</span>",
-    "subtitle": "Développeur Fullstack spécialisé dans la création d'architectures web robustes et d'expériences numériques immersives.",
-    "cta_projects": "Voir mes travaux",
-    "cta_contact": "Me contacter"
-  },
+    "subtitle": "Un <em>Développeur Web Fullstack</em> dédié à la création de solutions numériques performantes, évolutives et visuellement percutantes pour répondre aux problématiques réelles.",
+    "cta_projects": "Mes Projets",
+    "cta_cv": "Télécharger mon CV",
+    "stat_success_projects": "Projets réussis"
+  
+},
   "About": {
-    "title": "Plongée dans mon parcours",
-    "description": "Passionné par l'informatique depuis mes premières lignes de code, j'aide les entreprises à transformer leurs idées en solutions réelles.",
-    "experience_years": "Années d'expérience",
-    "projects_completed": "Projets terminés"
+    "years_experience": "2+ Years",
+    "experience_domain": "Expérience dans la Tech",
+    "subtitle": "Biographie",
+    "title": "Au-delà du <em>Code</em>",
+    "description": "<p>Salut ! Moi c'est <strong>Franck Andritina</strong>. Pour moi, le développement web ne se résume pas à aligner des lignes de code, c'est avant tout une aventure humaine et une question de <b>connexion</b>.</p><p>Je ne me contente pas de livrer des fonctionnalités. Je cultive l' <em>artisanat logiciel</em> : je soigne chaque détail pour que mes solutions soient robustes, performantes et prêtes à évoluer. La qualité n'est pas une option, c'est ma signature.</p><p>J'aime construire en équipe. Que ce soit pour piloter un projet ou brainstormer sur un tableau blanc, j'utilise mon expérience <em>Agile</em> et mon sens de l'écoute pour transformer vos besoins business en réalités techniques concrètes.</p>",
+    "highlights": {
+      "quality": {
+        "label": "Qualité d'abord",
+        "desc": "Code propre et testable"
+      },
+      "team": {
+        "label": "Esprit d'équipe",
+        "desc": "Communicateur actif"
+      },
+      "lead": {
+        "label": "Gestion de Projet",
+        "desc": "Axé sur les objectifs"
+      }
+    }
+
+  },
+  "Services": {
+    "subtitle": "Solutions Spécialisées",
+    "title": "Façonner l' <span>Excellence</span> Numérique",
+    "description": "Bien plus que de l'écriture de code, je bâtis des écosystèmes digitaux évolutifs. De l'architecture de backends robustes à la conception d'expériences utilisateur immersives, je me concentre sur la livraison de solutions haute performance adaptées à votre vision unique."
   },
   "Projects": {
-    "badge": "Travaux sélectionnés",
-    "title": "Solutions <span class='text-primary italic'>Éprouvées</span>",
-    "description": "Une vitrine de mes projets récents, des architectures web complexes aux expériences mobiles intuitives.",
-    "filter_all": "Tous",
-    "view_details": "Détails du projet",
-    "visit_site": "Visiter le site"
+    "subtitle": "Travaux Sélectionnés",
+    "title": "<em>Solutions</em> Éprouvées",
+    "description": "Une sélection de mes projets récents, allant d'architectures web complexes aux expériences mobiles intuitives. Chaque réalisation est un équilibre entre qualité du code et impact utilisateur.",
+
+    "features_title": "Fonctionnalités Clés"
+  },
+  "Skills": {
+    "subtitle": "Arsenal Technique",
+    "title": "Compétences & <em>Expertise</em>",
+    "description": "Survolez une catégorie pour découvrir mes niveaux de maîtrise et ma profondeur technique."
   },
   "Contact": {
-    "title": "Envie de démarrer un projet ?",
-    "description": "Mon abysse est toujours ouvert à la discussion. Envoyez-moi un message !",
-    "placeholder_name": "Votre nom",
-    "placeholder_email": "Votre email",
-    "placeholder_message": "Votre message",
-    "button_send": "Envoyer le message"
+    "subtitle": "Contactez-moi",
+    "title": "Bâtissons quelque chose de <em>Grand</em>",
+    "description": "Que vous ayez un projet spécifique en tête ou que vous souhaitiez simplement discuter d'artisanat logiciel et de collaboration, je suis toujours ouvert à de nouvelles opportunités.",
+    "contact_mail": "Envoyez-moi un e-mail",
+    "location": "Localisation",
+    "contact_badge": "Actuellement disponible pour de nouveaux projets",
+    "full_name_label": "Nom Complet",
+    "email_address_label": "Adresse E-mail",
+    "mail_object_label": "Objet",
+    "mail_object_placeholder": "Demande de projet",
+    "message_label": "Message",
+    "message_placeholder": "Parlez-moi de votre projet...",
+    "cta_send": "Envoyer le Message"
   }
 }

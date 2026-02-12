@@ -4,17 +4,19 @@ import { motion, AnimatePresence } from "framer-motion";
 import { SerializedProject } from '@/types/types';
 import ProjectCard from "@/components/pieces/ProjectCard";
 import ProjectModal from "@/components/pieces/ProjectModal";
+import { CATEGORIES } from "@/constants/constants";
+import { useTranslations} from 'next-intl';
 
 interface ProjectsProps {
   projects: SerializedProject[];
 }
 
 const Projects = ({ projects }: ProjectsProps) => {
-  const [filter, setFilter] = useState("All");
-  // ⚓ Typage précis au lieu de 'any'
-  const [selectedProject, setSelectedProject] = useState<SerializedProject | null>(null);
+  const t = useTranslations('Projects');
 
-  const categories = ["All", "Web App", "Mobile App", "Desktop App"];
+  const [filter, setFilter] = useState("All");
+
+  const [selectedProject, setSelectedProject] = useState<SerializedProject | null>(null);
   
   const filteredProjects = filter === "All" 
     ? projects 
@@ -30,21 +32,26 @@ const Projects = ({ projects }: ProjectsProps) => {
         {/* --- CENTERED HEADER SECTION --- */}
         <div className="max-w-3xl mx-auto text-center mb-16 space-y-4">
           <span className="text-primary font-mono text-sm tracking-[0.3em] uppercase">
-            Selected Works
+            {t('subtitle')}
           </span>
           <h2 className="text-4xl md:text-6xl font-bold font-title text-text-main">
-            Proven <span className="text-primary italic">Solutions</span>
+            {
+              t.rich('title', {
+                em: (chunk) => <em className="text-primary italic">{chunk}</em>
+            })
+            }
           </h2>
           <div className="w-20 h-1 bg-primary/30 mx-auto rounded-full mt-4" />
           <p className="text-text-muted text-lg leading-relaxed pt-4">
-            A showcase of my recent projects, spanning from complex web architectures 
-            to intuitive mobile experiences. Each one is a balance of code quality and user impact.
+            {
+              t('description')
+            }
           </p>
         </div>
 
         {/* Filter Bar */}
         <div className="flex flex-wrap justify-center gap-4 mb-20">
-          {categories.map((cat) => (
+          {CATEGORIES.map((cat) => (
             <button
               key={cat}
               onClick={() => setFilter(cat)}

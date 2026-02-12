@@ -155,6 +155,7 @@ export const projects: Project[] = [
   },
 ];
 
+export const CATEGORIES = ["All", "Web App", "Mobile App", "Desktop App", "Other"];
 
 export const skillCategories: SkillCategory[] = [
   {

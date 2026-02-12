@@ -12,7 +12,7 @@ import {useTranslations} from 'next-intl';
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
-  const translation = useTranslations('Nav')
+  const t = useTranslations('Nav')
 
 useEffect(() => {
   const handleIntersect = (entries: IntersectionObserverEntry[]) => {
@@ -51,8 +51,8 @@ useEffect(() => {
         <div className="flex items-center gap-4">
           <ThemeToggle />
           <LanguageSwitcher />
-          <Link href="#contact" className="hidden sm:block bg-primary text-white px-5 py-2 rounded-full font-bold">
-            {translation('cta_hire')}
+          <Link href="#contact" className="hidden sm:block w-full sm:w-auto bg-primary text-white px-5 py-2 rounded-full font-bold text-lg hover:bg-primary/90 transition-all shadow-xl shadow-primary/20 active:scale-95 text-center">
+            {t('cta_hire')}
           </Link>
           
           <MobileMenuButton isOpen={isMenuOpen} toggle={() => setIsMenuOpen(!isMenuOpen)} />
@@ -73,9 +73,9 @@ useEffect(() => {
         <Link 
           href="#contact" 
           onClick={() => setIsMenuOpen(false)}
-          className="bg-primary text-white px-8 py-3 rounded-full font-bold text-lg animate-pulse"
+          className="w-full sm:w-auto bg-primary text-white px-8 py-3 rounded-full font-bold text-lg hover:bg-primary/90 transition-all shadow-xl shadow-primary/20 active:scale-95 text-center"
         >
-          {translation('cta_hire')}
+          {t('cta_hire')}
         </Link>
       </div>
     </header>
