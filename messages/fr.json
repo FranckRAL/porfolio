@@ -67,7 +67,24 @@
   "Skills": {
     "subtitle": "Arsenal Technique",
     "title": "Compétences & <em>Expertise</em>",
-    "description": "Survolez une catégorie pour découvrir mes niveaux de maîtrise et ma profondeur technique."
+    "description": "Survolez une catégorie pour découvrir mes niveaux de maîtrise et ma profondeur technique.",
+    "categories": {
+      "programming": "Langages de Programmation",
+      "frontend": "Excellence Frontend",
+      "backend": "Backend & Systèmes",
+      "tools": "Outils & DevOps",
+      "management": "Gestion de Projet",
+      "quality": "Qualité & Soft Skills"
+    },
+    "skills": {
+      "agile": "Agile / Scrum",
+      "softwareDesign": "Architecture Logicielle",
+      "technicalWriting": "Rédaction Technique",
+      "codeReview": "Revue de Code",
+      "unitTesting": "Tests Unitaires",
+      "teamwork": "Travail d'Équipe",
+      "communication": "Communication"
+    }
   },
   "Contact": {
     "subtitle": "Contactez-moi",

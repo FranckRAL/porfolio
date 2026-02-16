@@ -6,7 +6,6 @@ import { signOut } from "next-auth/react";
 import { 
   LayoutDashboard, 
   FolderGit2, 
-  HandPlatter, 
   BookOpenCheck, 
   Anchor, 
   LogOut // 2. Import de l'icône
@@ -15,7 +14,6 @@ import {
 const navItems = [
   { name: "Dashboard", href: "/admin/dashboard", icon: LayoutDashboard },
   { name: "Projects", href: "/admin/projects", icon: FolderGit2 },
-  { name: "Services", href: "/admin/services", icon: HandPlatter },
   { name: "Testimonials", href: "/admin/testimonials", icon: BookOpenCheck },
 ];
 

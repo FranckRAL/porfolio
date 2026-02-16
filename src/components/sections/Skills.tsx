@@ -5,7 +5,6 @@ import SkillCard from "@/components/pieces/SkillCard";
 import { useTranslations } from 'next-intl';
 
 const Skills = () => {
-
   const t = useTranslations('Skills');
 
   return (
@@ -15,7 +14,6 @@ const Skills = () => {
       <div className="absolute bottom-1/4 -right-20 w-80 h-80 bg-primary/5 rounded-full blur-[100px] -z-10" />
 
       <div className="container mx-auto px-6">
-        {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-20 space-y-4">
           <motion.span 
             initial={{ opacity: 0, y: 10 }}
@@ -33,12 +31,9 @@ const Skills = () => {
             transition={{ delay: 0.1 }}
             className="font-title text-4xl md:text-6xl font-bold"
           >
-            
-            {
-              t.rich('title', {
-                em: (chunks) => <span className="text-primary italic">{chunks}</span>
-              })
-            }
+            {t.rich('title', {
+              em: (chunks) => <span className="text-primary italic">{chunks}</span>
+            })}
           </motion.h2>
           
           <motion.p 
@@ -52,7 +47,6 @@ const Skills = () => {
           </motion.p>
         </div>
 
-        {/* Skills Grid */}
         <motion.div 
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -60,8 +54,8 @@ const Skills = () => {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
-          {skillCategories.map((category, idx) => (
-            <SkillCard key={idx} category={category} />
+          {skillCategories.map((category) => (
+            <SkillCard key={category.id} category={category} />
           ))}
         </motion.div>
       </div>

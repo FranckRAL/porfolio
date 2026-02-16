@@ -14,36 +14,61 @@ datasource db {
 }
 
 model Project {
-  id          String   @id @default(cuid())
-  title       String
-  description String   @db.Text
-  imageUrl    String   
-  category    String
-  techStack   String[] 
-  githubUrl   String?  
-  liveUrl     String?
-  isFeatured  Boolean  @default(false)
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-}
+  // --- Identifiants ---
+  id            String   @id @default(cuid())
+  
+  // --- Métadonnées ---
+  year          String   // Ex: "2026"
+  category      String   // Ex: "Fullstack", "E-commerce"
+  role          String   // Ex: "Lead Developer"
+  
+  // --- Médias ---
+  imageUrl      String   // Image de couverture principale
 
-model Service {
-  id          String   @id @default(cuid())
-  title       String
-  description String   @db.Text
-  icon        String?  
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  // --- Stack Technique (La modification demandée) ---
+  // [{"slug": "php", "logoUrl": "/icons/php.svg"}]
+  stack         Json     
+  
+  // --- Liens ---
+  liveUrl       String?
+  githubUrl     String?
+  
+  // --- Contenu Multilingue (Format JSONB) ---
+  // Format : { "fr": "...", "en": "..." }
+  title         Json     
+  description   Json     
+  
+  // Format : { "fr": ["Feature A", "Feature B"], "en": ["Feature 1", "Feature 2"] }
+  features      Json     
+  
+  // Optionnel : { "fr": "Défi technique...", "en": "Technical challenge..." }
+  challenges    Json?    
+  
+  // --- Timestamps ---
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  @@map("projects")
 }
 
 model Testimonial {
   id          String   @id @default(cuid())
-  name        String
-  role        String   // ex: "CEO at TechMarine"
-  content     String   @db.Text
-  avatarUrl   String?  // Image de la personne (Cloudinary)
-  company     String?
+  name        String   // Nom de la personne
+  role        String   // Ex: "CEO at TechMarine"
+  company     String?  // Nom de l'entreprise
+  avatarUrl   String?  // URL Cloudinary
   rating      Int      @default(5)
+  
+  // Gestion de l'affichage
+  isActive    Boolean  @default(true) // Pour masquer un avis si besoin
+  
+  // Contenu Multilingue (JSONB)
+  // On traduit le contenu, et parfois le rôle si nécessaire
+  // Format : { "fr": "Super travail !", "en": "Great work!" }
+  content     Json     
+
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
+
+  @@map("testimonials")
 }

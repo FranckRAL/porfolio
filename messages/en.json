@@ -66,7 +66,24 @@
   "Skills": {
     "subtitle": "Technical Arsenal",
     "title": "Capabilities & <em>Expertise</em>",
-    "description": "Hover over a category to reveal my proficiency levels and technical depth."
+    "description": "Hover over a category to reveal my proficiency levels and technical depth.",
+    "categories": {
+      "programming": "Programming Languages",
+      "frontend": "Frontend Excellence",
+      "backend": "Backend & Systems",
+      "tools": "Tools & DevOps",
+      "management": "Project Management",
+      "quality": "Quality & Soft Skills"
+    },
+    "skills": {
+      "agile": "Agile / Scrum",
+      "softwareDesign": "Software Architecture",
+      "technicalWriting": "Technical Writing",
+      "codeReview": "Code Review",
+      "unitTesting": "Unit Testing",
+      "teamwork": "Teamwork",
+      "communication": "Communication"
+    }
   },
   "Contact": {
     "subtitle": "Get in Touch",

@@ -1,11 +1,7 @@
 
-import { 
-  Search,       
-  Palette,      
-  Zap,          
+import {          
   Database,     
-  Code2,        
-  Rocket,
+  Code2,
   LayoutDashboard,
   Terminal, 
   Workflow, 
@@ -14,42 +10,65 @@ import {
   Facebook, 
   Twitter, 
   MessageCircle, 
-  Github      
+  Github,
+  Layout, 
+  Smartphone,
+  ShieldCheck     
 } from "lucide-react";
-import { SkillCategory } from "@/types/types";
-import { TempService } from "@/types/types";
-import { Project } from "@/types/types";
+import { SkillCategory, Service } from "@/types/types";
 
-export const services: TempService[] = [
+export const SERVICES: Service[] = [
   {
-    title: "Dynamic Web Applications",
-    description: "Building interactive, fast, and scalable websites using modern technologies that provide a seamless user experience.",
-    icon: Zap,
-  },
-  {
-    title: "Backend Engineering",
-    description: "Developing robust server-side architectures, API integrations, and secure database management to power your business logic.",
-    icon: Database,
-  },
-  {
-    title: "Product from Scratch",
-    description: "Transforming your raw ideas into a fully functional digital product, handling everything from technical design to final execution.",
+    id: 'web-fullstack',
     icon: Code2,
+    title: {
+      fr: "Développement Fullstack",
+      en: "Fullstack Development"
+    },
+    description: {
+      fr: "Création d'applications web performantes et scalables, du design de la base de données PostgreSQL jusqu'à l'interface Next.js.",
+      en: "Building high-performance, scalable web applications, from PostgreSQL database design to Next.js interfaces."
+    },
+    color: "#0070f3"
   },
   {
-    title: "Experience Design (UI/UX)",
-    description: "Modernizing existing interfaces and creating intuitive designs that improve user engagement and strengthen your brand identity.",
-    icon: Palette,
+    id: 'ui-ux',
+    icon: Layout,
+    title: {
+      fr: "Design UI/UX",
+      en: "UI/UX Design"
+    },
+    description: {
+      fr: "Conception d'interfaces immersives et intuitives. Focus sur l'expérience utilisateur et l'esthétique moderne (Thème Abyss).",
+      en: "Crafting immersive and intuitive interfaces. Focused on user experience and modern aesthetics (Abyss Theme)."
+    },
+    color: "#7928ca"
   },
   {
-    title: "SEO & Performance",
-    description: "Optimizing your digital presence to rank higher on search engines and ensuring lightning-fast loading speeds for your users.",
-    icon: Search,
+    id: 'mobile-app',
+    icon: Smartphone,
+    title: {
+      fr: "Applications Mobiles",
+      en: "Mobile Apps"
+    },
+    description: {
+      fr: "Développement d'applications mobiles cross-platform fluides et réactives pour iOS et Android.",
+      en: "Developing smooth and responsive cross-platform mobile applications for both iOS and Android."
+    },
+    color: "#ff0080"
   },
   {
-    title: "Deployment & Scaling",
-    description: "Managing the lifecycle of your application, from secure hosting setups to scaling infrastructure as your traffic grows.",
-    icon: Rocket,
+    id: 'maintenance',
+    icon: ShieldCheck,
+    title: {
+      fr: "Maintenance & Optimisation",
+      en: "App Maintenance"
+    },
+    description: {
+      fr: "Audit, correction de bugs et amélioration continue de vos applications pour garantir sécurité et pérennité.",
+      en: "Auditing, bug fixing, and continuous improvement of your applications to ensure security and longevity."
+    },
+    color: "#50e3c2"
   }
 ];
 
@@ -80,144 +99,137 @@ export const NAV_LINKS = [
     },
 ]
 
-
-export const projects: Project[] = [
-  {
-    id: "1",
-    title: "Abyss E-Commerce",
-    description: "A high-performance online store for deep-sea diving gear.",
-    longDescription: "A full-scale e-commerce platform built to handle high traffic. It features a custom-built cart system, real-time inventory tracking, and a sleek dark-themed UI that matches the brand's professional identity.",
-    thumbnail: "https://picsum.photos/400/500?random=2",
-    category: "Web App",
-    tech: ["Next.js", "Stripe", "Tailwind CSS", "PostgreSQL"],
-    link: "https://demo.example.com",
-    github: "https://github.com/franck/abyss-shop",
-    features: ["Server-side rendering", "Secure payments", "Admin dashboard", "SEO Optimized"],
-  },
-  {
-    id: "2",
-    title: "Nova Mobile Wallet",
-    description: "Secure cryptocurrency wallet with real-time tracking.",
-    longDescription: "A mobile-first crypto wallet focusing on security and ease of use. Integrated with multiple blockchains to provide users with a unified view of their digital assets.",
-    thumbnail: "https://picsum.photos/400/500?random=3",
-    category: "Mobile App",
-    tech: ["React Native", "Firebase", "Web3.js"],
-    link: "#",
-    github: "https://github.com/franck/nova-wallet",
-    features: ["Biometric login", "Multi-chain support", "Live price alerts"],
-  },
-  {
-    id: "3",
-    title: "CloudSync Desktop",
-    description: "Cross-platform file synchronization tool for teams.",
-    longDescription: "A desktop application that allows seamless file sharing and synchronization across different operating systems, featuring end-to-end encryption.",
-    thumbnail: "https://picsum.photos/400/500?random=4",
-    category: "Desktop App",
-    tech: ["Electron", "Node.js", "Rust"],
-    link: "#",
-    github: "https://github.com/franck/cloudsync",
-    features: ["Background syncing", "Encrypted storage", "Low CPU usage"],
-  },
-  {
-    id: "4",
-    title: "Oceanic UI Kit",
-    description: "A comprehensive design system for maritime applications.",
-    longDescription: "A complete UI/UX overhaul for an oceanographic research firm. This project involved creating a custom design system and over 50+ reusable components.",
-    thumbnail: "https://picsum.photos/400/500?random=5", 
-    category: "UI/UX",
-    tech: ["Figma", "Adobe XD", "Storybook"],
-    link: "#",
-    features: ["Design tokens", "Dark mode support", "Accessibility compliant"],
-  },
-  {
-    id: "5",
-    title: "Lumina Dashboard",
-    description: "Real-time analytics dashboard for SaaS platforms.",
-    longDescription: "A complex data visualization project that transforms raw server metrics into beautiful, interactive charts and actionable insights.",
-    thumbnail: "https://picsum.photos/400/500?random=6",
-    category: "Web App",
-    tech: ["Next.js", "Chart.js", "Django API"],
-    link: "https://lumina.example.com",
-    github: "https://github.com/franck/lumina-viz",
-    features: ["Real-time sockets", "Interactive charts", "CSV Exporting"],
-  },
-  {
-    id: "6",
-    title: "Pulse Fitness",
-    description: "Workout tracking app with social features.",
-    longDescription: "A mobile application designed to help fitness enthusiasts track their progress and share routines within a community.",
-    thumbnail: "https://picsum.photos/400/500?random=7",
-    category: "Mobile App",
-    tech: ["Flutter", "GraphQL", "Supabase"],
-    link: "#",
-    github: "https://github.com/franck/pulse-fit",
-    features: ["Custom routine builder", "Community feed", "Progress tracking"],
-  },
-];
-
-export const CATEGORIES = ["All", "Web App", "Mobile App", "Desktop App", "Other"];
+export const CATEGORIES = ["Web App", "Mobile App", "Desktop App", "Other"];
 
 export const skillCategories: SkillCategory[] = [
   {
-    title: "Programming Languages",
+    id: "programming",
+    titleKey: "categories.programming",
     icon: Code2,
     skills: [
-      { name: "TypeScript", level: 92 },
-      { name: "JavaScript", level: 95 },
+      { name: "TypeScript", level: 85 },
+      { name: "JavaScript", level: 90 },
       { name: "Python", level: 85 },
-      { name: "PHP", level: 75 },
+      { name: "PHP", level: 80 },
     ]
   },
   {
-    title: "Frontend Excellence",
+    id: "frontend",
+    titleKey: "categories.frontend",
     icon: LayoutDashboard,
     skills: [
-      { name: "React.js", level: 95 },
-      { name: "Next.js", level: 90 },
-      { name: "Tailwind CSS", level: 98 },
-      { name: "Framer Motion", level: 80 },
+      { name: "React.js", level: 90 },
+      { name: "Next.js", level: 85 },
+      { name: "Tailwind CSS", level: 95 },
+      { name: "Framer Motion", level: 70 },
     ]
   },
   {
-    title: "Backend & Systems",
+    id: "backend",
+    titleKey: "categories.backend",
     icon: Database,
     skills: [
-      { name: "Node.js", level: 88 },
-      { name: "Django", level: 82 },
-      { name: "PostgreSQL", level: 80 },
+      { name: "Node.js & Express", level: 88 },
+      { name: "Django", level: 85 },
       { name: "REST APIs", level: 95 },
+      { name: "PostgreSQL", level: 80 },
     ]
   },
   {
-    title: "Tools & DevOps",
+    id: "tools",
+    titleKey: "categories.tools",
     icon: Terminal,
     skills: [
       { name: "Git & GitHub", level: 90 },
       { name: "Docker", level: 70 },
-      { name: "Vercel / Netlify", level: 85 },
-      { name: "Linux Arch", level: 75 },
+      { name: "Shell Scripting", level: 85 },
+      { name: "PowerShell", level: 75 },
     ]
   },
   {
-    title: "Project Management",
+    id: "management",
+    titleKey: "categories.management",
     icon: Workflow,
     skills: [
-      { name: "Agile / Scrum", level: 85 },
-      { name: "Software Design", level: 80 },
-      { name: "Technical Writing", level: 75 },
+      { nameKey: "skills.agile", level: 85 },
+      { nameKey: "skills.softwareDesign", level: 80 },
+      { nameKey: "skills.technicalWriting", level: 75 },
     ]
   },
   {
-    title: "Quality & Soft Skills",
+    id: "quality",
+    titleKey: "categories.quality",
     icon: Wrench,
     skills: [
-      { name: "Code Review", level: 90 },
-      { name: "Unit Testing", level: 75 },
-      { name: "Teamwork", level: 95 },
-      { name: "Communication", level: 90 },
+      { nameKey: "skills.codeReview", level: 90 },
+      { nameKey: "skills.unitTesting", level: 75 },
+      { nameKey: "skills.teamwork", level: 95 },
+      { nameKey: "skills.communication", level: 90 },
     ]
   }
 ];
+
+// export const skillCategories: SkillCategory[] = [
+//   {
+//     title: "Programming Languages",
+//     icon: Code2,
+//     skills: [
+//       { name: "TypeScript", level: 85 },
+//       { name: "JavaScript", level: 90 },
+//       { name: "Python", level: 85 },
+//       { name: "PHP", level: 80 },
+//     ]
+//   },
+//   {
+//     title: "Frontend Excellence",
+//     icon: LayoutDashboard,
+//     skills: [
+//       { name: "React.js", level: 90 },
+//       { name: "Next.js", level: 85 },
+//       { name: "Tailwind CSS", level: 95 },
+//       { name: "Framer Motion", level: 70 },
+//     ]
+//   },
+//   {
+//     title: "Backend & Systems",
+//     icon: Database,
+//     skills: [
+//       { name: "Node.js", level: 88 },
+//       { name: "Django", level: 82 },
+//       { name: "PostgreSQL", level: 80 },
+//       { name: "REST APIs", level: 95 },
+//     ]
+//   },
+//   {
+//     title: "Tools & DevOps",
+//     icon: Terminal,
+//     skills: [
+//       { name: "Git & GitHub", level: 90 },
+//       { name: "Docker", level: 70 },
+//       { name: "Shell Scripting", level: 85 },
+//       { name: "PowerShell", level: 75 },
+//     ]
+//   },
+//   {
+//     title: "Project Management",
+//     icon: Workflow,
+//     skills: [
+//       { name: "Agile / Scrum", level: 85 },
+//       { name: "Software Design", level: 80 },
+//       { name: "Technical Writing", level: 75 },
+//     ]
+//   },
+//   {
+//     title: "Quality & Soft Skills",
+//     icon: Wrench,
+//     skills: [
+//       { name: "Code Review", level: 90 },
+//       { name: "Unit Testing", level: 75 },
+//       { name: "Teamwork", level: 95 },
+//       { name: "Communication", level: 90 },
+//     ]
+//   }
+// ];
 
  export const socialLinks = [
     { name: "LinkedIn", icon: Linkedin, href: "https://linkedin.com/in/your-profile" },
