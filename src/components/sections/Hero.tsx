@@ -42,20 +42,20 @@ const Hero = () => {
             
             <div className="flex flex-col sm:flex-row items-center gap-6">
               <Link
-                href="#contact"
+                href="#projects"
                 className="w-full sm:w-auto bg-primary text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-primary/90 transition-all shadow-xl shadow-primary/20 active:scale-95 text-center"
               >
                 {t('cta_projects')}
               </Link>
-              <Link
-                href="/cv.pdf"
-                className="group flex items-center gap-2 text-text-main font-semibold hover:text-primary transition-colors py-2"
+              <a
+                href="/assets/cv_Franck_Andritina_developer_fullstack.pdf"
+                className="group flex items-center gap-2 text-text-main font-semibold hover:text-primary transition-colors py-2" download
               >
                 <span>{t('cta_cv')}</span>
                 <svg className="w-5 h-5 group-hover:translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
                 </svg>
-              </Link>
+              </a>
             </div>
           </div>
 
