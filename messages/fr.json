@@ -99,6 +99,9 @@
     "mail_object_placeholder": "Demande de projet",
     "message_label": "Message",
     "message_placeholder": "Parlez-moi de votre projet...",
-    "cta_send": "Envoyer le Message"
+    "cta_send": "Envoyer le Message",
+    "cta_success": "Message Envoyé",
+    "cta_error": "Échec de l'envoi, veuillez réessayer",
+    "cta_sending": "Envoi en cours..."
   }
 }

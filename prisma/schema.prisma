@@ -51,6 +51,16 @@ model Project {
   @@map("projects")
 }
 
+model Message {
+  id        String   @id @default(cuid())
+  email     String   
+  name      String?  
+  subject   String   
+  content   String   
+  isRead    Boolean  @default(false) 
+  createdAt DateTime @default(now())   
+}
+
 model Testimonial {
   id          String   @id @default(cuid())
   name        String   // Nom de la personne

@@ -1,9 +1,61 @@
-import { Mail, MapPin, Send } from "lucide-react"; 
+"use client";
+
+import { Mail, MapPin, Send, CheckCircle, AlertCircle, Loader2 } from "lucide-react"; 
 import { useTranslations } from 'next-intl';
+import {sendContactMessage} from "@/actions/contact";
+import {useState} from 'react';
 
 const Contact = () => {
 
   const t = useTranslations('Contact');
+
+const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+
+  async function handleSubmit(formData: FormData) {
+    setStatus("loading");
+    console.log(status)
+    
+    const result = await sendContactMessage(formData);
+    
+    if (result.success) {
+      setStatus("success");
+    } else {
+      setStatus("error");
+    }
+  }
+
+  const renderButtonContent = () => {
+  switch (status) {
+    case 'loading':
+      return (
+        <>
+          <span>{t('cta_sending')}</span>
+          <Loader2 className="animate-spin h-5 w-5 text-white" />
+        </>
+      );
+    case 'success':
+      return (
+        <>
+          <span>{t('cta_success')}</span>
+          <CheckCircle className="h-5 w-5 text-emerald-400 animate-in zoom-in" />
+        </>
+      );
+    case 'error':
+      return (
+        <>
+          <span>{t('cta_error')}</span>
+          <AlertCircle className="h-5 w-5 text-rose-400 animate-shake" />
+        </>
+      );
+    default:
+      return (
+        <>
+          <span>{t('cta_send')}</span>
+          <Send size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+        </>
+      );
+  }
+};
 
   return (
     <section id="contact" className="py-24 relative overflow-hidden bg-bg-page">
@@ -66,12 +118,13 @@ const Contact = () => {
 
           {/* --- FORM SIDE --- */}
           <div className="w-full lg:w-7/12">
-            <form className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <form className="grid grid-cols-1 sm:grid-cols-2 gap-6" action={handleSubmit}>
               <div className="space-y-2">
                 <label className="text-sm font-bold text-text-main/70 ml-1">{t('full_name_label')}</label>
                 <input 
                   type="text" 
-                  placeholder="John Doe" 
+                  placeholder="John Doe"
+                  name="name"
                   className="w-full bg-bg-page border border-primary/20 focus:border-primary focus:ring-1 focus:ring-primary rounded-xl px-5 py-4 outline-none transition-all placeholder:opacity-30"
                 />
               </div>
@@ -80,6 +133,7 @@ const Contact = () => {
                 <input 
                   type="email" 
                   placeholder="john@example.com" 
+                  name="email"
                   className="w-full bg-bg-page border border-primary/20 focus:border-primary focus:ring-1 focus:ring-primary rounded-xl px-5 py-4 outline-none transition-all placeholder:opacity-30"
                 />
               </div>
@@ -88,6 +142,7 @@ const Contact = () => {
                 <input 
                   type="text" 
                   placeholder={t('mail_object_placeholder')} 
+                  name="subject"
                   className="w-full bg-bg-page border border-primary/20 focus:border-primary focus:ring-1 focus:ring-primary rounded-xl px-5 py-4 outline-none transition-all placeholder:opacity-30"
                 />
               </div>
@@ -95,7 +150,8 @@ const Contact = () => {
                 <label className="text-sm font-bold text-text-main/70 ml-1">{t('message_label')}</label>
                 <textarea 
                   rows={5} 
-                  placeholder={t('message_placeholder')} 
+                  placeholder={t('message_placeholder')}
+                  name="content" 
                   className="w-full bg-bg-page border border-primary/20 focus:border-primary focus:ring-1 focus:ring-primary rounded-xl px-5 py-4 outline-none transition-all placeholder:opacity-30 resize-none"
                 ></textarea>
               </div>
@@ -104,8 +160,7 @@ const Contact = () => {
                 type="submit" 
                 className="sm:col-span-2 flex items-center justify-center gap-2 bg-primary text-white font-bold py-4 rounded-xl hover:bg-primary/90 transition-all shadow-xl shadow-primary/20 active:scale-[0.98] group"
               >
-                <span>{t('cta_send')}</span>
-                <Send size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                {renderButtonContent()}
               </button>
             </form>
           </div>

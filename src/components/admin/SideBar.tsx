@@ -7,13 +7,15 @@ import {
   LayoutDashboard, 
   FolderGit2, 
   BookOpenCheck, 
-  Anchor, 
-  LogOut // 2. Import de l'icône
+  Anchor,
+  Mail, 
+  LogOut 
 } from "lucide-react";
 
 const navItems = [
   { name: "Dashboard", href: "/admin/dashboard", icon: LayoutDashboard },
   { name: "Projects", href: "/admin/projects", icon: FolderGit2 },
+  { name: "Messages", href: "/admin/messages", icon: Mail },
   { name: "Testimonials", href: "/admin/testimonials", icon: BookOpenCheck },
 ];
 

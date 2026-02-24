@@ -98,6 +98,9 @@
     "mail_object_placeholder": "Project Inquiry",
     "message_label": "Message",
     "message_placeholder": "Tell me about your project...",
-    "cta_send": "Send Message"
+    "cta_send": "Send Message",
+    "cta_success": "Message Sent",
+    "cta_error": "Failed to send, Please Try again",
+    "cta_sending": "Sending..."
   }
 }
