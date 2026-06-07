@@ -12,7 +12,7 @@ const SkillCard = ({ category }: { category: SkillCategory }) => {
     <motion.div 
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="p-8 rounded-[2rem] bg-abyss-900/20 border border-primary/10 backdrop-blur-md hover:border-primary/40 transition-all duration-500 group relative overflow-hidden"
+      className="p-8 rounded-4xl bg-abyss-900/20 border border-primary/10 backdrop-blur-md hover:border-primary/40 transition-all duration-500 group relative overflow-hidden"
     >
       <div className="flex items-center gap-4 mb-8">
         <div className="p-3 rounded-xl bg-primary/10 group-hover:bg-primary group-hover:text-abyss-950 transition-all duration-500">
@@ -42,9 +42,9 @@ const SkillCard = ({ category }: { category: SkillCategory }) => {
                 initial={{ width: 0 }}
                 animate={{ width: isHovered ? `${skill.level}%` : "0%" }}
                 transition={{ duration: 1, ease: "circOut", delay: idx * 0.1 }}
-                className="h-full bg-gradient-to-r from-primary/40 to-primary rounded-full relative"
+                className="h-full bg-linear-to-r from-primary/40 to-primary rounded-full relative"
               >
-                <div className="absolute right-0 top-0 h-full w-2 bg-white blur-[4px] opacity-50" />
+                <div className="absolute right-0 top-0 h-full w-2 bg-white blur-xs opacity-50" />
               </motion.div>
             </div>
           </div>

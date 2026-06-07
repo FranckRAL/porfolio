@@ -37,7 +37,7 @@ export default function DashboardPage() {
       </div>
 
       {/* Recent Activity Placeholder */}
-      <section className="bg-bg-card border border-abyss-800 rounded-2xl p-8 min-h-[300px] flex flex-col items-center justify-center text-center">
+      <section className="bg-bg-card border border-abyss-800 rounded-2xl p-8 min-h-75 flex flex-col items-center justify-center text-center">
         <Activity size={48} className="text-abyss-700 mb-4 opacity-20" />
         <h3 className="font-title text-xl font-medium text-text-muted">No recent activities</h3>
         <p className="text-text-muted max-w-sm mx-auto mt-2">Start managing your projects or services to see updates here.</p>

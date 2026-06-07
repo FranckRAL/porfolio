@@ -57,7 +57,7 @@ export default function ServiceModal({ isOpen, onClose, serviceToEdit }: Service
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-[60] flex items-center justify-center p-4">
+    <div className="fixed inset-0 z-60 flex items-center justify-center p-4">
       <div className="absolute inset-0 bg-abyss-900/90 backdrop-blur-md" onClick={onClose} />
       
       <div className="relative w-full max-w-lg bg-bg-card border border-abyss-800 rounded-2xl shadow-2xl flex flex-col">
