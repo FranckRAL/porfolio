@@ -4,8 +4,8 @@ import "@/styles/globals.css";
 import { ThemeProvider } from "@/components/pieces/ThemeProvider";
 import { AuthProvider } from "@/components/providers/AuthProvider";
 import BackToTop from "@/components/pieces/BackToTop";
-import {headers} from "next/headers";
-
+import { headers } from "next/headers";
+import { cookies } from "next/headers";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -21,8 +21,6 @@ const quicksand = Quicksand({
   preload: true,
 });
 
-
-
 export const metadata: Metadata = {
   title: {
     template: "%s",
@@ -31,21 +29,33 @@ export const metadata: Metadata = {
   description: "Fullstack web developer and software engineer portfolio",
 };
 
-
-
-
-export default async function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   const headerList = await headers();
-  const locale = headerList.get('x-locale') || 'en';
+  const locale = headerList.get("x-locale") || "en";
+  const cookieStore = await cookies();
+
+  const theme =
+    (cookieStore.get("theme")?.value as "light" | "dark") ?? "light";
 
   return (
-    <html lang={locale} suppressHydrationWarning className="scroll-smooth">
-      <body suppressHydrationWarning className={`${inter.variable} ${quicksand.variable} antialiased`}>
+    <html
+      lang={locale}
+      suppressHydrationWarning
+      className={`${theme === "dark" ? "dark" : ""} scroll-smooth`}
+    >
+      <body
+        suppressHydrationWarning
+        className={`${inter.variable} ${quicksand.variable} antialiased`}
+      >
         <AuthProvider>
-            <ThemeProvider> 
-                {children}
-                <BackToTop />
-            </ThemeProvider>
+          <ThemeProvider initialTheme={theme}>
+            {children}
+            <BackToTop />
+          </ThemeProvider>
         </AuthProvider>
       </body>
     </html>

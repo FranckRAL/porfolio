@@ -1,17 +1,40 @@
+// components/theme-provider.tsx
+
 "use client";
 
-import { ThemeProvider as NextThemesProvider } from "next-themes";
-import * as React from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 
-export function ThemeProvider({ children }: { children: React.ReactNode }) {
+type Theme = "light" | "dark";
+
+const ThemeContext = createContext({
+  theme: "light" as Theme,
+  setTheme: (_theme: Theme) => {},
+});
+
+export function ThemeProvider({
+  initialTheme,
+  children,
+}: {
+  initialTheme: Theme;
+  children: React.ReactNode;
+}) {
+  const [theme, setThemeState] = useState<Theme>(initialTheme);
+
+  useEffect(() => {
+    document.documentElement.classList.toggle("dark", theme === "dark");
+  }, [theme]);
+
+  const setTheme = async (newTheme: Theme) => {
+    setThemeState(newTheme);
+
+    document.cookie = `theme=${newTheme}; path=/; max-age=31536000`;
+  };
 
   return (
-    <NextThemesProvider 
-      attribute="class" 
-      defaultTheme="dark" 
-      enableSystem
-    >
+    <ThemeContext.Provider value={{ theme, setTheme }}>
       {children}
-    </NextThemesProvider>
+    </ThemeContext.Provider>
   );
 }
+
+export const useTheme = () => useContext(ThemeContext);

@@ -8,18 +8,6 @@ import Skills from "@/components/sections/Skills";
 import Footer from "@/components/sections/Footer";
 import prisma from '@/lib/db';
 import { SerializedProject } from '@/types/types';
-// import { getTranslations } from 'next-intl/server';
-
-
-// export async function generateMetadata({params}: {params: Promise<{locale: string}>}) {
-//   const {locale} = await params;
-//   const t = await getTranslations({locale, namespace: 'Metadata'});
- 
-//   return {
-//     title: t('title').concat(' | Franck Andritina'),
-//     description: t('description'),
-//   };
-// }
 
 
 export default async function Home() {
