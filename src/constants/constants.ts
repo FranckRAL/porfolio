@@ -1,26 +1,24 @@
 
 import {          
   Database,     
-  Code2,
+  CodeXml,
   LayoutDashboard,
   Terminal, 
   Workflow, 
-  Wrench, 
-  Linkedin, 
-  Facebook, 
-  Twitter, 
-  MessageCircle, 
-  Github,
+  Wrench,
   Layout, 
   Smartphone,
   ShieldCheck     
 } from "lucide-react";
+import { FaFacebook, FaGithub, FaLinkedinIn} from 'react-icons/fa';
+import { IoLogoWhatsapp } from "react-icons/io";
+import { RiTwitterXFill } from "react-icons/ri";
 import { SkillCategory, Service } from "@/types/types";
 
 export const SERVICES: Service[] = [
   {
     id: 'web-fullstack',
-    icon: Code2,
+    icon: CodeXml,
     title: {
       fr: "Développement Fullstack",
       en: "Fullstack Development"
@@ -105,7 +103,7 @@ export const skillCategories: SkillCategory[] = [
   {
     id: "programming",
     titleKey: "categories.programming",
-    icon: Code2,
+    icon: CodeXml,
     skills: [
       { name: "TypeScript", level: 85 },
       { name: "JavaScript", level: 90 },
@@ -169,72 +167,11 @@ export const skillCategories: SkillCategory[] = [
   }
 ];
 
-// export const skillCategories: SkillCategory[] = [
-//   {
-//     title: "Programming Languages",
-//     icon: Code2,
-//     skills: [
-//       { name: "TypeScript", level: 85 },
-//       { name: "JavaScript", level: 90 },
-//       { name: "Python", level: 85 },
-//       { name: "PHP", level: 80 },
-//     ]
-//   },
-//   {
-//     title: "Frontend Excellence",
-//     icon: LayoutDashboard,
-//     skills: [
-//       { name: "React.js", level: 90 },
-//       { name: "Next.js", level: 85 },
-//       { name: "Tailwind CSS", level: 95 },
-//       { name: "Framer Motion", level: 70 },
-//     ]
-//   },
-//   {
-//     title: "Backend & Systems",
-//     icon: Database,
-//     skills: [
-//       { name: "Node.js", level: 88 },
-//       { name: "Django", level: 82 },
-//       { name: "PostgreSQL", level: 80 },
-//       { name: "REST APIs", level: 95 },
-//     ]
-//   },
-//   {
-//     title: "Tools & DevOps",
-//     icon: Terminal,
-//     skills: [
-//       { name: "Git & GitHub", level: 90 },
-//       { name: "Docker", level: 70 },
-//       { name: "Shell Scripting", level: 85 },
-//       { name: "PowerShell", level: 75 },
-//     ]
-//   },
-//   {
-//     title: "Project Management",
-//     icon: Workflow,
-//     skills: [
-//       { name: "Agile / Scrum", level: 85 },
-//       { name: "Software Design", level: 80 },
-//       { name: "Technical Writing", level: 75 },
-//     ]
-//   },
-//   {
-//     title: "Quality & Soft Skills",
-//     icon: Wrench,
-//     skills: [
-//       { name: "Code Review", level: 90 },
-//       { name: "Unit Testing", level: 75 },
-//       { name: "Teamwork", level: 95 },
-//       { name: "Communication", level: 90 },
-//     ]
-//   }
-// ];
 
  export const socialLinks = [
-    { name: "LinkedIn", icon: Linkedin, href: "https://linkedin.com/in/your-profile" },
-    { name: "GitHub", icon: Github, href: "https://github.com/your-username" },
-    { name: "Facebook", icon: Facebook, href: "https://facebook.com/your-profile" },
-    { name: "Twitter", icon: Twitter, href: "https://twitter.com/your-handle" },
-    { name: "WhatsApp", icon: MessageCircle, href: "https://wa.me/your-number" },
+    { name: "LinkedIn", icon: FaLinkedinIn, href: "https://linkedin.com/in/your-profile" },
+    { name: "GitHub", icon: FaGithub, href: "https://github.com/FranckRal" },
+    { name: "Facebook", icon: FaFacebook, href: "https://facebook.com/Franck-Andritina" },
+    { name: "Twitter", icon: RiTwitterXFill, href: "https://twitter.com/your-handle" },
+    { name: "WhatsApp", icon: IoLogoWhatsapp, href: "https://wa.me/+261339325613" },
   ];

@@ -1,11 +1,29 @@
-import { FolderGit2, HandPlatter, BookOpenCheck, Activity } from "lucide-react";
+import { FaGitAlt, FaServicestack, FaBook, FaCircle } from "react-icons/fa";
+import { FiActivity } from "react-icons/fi";
 
-export default function DashboardPage() {
+import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
+import { verifyToken } from "@/lib/jwt";
+
+export default async function DashboardPage() {
+
+  const token = (await cookies()).get("session")?.value;
+
+if (!token) {
+  redirect("/login");
+}
+
+const session = verifyToken(token);
+
+if (!session) {
+  redirect("/login");
+}
+
   const stats = [
-    { label: "Total Projects", value: "12", icon: FolderGit2, color: "text-primary" },
-    { label: "Active Services", value: "6", icon: HandPlatter, color: "text-accent" },
-    { label: "Reviews", value: "24", icon: BookOpenCheck, color: "text-abyss-100" },
-    { label: "System Status", value: "Online", icon: Activity, color: "text-emerald-400" },
+    { label: "Total Projects", value: "12", icon: FaGitAlt, color: "text-primary" },
+    { label: "Active Services", value: "6", icon: FaServicestack, color: "text-accent" },
+    { label: "Reviews", value: "24", icon: FaBook, color: "text-abyss-100" },
+    { label: "System Status", value: "Online", icon: FaCircle, color: "text-emerald-400" },
   ];
 
   return (
@@ -38,7 +56,7 @@ export default function DashboardPage() {
 
       {/* Recent Activity Placeholder */}
       <section className="bg-bg-card border border-abyss-800 rounded-2xl p-8 min-h-75 flex flex-col items-center justify-center text-center">
-        <Activity size={48} className="text-abyss-700 mb-4 opacity-20" />
+        <FiActivity size={48} className="text-abyss-700 mb-4 opacity-20" />
         <h3 className="font-title text-xl font-medium text-text-muted">No recent activities</h3>
         <p className="text-text-muted max-w-sm mx-auto mt-2">Start managing your projects or services to see updates here.</p>
       </section>

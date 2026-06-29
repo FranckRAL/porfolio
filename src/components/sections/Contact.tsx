@@ -79,7 +79,7 @@ const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("
         <div className="flex flex-col lg:flex-row gap-12 items-stretch">
           
           {/* --- INFO SIDE --- */}
-          <div className="w-full lg:w-5/12 space-y-8 bg-abyss-900/20 p-8 rounded-4xl border border-primary/10 backdrop-blur-sm">
+          <div className="w-full lg:w-5/12 space-y-8 bg-abyss-900/20 p-8 rounded-4xl border border-primary/10 backdrop-blur-sm overflow-auto">
             <h3 className="font-title text-2xl font-bold">Contact Information</h3>
             
             <div className="space-y-6">
@@ -89,7 +89,7 @@ const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("
                 </div>
                 <div>
                   <p className="text-sm text-text-muted uppercase font-bold tracking-tighter">{t('contact_mail')}</p>
-                  <p className="text-lg font-medium">rakotomavofranck007@gmail.com</p>
+                  <p className="text-lg font-medium ">rakotomavofranck007@gmail.com</p>
                 </div>
               </div>
 

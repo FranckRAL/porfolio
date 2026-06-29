@@ -1,38 +1,46 @@
-// src/middleware.ts
-import { withAuth } from "next-auth/middleware";
+
 import createMiddleware from "next-intl/middleware";
 import { routing } from "@/i18n/routing";
-import { NextRequest } from "next/server";
-
+import { NextRequest, NextResponse } from "next/server";
+import { verifyToken } from "@/lib/jwt";
 
 const handleI18nRouting = createMiddleware(routing);
-
-const authMiddleware = withAuth(
-
-  function onSuccess(req) {
-    return handleI18nRouting(req);
-  },
-  {
-    pages: {
-      signIn: "/api/auth/signin",
-    },
-  }
-);
 
 export default function proxy(req: NextRequest) {
   const { pathname } = req.nextUrl;
 
-
+  
   if (pathname.startsWith("/admin")) {
-    return (authMiddleware as any)(req);
+    const token = req.cookies.get("session")?.value;
+
+    if (!token) {
+      return NextResponse.redirect(
+        new URL("/login", req.url)
+      );
+    }
+
+    const session = verifyToken(token);
+
+    if (!session) {
+      return NextResponse.redirect(
+        new URL("/login", req.url)
+      );
+    }
   }
 
+  
   const response = handleI18nRouting(req);
-  response.headers.set('x-locale', req.nextUrl.locale || 'en');
+
+  response.headers.set(
+    "x-locale",
+    req.nextUrl.locale || "en"
+  );
+
   return response;
 }
 
 export const config = {
-  // On surveille tout, sauf l'API et les fichiers statiques
-  matcher: ["/((?!api|admin|_next|.*\\..*).*)"],
+  matcher: [
+    "/((?!api|_next|.*\\..*).*)",
+  ],
 };

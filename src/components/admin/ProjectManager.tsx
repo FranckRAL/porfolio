@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Plus, Edit2, Trash2 } from "lucide-react";
+import {FaPlus, FaEdit, FaTrash} from "react-icons/fa";
 import ProjectModal from "@/components/admin/ProjectModal";
 import { deleteProject } from "@/actions/project";
 import Image from "next/image";
@@ -36,7 +36,7 @@ export default function ProjectManager({ initialProjects }: ProjectManagerProps)
           onClick={handleCreate}
           className="bg-primary text-abyss-900 px-6 py-3 rounded-xl font-bold flex items-center gap-2 hover:shadow-[0_0_20px_rgba(var(--primary-rgb),0.3)] transition-all"
         >
-          <Plus size={20} /> Deploy New Vessel
+          <FaPlus size={20} /> Deploy New Vessel
         </button>
       </div>
 
@@ -81,12 +81,12 @@ export default function ProjectManager({ initialProjects }: ProjectManagerProps)
                 </td>
                 <td className="p-6 text-right">
                   <div className="flex justify-end gap-3">
-                    <button onClick={() => handleEdit(project)} className="p-2 text-text-muted hover:text-primary transition-colors"><Edit2 size={18} /></button>
+                    <button onClick={() => handleEdit(project)} className="p-2 text-text-muted hover:text-primary transition-colors"><FaEdit size={18} /></button>
                     <button 
                       onClick={async () => { if(confirm("Sink this project?")) await deleteProject(project.id) }} 
                       className="p-2 text-text-muted hover:text-red-500 transition-colors"
                     >
-                      <Trash2 size={18} />
+                      <FaTrash size={18} />
                     </button>
                   </div>
                 </td>

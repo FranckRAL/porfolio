@@ -22,7 +22,7 @@ export const sendNotificationEmail = async (name: string, email: string, subject
         <div style="background-color: #001d3d; border-left: 4px solid #00f5ff; padding: 15px; margin-top: 20px;">
           <p style="font-style: italic; color: #e0e1dd;">"${message}"</p>
         </div>
-        <p style="font-size: 0.8em; margin-top: 30px; color: #003566;">This Message is stored on your databse, you can manage it on your <a href="http://localhost:3000/admin/messages" style="color: #00f5ff;">Dashboard</a></p>
+        <p style="font-size: 0.8em; margin-top: 30px; color: #003566;">This Message is stored on your database, you can manage it on your <a href="http://localhost:3000/admin/messages" style="color: #00f5ff;">Dashboard</a></p>
       </div>
     `,
   };

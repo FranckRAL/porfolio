@@ -62,7 +62,8 @@
     "title": "<em>Solutions</em> Éprouvées",
     "description": "Une sélection de mes projets récents, allant d'architectures web complexes aux expériences mobiles intuitives. Chaque réalisation est un équilibre entre qualité du code et impact utilisateur.",
 
-    "features_title": "Fonctionnalités Clés"
+    "features_title": "Fonctionnalités Clés",
+    "cta_contact": "Discuter de votre projet"
   },
   "Skills": {
     "subtitle": "Arsenal Technique",

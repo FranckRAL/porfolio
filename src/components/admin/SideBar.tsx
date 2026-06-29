@@ -2,21 +2,20 @@
 
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { signOut } from "next-auth/react"; 
-import { 
-  LayoutDashboard, 
-  FolderGit2, 
-  BookOpenCheck, 
-  Anchor,
-  Mail, 
-  LogOut 
-} from "lucide-react";
+import {
+  FiLayout,
+  FiFolder,
+  FiBook,
+  FiAnchor,
+  FiMail,
+  FiLogOut,
+} from "react-icons/fi";
 
 const navItems = [
-  { name: "Dashboard", href: "/admin/dashboard", icon: LayoutDashboard },
-  { name: "Projects", href: "/admin/projects", icon: FolderGit2 },
-  { name: "Messages", href: "/admin/messages", icon: Mail },
-  { name: "Testimonials", href: "/admin/testimonials", icon: BookOpenCheck },
+  { name: "Dashboard", href: "/admin/dashboard", icon: FiLayout },
+  { name: "Projects", href: "/admin/projects", icon: FiFolder },
+  { name: "Messages", href: "/admin/messages", icon: FiMail },
+  { name: "Testimonials", href: "/admin/testimonials", icon: FiBook },
 ];
 
 export default function Sidebar() {
@@ -28,7 +27,7 @@ export default function Sidebar() {
       {/* Logo Section */}
       <div className="flex items-center gap-4 mb-10 pl-2">
         <div className="bg-primary p-2 rounded-lg shadow-[0_0_15px_rgba(var(--primary-rgb),0.4)] shrink-0">
-          <Anchor size={24} className="text-abyss-900" />
+          <FiAnchor size={24} className="text-abyss-900" />
         </div>
         <span className="font-title text-xl font-bold text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
           Abyss Admin
@@ -70,11 +69,11 @@ export default function Sidebar() {
       {/* 3. Logout Button Section */}
       <div className="mb-4">
         <button
-          onClick={() => signOut({ callbackUrl: "/" })} // Redirige vers l'accueil après déco
+          onClick={() => console.log("Logging out...")} 
           className="w-full flex items-center gap-4 p-3 rounded-xl text-text-muted hover:text-red-500 hover:bg-red-500/10 transition-all duration-300 group/logout"
         >
           <div className="shrink-0 pl-1">
-            <LogOut size={22} className="group-hover/logout:rotate-12 transition-transform" />
+            <FiLogOut size={22} className="group-hover/logout:rotate-12 transition-transform" />
           </div>
           <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap font-medium">
             Surface (Exit)

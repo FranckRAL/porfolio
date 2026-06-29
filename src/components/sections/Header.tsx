@@ -73,7 +73,7 @@ useEffect(() => {
         <Link 
           href="#contact" 
           onClick={() => setIsMenuOpen(false)}
-          className="w-full sm:w-auto bg-primary text-white px-8 py-3 rounded-full font-bold text-lg hover:bg-primary/90 transition-all shadow-xl shadow-primary/20 active:scale-95 text-center"
+          className="sm:col-span-2 flex items-center justify-center gap-2 bg-primary text-white font-bold py-4 rounded-xl hover:bg-primary/90 transition-all shadow-xl shadow-primary/20 active:scale-[0.98] group"
         >
           {t('cta_hire')}
         </Link>

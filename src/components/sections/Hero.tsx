@@ -70,7 +70,7 @@ const Hero = () => {
             {/* Main Image Container */}
             <div className="relative z-10 group rounded-[2.5rem] overflow-hidden border border-primary/10 bg-linear-to-br from-abyss-800/20 to-abyss-900/40 p-1 backdrop-blur-sm">
               <Image
-                src="/images/franck.png"
+                src="/images/franck.webp"
                 alt="Franck Andritina"
                 width={400}
                 height={500}

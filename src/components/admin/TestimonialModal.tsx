@@ -1,7 +1,9 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { X, Send, Loader2, Quote } from "lucide-react";
+import {FaX, FaQuoteLeft} from "react-icons/fa6";
+import {BiLoaderCircle} from "react-icons/bi";
+import { IoIosSend } from "react-icons/io";
 import { createTestimonial, updateTestimonial } from "@/actions/testimonial";
 import { SerializedTestimonial } from "@/types/types";
 
@@ -54,9 +56,9 @@ export default function TestimonialModal({ isOpen, onClose, testimonialToEdit }:
       <div className="relative w-full max-w-lg bg-bg-card border border-abyss-800 rounded-2xl shadow-2xl overflow-hidden">
         <div className="p-6 border-b border-abyss-800 flex justify-between items-center bg-abyss-900/50">
           <h2 className="font-title text-xl font-bold text-text-main flex items-center gap-2">
-            <Quote size={20} className="text-primary" /> {testimonialToEdit ? "Edit Echo" : "New Echo"}
+            <FaQuoteLeft size={20} className="text-primary" /> {testimonialToEdit ? "Edit Echo" : "New Echo"}
           </h2>
-          <button onClick={onClose} className="text-text-muted hover:text-primary transition-colors"><X size={20} /></button>
+          <button onClick={onClose} className="text-text-muted hover:text-primary transition-colors"><FaX size={20} /></button>
         </div>
 
         <form onSubmit={handleSubmit} className="p-6 space-y-4">
@@ -88,7 +90,7 @@ export default function TestimonialModal({ isOpen, onClose, testimonialToEdit }:
           <div className="flex gap-3 pt-2">
             <button type="button" onClick={onClose} className="flex-1 py-3 rounded-lg border border-abyss-800 text-text-muted hover:bg-abyss-900">Cancel</button>
             <button type="submit" disabled={isSubmitting} className="flex-1 py-3 rounded-lg bg-primary text-abyss-900 font-bold hover:shadow-lg flex items-center justify-center gap-2">
-              {isSubmitting ? <Loader2 className="animate-spin" size={18} /> : <Send size={18} />}
+              {isSubmitting ? <BiLoaderCircle className="animate-spin" size={18} /> : <IoIosSend size={18} />}
               {testimonialToEdit ? "Update" : "Broadcast"}
             </button>
           </div>

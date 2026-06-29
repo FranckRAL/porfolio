@@ -6,10 +6,10 @@ import { useTranslations } from "next-intl";
 
 const SkillCard = ({ category }: { category: SkillCategory }) => {
   const [isHovered, setIsHovered] = useState(false);
-  const t = useTranslations('Skills');
+  const t = useTranslations("Skills");
 
   return (
-    <motion.div 
+    <motion.div
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       className="p-8 rounded-4xl bg-abyss-900/20 border border-primary/10 backdrop-blur-md hover:border-primary/40 transition-all duration-500 group relative overflow-hidden"
@@ -28,23 +28,33 @@ const SkillCard = ({ category }: { category: SkillCategory }) => {
               <span className="text-sm font-medium text-text-main/80">
                 {skill.nameKey ? t(skill.nameKey) : skill.name}
               </span>
-              <motion.span 
-                initial={{ opacity: 0 }}
-                animate={{ opacity: isHovered ? 1 : 0 }}
-                className="text-xs font-mono text-primary font-bold"
-              >
+              <span className="text-xs font-mono text-primary font-bold">
                 {skill.level}%
-              </motion.span>
+              </span>
             </div>
-            
+
             <div className="h-1.5 w-full bg-primary/5 rounded-full overflow-hidden">
               <motion.div
-                initial={{ width: 0 }}
-                animate={{ width: isHovered ? `${skill.level}%` : "0%" }}
-                transition={{ duration: 1, ease: "circOut", delay: idx * 0.1 }}
-                className="h-full bg-linear-to-r from-primary/40 to-primary rounded-full relative"
+                style={{ width: `${skill.level}%` }}
+                animate={{
+                  scaleY: isHovered ? 1.2 : 1,
+                }}
+                transition={{
+                  duration: 0.3,
+                }}
+                className="h-full bg-linear-to-r from-primary/40 to-primary rounded-full relative origin-center"
               >
-                <div className="absolute right-0 top-0 h-full w-2 bg-white blur-xs opacity-50" />
+                <motion.div
+                  animate={{
+                    x: isHovered ? ["-100%", "300%"] : "-100%",
+                  }}
+                  transition={{
+                    duration: 1.2,
+                    repeat: isHovered ? Infinity : 0,
+                    ease: "linear",
+                  }}
+                  className="absolute top-0 h-full w-6 bg-white/50 blur-sm"
+                />
               </motion.div>
             </div>
           </div>

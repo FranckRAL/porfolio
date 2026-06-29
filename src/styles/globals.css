@@ -37,11 +37,11 @@
 
   
   :root:not(.dark) {
-    --color-bg-page: #f0f9ff;   /* Bleu très pâle (Sky 50) */
-    --color-bg-card: #ffffff;   /* Blanc pur */
-    --color-text-main: #001f3f; /* Ton Darkest Navy pour le texte */
+    --color-bg-page: #f0f9ff;   
+    --color-bg-card: #ffffff;   
+    --color-text-main: #001f3f; 
     --color-text-muted: #475569;
-    --color-primary: #005b96;   /* On fonce un peu l'accent pour la lisibilité */
+    --color-primary: #005b96;   
     --color-accent: #007bff;
     --color-abyss-100: #001f3f; 
   }

@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { X, Upload, Send, Github, Globe, Loader2, Code2, Calendar } from "lucide-react";
+import {FaX, FaUpload, FaGithub, FaGlobe, FaCode, FaCalendar, FaPaperPlane } from "react-icons/fa6";
+import { BiLoaderCircle } from "react-icons/bi";
 import { createProject, updateProject } from "@/actions/project";
 import { CldUploadWidget } from 'next-cloudinary';
 import { ProjectFromDB as Project } from "@/types/types";
@@ -113,7 +114,7 @@ export default function ProjectModal({ isOpen, onClose, projectToEdit }: { isOpe
               ))}
             </div>
           </div>
-          <button onClick={onClose} className="text-text-muted hover:text-primary transition-colors"><X size={24} /></button>
+          <button onClick={onClose} className="text-text-muted hover:text-primary transition-colors"><FaX size={24} /></button>
         </div>
 
         <form onSubmit={handleSubmit} className="p-8 overflow-y-auto space-y-8">
@@ -140,11 +141,11 @@ export default function ProjectModal({ isOpen, onClose, projectToEdit }: { isOpe
 
               <div className="grid grid-cols-2 gap-4">
                 <div className="relative">
-                  <Calendar className="absolute left-4 top-1/2 -translate-y-1/2 text-primary" size={18} />
+                  <FaCalendar className="absolute left-4 top-1/2 -translate-y-1/2 text-primary" size={18} />
                   <input type="text" value={formData.year} onChange={(e) => setFormData(p => ({...p, year: e.target.value}))} className="w-full bg-abyss-900 border border-primary/10 rounded-xl p-3 pl-12 text-sm outline-none" placeholder="Year" />
                 </div>
                 <div className="relative">
-                  <Code2 className="absolute left-4 top-1/2 -translate-y-1/2 text-primary" size={18} />
+                  <FaCode className="absolute left-4 top-1/2 -translate-y-1/2 text-primary" size={18} />
                   <input type="text" value={formData.category} onChange={(e) => setFormData(p => ({...p, category: e.target.value}))} className="w-full bg-abyss-900 border border-primary/10 rounded-xl p-3 pl-12 text-sm outline-none" placeholder="Category" />
                 </div>
               </div>
@@ -159,12 +160,12 @@ export default function ProjectModal({ isOpen, onClose, projectToEdit }: { isOpe
                       <>
                         <Image src={formData.imageUrl} alt="" fill className="object-cover" />
                         <div className="absolute inset-0 bg-abyss-900/60 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
-                          <Upload className="text-primary" />
+                          <FaUpload className="text-primary" />
                         </div>
                       </>
                     ) : (
                       <div className="text-center p-4">
-                        <Upload className="mx-auto text-text-muted mb-2" />
+                        <FaUpload className="mx-auto text-text-muted mb-2" />
                         <span className="text-xs font-bold text-text-muted">Transmit Cover</span>
                       </div>
                     )}
@@ -174,11 +175,11 @@ export default function ProjectModal({ isOpen, onClose, projectToEdit }: { isOpe
 
               <div className="space-y-3">
                 <div className="flex items-center gap-2 bg-abyss-900 border border-primary/10 rounded-xl p-3">
-                  <Github size={16} className="text-text-muted" />
+                  <FaGithub size={16} className="text-text-muted" />
                   <input type="url" value={formData.githubUrl} onChange={(e) => setFormData(p => ({...p, githubUrl: e.target.value}))} placeholder="Repo URL" className="bg-transparent outline-none text-xs w-full" />
                 </div>
                 <div className="flex items-center gap-2 bg-abyss-900 border border-primary/10 rounded-xl p-3">
-                  <Globe size={16} className="text-text-muted" />
+                  <FaGlobe size={16} className="text-text-muted" />
                   <input type="url" value={formData.liveUrl} onChange={(e) => setFormData(p => ({...p, liveUrl: e.target.value}))} placeholder="Live URL" className="bg-transparent outline-none text-xs w-full" />
                 </div>
               </div>
@@ -206,7 +207,7 @@ export default function ProjectModal({ isOpen, onClose, projectToEdit }: { isOpe
             type="submit" disabled={isSubmitting}
             className="w-full bg-primary text-abyss-900 py-4 rounded-2xl font-bold flex items-center justify-center gap-2 hover:scale-[1.02] active:scale-95 transition-all disabled:opacity-50"
           >
-            {isSubmitting ? <Loader2 className="animate-spin" /> : <Send size={20} />}
+            {isSubmitting ? <BiLoaderCircle className="animate-spin" /> : <FaPaperPlane size={20} />}
             {projectToEdit ? "Confirm Update" : "Deploy to Abyss"}
           </button>
         </form>

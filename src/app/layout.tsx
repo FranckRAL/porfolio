@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import { Quicksand, Inter } from "next/font/google";
 import "@/styles/globals.css";
 import { ThemeProvider } from "@/components/pieces/ThemeProvider";
-import { AuthProvider } from "@/components/providers/AuthProvider";
 import BackToTop from "@/components/pieces/BackToTop";
 import { headers } from "next/headers";
 import { cookies } from "next/headers";
+import { GoogleOAuthProvider } from "@react-oauth/google";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -51,12 +51,14 @@ export default async function RootLayout({
         suppressHydrationWarning
         className={`${inter.variable} ${quicksand.variable} antialiased`}
       >
-        <AuthProvider>
-          <ThemeProvider initialTheme={theme}>
+        <ThemeProvider initialTheme={theme}>
+          <GoogleOAuthProvider
+            clientId={process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID!}
+          >
             {children}
             <BackToTop />
-          </ThemeProvider>
-        </AuthProvider>
+          </GoogleOAuthProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

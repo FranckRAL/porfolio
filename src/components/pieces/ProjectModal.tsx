@@ -2,7 +2,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ProjectFromDB } from '@/types/types';
 import { useTranslations, useLocale } from 'next-intl';
-import { XCircleIcon, ExternalLink, Github, ChevronRight } from 'lucide-react';
+import {FaExternalLinkAlt, FaGithub, FaChevronRight} from 'react-icons/fa';
+import { IoIosCloseCircleOutline } from "react-icons/io";
 
 const ProjectModal = ({ project, onClose }: { project: ProjectFromDB, onClose: () => void }) => {
   const t = useTranslations('Projects');
@@ -26,7 +27,7 @@ const ProjectModal = ({ project, onClose }: { project: ProjectFromDB, onClose: (
           onClick={onClose} 
           className="absolute top-6 right-6 z-10 text-text-muted hover:text-primary transition-colors bg-bg-page/50 p-1 rounded-full backdrop-blur-md"
         >
-          <XCircleIcon size={32} />
+          <IoIosCloseCircleOutline size={32} />
         </button>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 p-6 md:p-12">
@@ -79,7 +80,7 @@ const ProjectModal = ({ project, onClose }: { project: ProjectFromDB, onClose: (
             {/* Features (Depuis JSON) */}
             <div className="space-y-4">
               <h4 className="text-xl font-bold text-text-main flex items-center gap-2">
-                <ChevronRight className="text-primary" size={20} />
+                <FaChevronRight className="text-primary" size={20} />
                 {t('features_title')}
               </h4>
               <ul className="grid grid-cols-1 gap-3">
@@ -108,7 +109,7 @@ const ProjectModal = ({ project, onClose }: { project: ProjectFromDB, onClose: (
                   target="_blank"
                   className="flex items-center gap-2 bg-primary text-abyss-950 px-8 py-4 rounded-2xl font-bold hover:scale-105 transition-transform"
                 >
-                  <ExternalLink size={18} />
+                  <FaExternalLinkAlt size={18} />
                   Live Demo
                 </Link>
               )}
@@ -118,7 +119,7 @@ const ProjectModal = ({ project, onClose }: { project: ProjectFromDB, onClose: (
                   target="_blank"
                   className="flex items-center gap-2 border border-primary/20 bg-primary/5 text-text-main px-8 py-4 rounded-2xl font-bold hover:bg-primary/10 transition-all"
                 >
-                  <Github size={18} />
+                  <FaGithub size={18} />
                   Source Code
                 </Link>
               )}

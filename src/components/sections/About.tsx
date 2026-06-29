@@ -25,7 +25,7 @@ export default function About() {
 
              <div className="relative z-10 flex justify-center">
               <Image
-                src="/images/franck.png"
+                src="/images/franck.webp"
                  alt="Franck Andritina photo, web developper and software engineer passionated with python and javascript"
                  width={450}
                 height={450}
@@ -70,7 +70,7 @@ export default function About() {
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
               {highlights.map((item) => (
                 <div key={item.id} className="p-4 bg-primary/5 border border-primary/10 rounded-xl">
-                  <h4 className="text-primary font-bold text-sm mb-1 uppercase tracking-wider">{t(`highlights.${item.id}.label`)}</h4>
+                  <h3 className="text-primary font-bold text-sm mb-1 uppercase tracking-wider">{t(`highlights.${item.id}.label`)}</h3>
                   <p className="text-xs text-text-muted">{t(`highlights.${item.id}.desc`)}</p>
                 </div>
               ))}
