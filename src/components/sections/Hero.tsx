@@ -48,7 +48,7 @@ const Hero = () => {
                 {t('cta_projects')}
               </Link>
               <a
-                href="/assets/cv_Franck_Andritina_developer_fullstack.pdf"
+                href="/assets/CV_RAKOTOMAVO_Franck_Developpeur_web_et_mobile.pdf"
                 className="group flex items-center gap-2 text-text-main font-semibold hover:text-primary transition-colors py-2" download
               >
                 <span>{t('cta_cv')}</span>
