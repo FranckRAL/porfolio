@@ -42,7 +42,7 @@ export async function createProject(data: ProjectData) {
         title: data.title,           
         description: data.description, 
         features: data.features,     
-        challenges: data.challenges || null, 
+        challenges: data.challenges || "", 
       },
     });
 

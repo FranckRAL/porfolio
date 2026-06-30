@@ -1,14 +1,12 @@
 import Image from 'next/image';
-import { ProjectFromDB } from '@/types/types';
+import { ProjectView} from '@/types/types';
 import { useLocale } from 'next-intl';
 import {Suspense} from 'react';
 
-const ProjectCard = ({ project, onClick }: {project: ProjectFromDB, onClick: () => void}) => {
+const ProjectCard = ({ project, onClick }: {project: ProjectView, onClick: () => void}) => {
   const locale = useLocale();
   
-  // Sécurité pour la traduction
-  const title = project.title[locale] || project.title['en'];
-  console.log(project.imageUrl)
+const title = project.title[locale as keyof typeof project.title] || project.title['en'];
 
   return (
     <div 

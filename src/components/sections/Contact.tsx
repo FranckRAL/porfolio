@@ -13,7 +13,6 @@ const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("
 
   async function handleSubmit(formData: FormData) {
     setStatus("loading");
-    console.log(status)
     
     const result = await sendContactMessage(formData);
     

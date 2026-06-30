@@ -1,5 +1,5 @@
 import { LucideIcon } from "lucide-react";
-import { Project, Testimonial } from '@/generated/prisma/client';
+import { Project, Testimonial } from './../../generated/prisma/client';
 
 
 export type ProjectCategory = "Web App" | "Mobile App" | "Desktop App" | "UI/UX";
@@ -10,18 +10,35 @@ export interface ProjectFromDB {
   category: string;
   role: string;
   imageUrl: string;
-  stack: { slug: string; logoUrl: string }[]; // Adapté à ton JSON
+  stack: { slug: string; logoUrl: string }[]; 
   liveUrl?: string | null;
   githubUrl?: string | null;
-  title: Record<string, string>; // { fr: "...", en: "..." }
+  title: Record<string, string>; 
   description: Record<string, string>;
   features: Record<string, string[]>;
   challenges?: Record<string, string> | null;
 }
 
+export interface ProjectView {
+  id: string;
+  year: string;
+  category: string;
+  role: string;
+  imageUrl: string;
+  stack: { slug: string; logoUrl: string }[];
+  liveUrl?: string | null;
+  githubUrl?: string | null;
+  title: Record<string, string>;
+  description: Record<string, string>;
+  features: Record<string, string[]>;
+  challenges?: Record<string, string> | null;
+  createdAt: string;
+  updatedAt: string;
+}
+
 export interface Skill {
   name?: string;
-  nameKey?: string; // Pour les termes traduisibles dans le JSON
+  nameKey?: string; 
   level: number;
 }
 
@@ -31,17 +48,6 @@ export interface SkillCategory {
   icon: LucideIcon;
   skills: Skill[];
 }
-
-// export interface SkillItem {
-//   name: string;
-//   level: number;
-// }
-
-// export interface SkillCategory {
-//   title: string;
-//   icon: LucideIcon;
-//   skills: SkillItem[];
-// }
 
 export type SerializedProject = Omit<Project, "createdAt" | "updatedAt"> & {
   createdAt: string;

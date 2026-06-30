@@ -2,40 +2,52 @@ import Header from "@/components/sections/Header";
 import Hero from "@/components/sections/Hero";
 import About from "@/components/sections/About";
 import Contact from "@/components/sections/Contact";
-import ProjectsSection from "@/components/sections/Project"; 
+import ProjectsSection from "@/components/sections/Project";
 import Services from "@/components/sections/Services";
 import Skills from "@/components/sections/Skills";
 import Footer from "@/components/sections/Footer";
-import prisma from '@/lib/db';
-import { SerializedProject } from '@/types/types';
-
+import prisma from "@/lib/db";
+import { ProjectView } from "@/types/types";
+import { Project } from "../../../../generated/prisma/client";
 
 export default async function Home() {
-    
-    const rawProjects = await prisma.project.findMany({
-        orderBy: { createdAt: 'desc' }
-    });
+  const rawProjects = await prisma.project.findMany({
+    orderBy: { createdAt: "desc" },
+  });
 
-    const projects: SerializedProject[] = rawProjects.map((project) => ({
-        ...project,
-        createdAt: project.createdAt.toISOString(),
-        updatedAt: project.updatedAt.toISOString(),
-        githubUrl: project.githubUrl || undefined,
-        liveUrl: project.liveUrl || undefined,
-    }));
+  const serializeProject = (project: Project): ProjectView => ({
+    id: project.id,
+    year: project.year,
+    category: project.category,
+    role: project.role,
+    imageUrl: project.imageUrl,
+    stack: project.stack as { slug: string; logoUrl: string }[],
+    liveUrl: project.liveUrl ?? null,
+    githubUrl: project.githubUrl ?? null,
+    title: project.title as Record<string, string>,
+    description: project.description as Record<string, string>,
+    features: project.features as Record<string, string[]>,
+    challenges: project.challenges
+      ? (project.challenges as Record<string, string>)
+      : null,
+    createdAt: project.createdAt.toISOString(),
+    updatedAt: project.updatedAt.toISOString(),
+  });
 
-    return (
-        <div className="bg-bg-page min-h-screen">
-            <Header />
-            <main>
-                <Hero />
-                <About />
-                <Services />
-                <ProjectsSection projects={projects} />
-                <Skills />
-                <Contact />
-            </main>
-            <Footer />
-        </div>
-    );
+  const projects: ProjectView[] = rawProjects.map(serializeProject);
+
+  return (
+    <div className="bg-bg-page min-h-screen">
+      <Header />
+      <main>
+        <Hero />
+        <About />
+        <Services />
+        <ProjectsSection projects={projects} />
+        <Skills />
+        <Contact />
+      </main>
+      <Footer />
+    </div>
+  );
 }

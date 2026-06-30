@@ -6,6 +6,7 @@ import BackToTop from "@/components/pieces/BackToTop";
 import { headers } from "next/headers";
 import { cookies } from "next/headers";
 import { GoogleOAuthProvider } from "@react-oauth/google";
+import { NextIntlClientProvider } from "next-intl";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -41,6 +42,8 @@ export default async function RootLayout({
   const theme =
     (cookieStore.get("theme")?.value as "light" | "dark") ?? "light";
 
+    
+
   return (
     <html
       lang={locale}
@@ -52,12 +55,14 @@ export default async function RootLayout({
         className={`${inter.variable} ${quicksand.variable} antialiased`}
       >
         <ThemeProvider initialTheme={theme}>
+          <NextIntlClientProvider locale={locale}>
           <GoogleOAuthProvider
             clientId={process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID!}
           >
             {children}
             <BackToTop />
           </GoogleOAuthProvider>
+          </NextIntlClientProvider>
         </ThemeProvider>
       </body>
     </html>
