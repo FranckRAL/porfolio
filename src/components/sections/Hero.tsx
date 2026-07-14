@@ -40,10 +40,10 @@ const Hero = () => {
               }
             </p>
             
-            <div className="flex flex-col sm:flex-row items-center gap-6">
+            <div className="flex flex-col md:flex-row items-center gap-6">
               <Link
                 href="#projects"
-                className="w-full sm:w-auto bg-primary text-white px-10 py-4 rounded-full font-bold text-base hover:bg-primary/90 transition-all shadow-xl shadow-primary/20 active:scale-95 text-center"
+                className="w-full md:w-auto bg-primary text-white px-10 py-4 rounded-full font-bold text-base hover:bg-primary/90 transition-all shadow-xl shadow-primary/20 active:scale-95 text-center"
               >
                 {t('cta_projects')}
               </Link>

@@ -25,9 +25,9 @@ const Services = () => {
             {t('description')}
           </p>
         </div>
-
-        {/* --- LISTE ANIMÉE --- */}
+        
         <ServiceList  />
+
       </div>
     </section>
   );

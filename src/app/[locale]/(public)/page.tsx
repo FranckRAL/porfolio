@@ -43,7 +43,7 @@ export default async function Home() {
       <Header />
       <main>
         <Hero />
-        <About />
+        {/* <About /> */}
         <Services />
         <ProjectsSection projects={projects} />
         <Skills />

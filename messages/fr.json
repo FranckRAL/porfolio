@@ -54,8 +54,8 @@
   },
   "Services": {
     "subtitle": "Solutions Spécialisées",
-    "title": "Façonner l' <span>Excellence</span> Numérique",
-    "description": "Bien plus que de l'écriture de code, je bâtis des écosystèmes digitaux évolutifs. De l'architecture de backends robustes à la conception d'expériences utilisateur immersives, je me concentre sur la livraison de solutions haute performance adaptées à votre vision unique."
+    "title": "Des <span>Idées</span> à la Réalité",
+    "description": "Je conçois des applications web modernes, performantes et évolutives, en alliant une architecture robuste à une expérience utilisateur fluide pour donner vie à vos idées."
   },
   "Projects": {
     "subtitle": "Travaux Sélectionnés",
@@ -68,7 +68,30 @@
   "Skills": {
     "subtitle": "Arsenal Technique",
     "title": "Compétences & <em>Expertise</em>",
-    "description": "Survolez une catégorie pour découvrir mes niveaux de maîtrise et ma profondeur technique.",
+    "description": "Un ensemble de technologies et d'outils que j'utilise pour concevoir, développer et déployer des solutions performantes et modernes",
+    "soft_skills": {
+      "education": {
+        "title": "Ingenieur Logiciel",
+        "description": "Diplômé en Informatique et passionné par le développement logiciel"
+      },
+      "continuous_learning": {
+        "title": "Apprentissage Continu",
+        "description": "Toujours curieux aux nouvelles technologies"
+      },
+      "clean_code": {
+        "title": "Code Propre et maintenable",
+        "description": "J'ai écris un code lisible, modulaire et bien structuré"
+      },
+      "performance_scalability": {
+        "title": "Performance et Scalabilité",
+        "description": "Je conçois des applications rapide et performantes"
+      },
+      "teamwork": {
+        "title": "Travail en équipe",
+        "description": "Bonne communication et esprit collaboratif"
+      }
+
+    },
     "categories": {
       "programming": "Langages de Programmation",
       "frontend": "Excellence Frontend",

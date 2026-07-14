@@ -8,12 +8,16 @@ import {
   Wrench,
   Layout, 
   Smartphone,
-  ShieldCheck     
+  ShieldCheck,     
+  Rocket,
+  Users,
+  BookOpen
 } from "lucide-react";
 import { FaFacebook, FaGithub, FaLinkedinIn} from 'react-icons/fa';
 import { IoLogoWhatsapp } from "react-icons/io";
 import { RiTwitterXFill } from "react-icons/ri";
-import { SkillCategory, Service } from "@/types/types";
+import { SkillCategory, Service, SkillCategory2, SoftSkill } from "@/types/types";
+import { TbUsersGroup } from "react-icons/tb";
 
 export const SERVICES: Service[] = [
   {
@@ -97,7 +101,7 @@ export const NAV_LINKS = [
     },
 ]
 
-export const CATEGORIES = ["Web App", "Mobile App", "Desktop App", "Other"];
+export const CATEGORIES = ["Web", "Mobile", "Desktop", "Other"];
 
 export const skillCategories: SkillCategory[] = [
   {
@@ -175,3 +179,99 @@ export const skillCategories: SkillCategory[] = [
     { name: "Twitter", icon: RiTwitterXFill, href: "https://twitter.com/your-handle" },
     { name: "WhatsApp", icon: IoLogoWhatsapp, href: "https://wa.me/+261339325613" },
   ];
+
+export const SKILLCATEGORIES: SkillCategory2[] = [
+  
+    {
+      id: "frontend",
+      categoryName: "Frontend",
+      CategoryIcon: CodeXml,
+      skills: [
+        { skillName: "React.js", icon: "react" },
+        { skillName: "Next.js", icon: "nextjs" },
+        { skillName: "Tailwind CSS", icon: "tailwind" },
+        { skillName: "TypeScript", icon: "typescript" },
+      ]
+    },
+
+    {
+      id: "Backend",
+      categoryName: "Backend",
+      CategoryIcon: Database,
+      skills: [
+        { skillName: "Django", icon: "django" },
+        { skillName: "Laravel", icon: "laravel" },
+        { skillName: "NestJS", icon: "nestjs" },
+        { skillName: "Express", icon: "express" },
+        { skillName: "Node.js", icon: "nodejs" },
+      ]
+    },
+    
+    {
+      id: "languages",
+      categoryName: "Languages",
+      CategoryIcon: CodeXml,
+      skills: [
+        { skillName: "Python", icon: "python" },
+        { skillName: "Java", icon: "java" },
+        { skillName: "PHP", icon: "php" },
+        { skillName: "Kotlin", icon: "kotlin" },
+      ]
+    },
+    {
+      id: "database",
+      categoryName: "Database & ORM",
+      CategoryIcon: Database,
+      skills: [
+        { skillName: "PostgreSQL", icon: "postgresql" },
+        { skillName: "MongoDB", icon: "mongo" },
+        { skillName: "MySQL", icon: "mysql" },
+        { skillName: "Prisma", icon: "prisma" },
+      ]
+    },
+    {
+      id: "mobile",
+      categoryName: "Mobile",
+      CategoryIcon: Smartphone,
+      skills: [
+        { skillName: "Flutter", icon: "flutter" },
+        { skillName: "Kotlin", icon: "kotlin" },
+      ]
+    },
+
+    {
+      id: "tools",
+      categoryName: "Tools",
+      CategoryIcon: Terminal,
+      skills: [
+        { skillName: "Figma", icon: "figma" },
+        { skillName: "Postman", icon: "postman" },
+        { skillName: "Docker", icon: "docker" },
+        { skillName: "Git/Github", icon: "git" },
+      ]
+    },
+
+]
+       
+export const SOFTSKILLS: SoftSkill[] = [
+  {
+    name: "continuous_learning",
+    Icon: BookOpen
+  },
+  {
+    name: "clean_code",
+    Icon: CodeXml
+  },
+
+  {
+    name: "performance_scalability",
+    Icon: Rocket
+  },
+
+  {
+    name: "teamwork",
+    Icon: Users
+  },
+
+]
+       

@@ -49,6 +49,26 @@ export interface SkillCategory {
   skills: Skill[];
 }
 
+// fixed categoryIcon type to LucideIcon for consistency with Service interface
+export interface Skill2 {
+  skillName: string;
+  icon: string;
+}
+
+export interface SkillCategory2{
+  id: String;
+  categoryName: string;
+  CategoryIcon: LucideIcon;
+  skills: Skill2[];
+}
+
+export interface SoftSkill {
+  name: string;
+  Icon: LucideIcon;
+}
+
+// -----------------------------------------
+
 export type SerializedProject = Omit<Project, "createdAt" | "updatedAt"> & {
   createdAt: string;
   updatedAt: string;

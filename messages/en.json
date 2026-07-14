@@ -18,7 +18,6 @@
     "social_intro_text": "Let's discuss your next big project.",
     "final_word": "Designed & Built with",
     "in": "in"
-
   },
   "Hero": {
     "badge": "Available for new challenges",
@@ -49,25 +48,45 @@
         "desc": "Goal-oriented mindset"
       }
     }
-    
   },
   "Services": {
     "subtitle": "Specialized Solutions",
-    "title": "Crafting Digital <span>Excellence</span>",
-    "description": "Beyond just writing code, I build scalable digital ecosystems. From architecting robust backends to designing immersive user experiences, I focus on delivering high-performance solutions tailored to your unique vision."
+    "title": "From <span>Ideas</span> to Reality",
+    "description": "I build modern, high-performance, and scalable web applications, combining robust architecture with seamless user experiences to bring your ideas to life."
   },
   "Projects": {
     "subtitle": "Selected Works",
     "title": "Proven <em>Solutions</em>",
     "description": "A showcase of my recent projects, spanning from complex web architectures to intuitive mobile experiences. Each one is a balance of code quality and user impact.",
-
     "features_title": "Core Features",
     "cta_contact": "Discuss Your Project"
   },
   "Skills": {
     "subtitle": "Technical Arsenal",
     "title": "Capabilities & <em>Expertise</em>",
-    "description": "Hover over a category to reveal my proficiency levels and technical depth.",
+    "description": "A collection of technologies and tools I use to design, build, and deploy modern, high-performance applications.",
+    "soft_skills": {
+      "education": {
+        "title": "Software Engineer",
+        "description": "Graduated in Computer Science with a passion for software development."
+      },
+      "continuous_learning": {
+        "title": "Continuous Learning",
+        "description": "Always eager to learn new technologies."
+      },
+      "clean_code": {
+        "title": "Clean & Maintainable Code",
+        "description": "I write clean, readable, modular, and well-structured code."
+      },
+      "performance_scalability": {
+        "title": "Performance & Scalability",
+        "description": "I build fast, scalable, and efficient applications."
+      },
+      "teamwork": {
+        "title": "Teamwork",
+        "description": "Strong communication and a collaborative mindset."
+      }
+    },
     "categories": {
       "programming": "Programming Languages",
       "frontend": "Frontend Excellence",
@@ -89,7 +108,7 @@
   "Contact": {
     "subtitle": "Get in Touch",
     "title": "Let's Build Something <em>Great</em>",
-    "description": "Whether you have a specific project in mind or just want to chat about software craftsmanship and collaboration, I&apos;m always open to new opportunities.",
+    "description": "Whether you have a specific project in mind or just want to chat about software craftsmanship and collaboration, I'm always open to new opportunities.",
     "contact_mail": "Email Me",
     "location": "Location",
     "contact_badge": "Currently accepting new projects",
