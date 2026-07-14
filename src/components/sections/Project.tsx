@@ -24,7 +24,7 @@ const Projects = ({projects}: {projects: ProjectView[]}) => {
 
   return (
     <section
-      className="py-24 bg-bg-page relative overflow-hidden"
+      className="py-24  relative overflow-hidden"
       id="projects"
     >
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_center,var(--tw-gradient-stops))] from-primary/5 via-transparent to-transparent -z-10" />

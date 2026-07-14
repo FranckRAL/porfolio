@@ -4,7 +4,7 @@ import {useTranslations} from 'next-intl';
 interface NavLinkProps {
     id: string;
     path: string;
-    isActive: boolean; // Nouvelle prop pour l'état
+    isActive: boolean; 
 }
 
 const NavLink = ({ id, path, isActive }: NavLinkProps) => {
@@ -12,7 +12,7 @@ const NavLink = ({ id, path, isActive }: NavLinkProps) => {
   return (
     <Link 
       href={path} 
-      className={`relative py-2 text-text-main hover:text-primary transition-colors ${isActive ? 'text-primary ' : ''}`}
+      className={`relative py-2 text-text-main hover:text-primary text-base transition-colors ${isActive ? 'text-primary ' : ''}`}
     >
       {t(id)}
       

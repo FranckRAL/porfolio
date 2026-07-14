@@ -35,7 +35,7 @@ useEffect(() => {
 }, []);
 
   return (
-    <header className="sticky top-0 w-full z-50 bg-bg-page/80 backdrop-blur-md border-b border-primary/10 py-4">
+    <header className="sticky top-0 w-full z-50 bg-bg-page/50 backdrop-blur-[5px] border-b border-primary/10 py-4">
       <div className="container relative flex justify-between items-center mx-auto px-6">
         
         <Link href="/" className="text-2xl font-title font-bold text-primary">
@@ -51,9 +51,9 @@ useEffect(() => {
         <div className="flex items-center gap-4">
           <ThemeToggle />
           <LanguageSwitcher />
-          <Link href="#contact" className="hidden sm:block w-full sm:w-auto bg-primary text-white px-5 py-2 rounded-full font-bold text-lg hover:bg-primary/90 transition-all shadow-xl shadow-primary/20 active:scale-95 text-center">
+          {/* <Link href="#contact" className="hidden sm:block w-full sm:w-auto bg-primary text-white px-5 py-2 rounded-full font-bold text-lg hover:bg-primary/90 transition-all shadow-xl shadow-primary/20 active:scale-95 text-center">
             {t('cta_hire')}
-          </Link>
+          </Link> */}
           
           <MobileMenuButton isOpen={isMenuOpen} toggle={() => setIsMenuOpen(!isMenuOpen)} />
         </div>
@@ -73,7 +73,7 @@ useEffect(() => {
         <Link 
           href="#contact" 
           onClick={() => setIsMenuOpen(false)}
-          className="sm:col-span-2 flex items-center justify-center gap-2 bg-primary text-white font-bold py-4 rounded-xl hover:bg-primary/90 transition-all shadow-xl shadow-primary/20 active:scale-[0.98] group"
+          className=" sm:col-span-2 flex items-center justify-center gap-2 bg-primary text-white text-base py-4 rounded-xl hover:bg-primary/90 transition-all shadow-xl shadow-primary/20 active:scale-[0.98] group"
         >
           {t('cta_hire')}
         </Link>

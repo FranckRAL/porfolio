@@ -9,6 +9,7 @@ import Footer from "@/components/sections/Footer";
 import prisma from "@/lib/db";
 import { ProjectView } from "@/types/types";
 import { Project } from "../../../../generated/prisma/client";
+import OceanBackground from "@/components/pieces/OceanBackground";
 
 export default async function Home() {
   const rawProjects = await prisma.project.findMany({
@@ -37,7 +38,8 @@ export default async function Home() {
   const projects: ProjectView[] = rawProjects.map(serializeProject);
 
   return (
-    <div className="bg-bg-page min-h-screen">
+    <div className=" min-h-screen">
+      <OceanBackground />
       <Header />
       <main>
         <Hero />

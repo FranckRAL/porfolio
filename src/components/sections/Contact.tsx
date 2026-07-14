@@ -57,7 +57,7 @@ const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("
 };
 
   return (
-    <section id="contact" className="py-24 relative overflow-hidden bg-bg-page">
+    <section id="contact" className="py-24 relative overflow-hidden ">
       <div className="container mx-auto px-6 relative z-10">
         
         {/* Header */}

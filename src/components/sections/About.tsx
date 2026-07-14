@@ -11,7 +11,7 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="py-24 relative overflow-hidden bg-bg-page transition-colors duration-500">
+    <section id="about" className="py-24 relative overflow-hidden transition-colors duration-500">
       <div className="container mx-auto px-6 relative z-10">
         <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
           
@@ -55,7 +55,7 @@ export default function About() {
               </h2>
             </div>
 
-            <div className="space-y-5 text-text-main/80 text-lg leading-relaxed font-body">
+            <div className="space-y-5 text-text-main/80 text-base leading-relaxed font-body">
             {
               t.rich('description', {
                 strong: (chunk) => <strong className="text-text-main font-semibold">{chunk}</strong>,

@@ -10,7 +10,7 @@ const Footer = () => {
 
 
   return (
-    <footer className="bg-bg-page  border-t border-primary/10 pt-16 pb-8 relative overflow-hidden">
+    <footer className="bg-bg-page/5  border-t border-primary/10 pt-16 pb-8 relative overflow-hidden">
       {/* Decorative Glow */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-2/3 h-px bg-linear-to-r from-transparent via-primary/50 to-transparent" />
 

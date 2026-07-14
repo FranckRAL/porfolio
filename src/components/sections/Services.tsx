@@ -5,7 +5,7 @@ const Services = () => {
   const t = useTranslations('Services');
 
   return (
-    <section id="services" className="py-24 bg-bg-page relative overflow-hidden">
+    <section id="services" className="py-24  relative overflow-hidden">
       {/* Glow d'arrière-plan thématique */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-150 h-75 bg-primary/5 blur-[120px] rounded-full -z-10" />
 
