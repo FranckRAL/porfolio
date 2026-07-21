@@ -42,8 +42,7 @@ export default async function RootLayout({
   const theme =
     (cookieStore.get("theme")?.value as "light" | "dark") ?? "light";
 
-    
-
+  
   return (
     <html
       lang={locale}
