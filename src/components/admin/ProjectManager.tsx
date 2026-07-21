@@ -5,17 +5,17 @@ import {FaPlus, FaEdit, FaTrash} from "react-icons/fa";
 import ProjectModal from "@/components/admin/ProjectModal";
 import { deleteProject } from "@/actions/project";
 import Image from "next/image";
-import { ProjectFromDB } from "@/types/types";
+import { ProjectView } from "@/types";
 
 interface ProjectManagerProps {
-  initialProjects: ProjectFromDB[];
+  initialProjects: ProjectView[];
 }
 
 export default function ProjectManager({ initialProjects }: ProjectManagerProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedProject, setSelectedProject] = useState<ProjectFromDB | null>(null);
+  const [selectedProject, setSelectedProject] = useState<ProjectView | null>(null);
 
-  const handleEdit = (project: ProjectFromDB) => {
+  const handleEdit = (project: ProjectView) => {
     setSelectedProject(project);
     setIsModalOpen(true);
   };

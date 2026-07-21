@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { ProjectView} from '@/types/types';
+import { ProjectView} from '@/types';
 import { useLocale } from 'next-intl';
 import {Suspense} from 'react';
 

@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { SkillCategory } from "@/types/types";
+import { SkillCategory } from "@/types";
 import { useTranslations } from "next-intl";
 
 const SkillCard = ({ category }: { category: SkillCategory }) => {

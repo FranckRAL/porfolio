@@ -1,13 +1,13 @@
 import Header from "@/components/sections/Header";
 import Hero from "@/components/sections/Hero";
-import About from "@/components/sections/About";
+//import About from "@/components/sections/About";
 import Contact from "@/components/sections/Contact";
 import ProjectsSection from "@/components/sections/Project";
 import Services from "@/components/sections/Services";
 import Skills from "@/components/sections/Skills";
 import Footer from "@/components/sections/Footer";
 import prisma from "@/lib/db";
-import { ProjectView } from "@/types/types";
+import { ProjectView } from "@/types";
 import { Project } from "../../../../generated/prisma/client";
 import OceanBackground from "@/components/pieces/OceanBackground";
 

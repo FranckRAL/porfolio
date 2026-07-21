@@ -62,17 +62,15 @@ model Message {
 
 model Testimonial {
   id          String   @id @default(cuid())
-  name        String   // Nom de la personne
-  role        String   // Ex: "CEO at TechMarine"
-  company     String?  // Nom de l'entreprise
-  avatarUrl   String?  // URL Cloudinary
+  name        String   
+  role        String   
+  company     String?  
+  avatarUrl   String?  
   rating      Int      @default(5)
   
-  // Gestion de l'affichage
-  isActive    Boolean  @default(true) // Pour masquer un avis si besoin
   
-  // Contenu Multilingue (JSONB)
-  // On traduit le contenu, et parfois le rôle si nécessaire
+  isActive    Boolean  @default(true) 
+  
   // Format : { "fr": "Super travail !", "en": "Great work!" }
   content     Json     
 

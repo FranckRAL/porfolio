@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Easing } from "framer-motion";
 import { useLocale } from "next-intl";
 import { SERVICES } from "@/constants";
 
@@ -22,7 +22,7 @@ const itemVariants = {
     opacity: 1,
     transition: {
       duration: 0.8,
-      ease: [0.22, 1, 0.36, 1], // Ease out quint pour un effet fluide
+      ease: [0.22, 1, 0.36, 1] as Easing,
     },
   },
 };

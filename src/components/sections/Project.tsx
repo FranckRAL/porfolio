@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ProjectView } from "@/types/types";
+import { ProjectView } from "@/types";
 import type { Project } from "@/../../generated/prisma/client";
 import ProjectCard from "@/components/pieces/ProjectCard";
 import ProjectModal from "@/components/pieces/ProjectModal";

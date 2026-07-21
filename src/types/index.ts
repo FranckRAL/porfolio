@@ -89,6 +89,7 @@ export interface Service {
 }
 
 export type SerializedTestimonial = Omit<Testimonial, "createdAt" | "updatedAt"> & {
+  content: { fr: string; en: string };
   createdAt: string;
   updatedAt: string;
 };

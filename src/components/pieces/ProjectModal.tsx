@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { ProjectFromDB } from '@/types/types';
+import { ProjectFromDB } from '@/types';
 import { useTranslations, useLocale } from 'next-intl';
 import {FaExternalLinkAlt, FaGithub, FaChevronRight} from 'react-icons/fa';
 import { IoIosCloseCircleOutline } from "react-icons/io";

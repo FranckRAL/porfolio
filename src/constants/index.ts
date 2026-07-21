@@ -16,7 +16,7 @@ import {
 import { FaFacebook, FaGithub, FaLinkedinIn} from 'react-icons/fa';
 import { IoLogoWhatsapp } from "react-icons/io";
 import { RiTwitterXFill } from "react-icons/ri";
-import { SkillCategory, Service, SkillCategory2, SoftSkill } from "@/types/types";
+import { SkillCategory, Service, SkillCategory2, SoftSkill } from "@/types";
 import { TbUsersGroup } from "react-icons/tb";
 
 export const SERVICES: Service[] = [

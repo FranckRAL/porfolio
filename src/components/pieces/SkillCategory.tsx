@@ -1,4 +1,4 @@
-import { SkillCategory2 } from "@/types/types";
+import { SkillCategory2 } from "@/types";
 import SkillBubble from "./SkillBubble";
 
 const SkillCategory = ({
