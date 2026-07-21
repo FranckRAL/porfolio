@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { NAV_LINKS, socialLinks } from "@/constants/constants";
+import { NAV_LINKS, socialLinks } from "@/constants";
 import {useTranslations} from 'next-intl';
 
 

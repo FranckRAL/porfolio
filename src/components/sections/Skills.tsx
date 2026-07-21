@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
-import { SKILLCATEGORIES, SOFTSKILLS } from "@/constants/constants";
+import { SKILLCATEGORIES, SOFTSKILLS } from "@/constants";
 import SkillCategory from "../pieces/SkillCategory";
 import SoftSkill from "../pieces/SoftSkill";
 import Image from "next/image";

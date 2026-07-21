@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useLocale } from "next-intl";
-import { SERVICES } from "@/constants/constants";
+import { SERVICES } from "@/constants";
 
 
 const containerVariants = {

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { NAV_LINKS } from "@/constants/constants";
+import { NAV_LINKS } from "@/constants";
 import NavLink from "@/components/pieces/NavLink";
 import ThemeToggle from "@/components/pieces/ToggleTheme";
 import LanguageSwitcher from "@/components/pieces/LanguageSwitcher";

@@ -1,5 +1,5 @@
 "use client";
-import { CATEGORIES } from "@/constants/constants";
+import { CATEGORIES } from "@/constants";
 
 const ProjectFilter = (
     {filter, setFilter}: {filter: string; setFilter: (filter: string) => void}
