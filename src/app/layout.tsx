@@ -65,6 +65,8 @@ export default async function RootLayout({
           </GoogleOAuthProvider>
           </NextIntlClientProvider>
         </ThemeProvider>
+        <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );
