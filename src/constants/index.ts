@@ -173,10 +173,9 @@ export const skillCategories: SkillCategory[] = [
 
 
  export const socialLinks = [
-    { name: "LinkedIn", icon: FaLinkedinIn, href: "https://linkedin.com/in/your-profile" },
+    { name: "LinkedIn", icon: FaLinkedinIn, href: "https://www.linkedin.com/in/franck-laurent-365a72279" },
     { name: "GitHub", icon: FaGithub, href: "https://github.com/FranckRal" },
-    { name: "Facebook", icon: FaFacebook, href: "https://facebook.com/Franck-Andritina" },
-    { name: "Twitter", icon: RiTwitterXFill, href: "https://twitter.com/your-handle" },
+    { name: "Facebook", icon: FaFacebook, href: "https://www.facebook.com/franck.laurent.9216" },
     { name: "WhatsApp", icon: IoLogoWhatsapp, href: "https://wa.me/+261339325613" },
   ];
 
