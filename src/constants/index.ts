@@ -79,10 +79,7 @@ export const NAV_LINKS = [
         'id': 'home',
         'path': '#hero'
     },
-    {
-        'id': 'about',
-        'path': '#about'
-    },
+    
     {
         'id': 'services',
         'path': '#services'

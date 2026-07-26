@@ -25,8 +25,10 @@
     "title": "Explorer of the <span class='text-primary italic'>Code</span>",
     "subtitle": "A <em>Fullstack Web Developer</em> dedicated to crafting high-performance, scalable, and visually stunning digital solutions that solve real-world problems.",
     "cta_projects": "View my work",
-    "cta_cv": "Download CV",
-    "stat_success_projects": "Completed projects"
+    "contact_cta": "Let's talk",
+    "stat_success_projects": "Completed projects",
+    "stat_technologies": "Technologies",
+    "stat_year_of_experience": "Years of Experience"
   },
   "About": {
     "years_experience": "2+ Years",

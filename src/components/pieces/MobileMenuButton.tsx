@@ -9,7 +9,7 @@ export default function MobileMenuButton({ isOpen, toggle }: Props) {
   return (
     <button
       onClick={toggle}
-      className="flex flex-col justify-center items-center md:hidden w-10 h-10 gap-1.5 z-50 group"
+      className="flex flex-col justify-center items-center lg:hidden w-10 h-10 gap-1.5 z-50 group"
       aria-label="Toggle Menu"
     >
       <span

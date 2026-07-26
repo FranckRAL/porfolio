@@ -26,8 +26,10 @@
     "title": "Explorateur du <span class='text-primary italic'>Code</span>",
     "subtitle": "Un <em>Développeur Web Fullstack</em> dédié à la création de solutions numériques performantes, évolutives et visuellement percutantes pour répondre aux problématiques réelles.",
     "cta_projects": "Mes Projets",
-    "cta_cv": "Télécharger mon CV",
-    "stat_success_projects": "Projets réussis"
+    "contact_cta": "Me contacter",
+    "stat_success_projects": "Projets réussis",
+    "stat_technologies": "Technologies",
+    "stat_year_of_experience": "Années d'expérience"
   
 },
   "About": {

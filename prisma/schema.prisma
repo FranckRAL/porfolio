@@ -13,26 +13,19 @@ datasource db {
 }
 
 model Project {
-  // --- Identifiants ---
   id            String   @id @default(cuid())
+  year          String   
+  category      String   
+  role          String   
   
-  // --- Métadonnées ---
-  year          String   // Ex: "2026"
-  category      String   // Ex: "Fullstack", "E-commerce"
-  role          String   // Ex: "Lead Developer"
-  
-  // --- Médias ---
-  imageUrl      String   // Image de couverture principale
 
-  // --- Stack Technique (La modification demandée) ---
-  // [{"slug": "php", "logoUrl": "/icons/php.svg"}]
+  imageUrl      String   
+
   stack         Json     
   
-  // --- Liens ---
   liveUrl       String?
   githubUrl     String?
   
-  // --- Contenu Multilingue (Format JSONB) ---
   // Format : { "fr": "...", "en": "..." }
   title         Json     
   description   Json     

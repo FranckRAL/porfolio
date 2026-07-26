@@ -16,7 +16,8 @@ const title = project.title[locale as keyof typeof project.title] || project.tit
       <div className="relative aspect-video overflow-hidden">
         <Suspense fallback={<div className="animate-pulse bg-abyss-800 rounded-2xl h-64 w-full" />}>
         <Image 
-          src={project.imageUrl} 
+          // src={project.imageUrl} 
+          src="/images/project.png"
           alt={title}
           width={800}
           height={800}
