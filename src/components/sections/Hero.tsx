@@ -8,7 +8,7 @@ const Hero = () => {
 
   return (
     <section
-      className="relative min-h-[90vh] flex items-center overflow-hidden py-16 md:py-24 bg-bg-page/50 "
+      className="relative min-h-[90vh] flex items-center overflow-hidden py-16 md:py-24 bg-bg-page/70 "
       id="hero"
     >
       <div className="absolute top-1/4 -left-20 w-80 h-80 bg-primary/10 rounded-full blur-[100px] -z-10" />
