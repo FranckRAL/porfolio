@@ -10,7 +10,7 @@ const containerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.15, // Délai entre chaque carte
+      staggerChildren: 0.15, 
     },
   },
 };
@@ -45,7 +45,7 @@ export default function ServicesList() {
           <motion.div
             key={service.id}
             variants={itemVariants}
-            className="group p-8 rounded-4xl bg-abyss-900/10 border border-primary/5 hover:border-primary/20 transition-all duration-300 backdrop-blur-sm relative overflow-hidden"
+            className="group p-8 rounded-4xl bg-abyss-900/10 border border-primary/5 hover:border-primary/20 dark:bg-bg-card/60 dark:border-primary/10 transition-all duration-300 backdrop-blur-sm relative overflow-hidden"
           >
             {/* Effet de lueur bioluminescente au survol */}
             <div 

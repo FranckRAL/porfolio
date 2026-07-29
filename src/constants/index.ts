@@ -1,19 +1,18 @@
-
-import {          
-  Database,     
+import {
+  Database,
   CodeXml,
   LayoutDashboard,
-  Terminal, 
-  Workflow, 
+  Terminal,
+  Workflow,
   Wrench,
-  Layout, 
+  Layout,
   Smartphone,
-  ShieldCheck,     
+  ShieldCheck,
   Rocket,
   Users,
-  BookOpen
+  BookOpen,
 } from "lucide-react";
-import { FaFacebook, FaGithub, FaLinkedinIn} from 'react-icons/fa';
+import { FaFacebook, FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { IoLogoWhatsapp } from "react-icons/io";
 import { RiTwitterXFill } from "react-icons/ri";
 import { SkillCategory, Service, SkillCategory2, SoftSkill } from "@/types";
@@ -21,82 +20,82 @@ import { TbUsersGroup } from "react-icons/tb";
 
 export const SERVICES: Service[] = [
   {
-    id: 'web-fullstack',
+    id: "web-fullstack",
     icon: CodeXml,
     title: {
       fr: "Développement Fullstack",
-      en: "Fullstack Development"
+      en: "Fullstack Development",
     },
     description: {
-      fr: "Création d'applications web performantes et scalables, du design de la base de données PostgreSQL jusqu'à l'interface Next.js.",
-      en: "Building high-performance, scalable web applications, from PostgreSQL database design to Next.js interfaces."
+      fr: "Je transforme vos idées en applications web rapides, évolutives et sécurisées, de la conception au déploiement.",
+      en: "I turn your ideas into fast, scalable, and secure web applications, from design to deployment.",
     },
-    color: "#0070f3"
+    color: "#0070f3",
   },
   {
-    id: 'ui-ux',
+    id: "ui-ux",
     icon: Layout,
     title: {
       fr: "Design UI/UX",
-      en: "UI/UX Design"
+      en: "UI/UX Design",
     },
     description: {
-      fr: "Conception d'interfaces immersives et intuitives. Focus sur l'expérience utilisateur et l'esthétique moderne (Thème Abyss).",
-      en: "Crafting immersive and intuitive interfaces. Focused on user experience and modern aesthetics (Abyss Theme)."
+      fr: "Conception d'interfaces immersives et intuitives. Focus sur l'expérience utilisateur et l'esthétique moderne",
+      en: "Crafting immersive and intuitive interfaces. Focused on user experience and modern aesthetics",
     },
-    color: "#7928ca"
+    color: "#7928ca",
   },
   {
-    id: 'mobile-app',
+    id: "mobile-app",
     icon: Smartphone,
     title: {
       fr: "Applications Mobiles",
-      en: "Mobile Apps"
+      en: "Mobile Apps",
     },
     description: {
       fr: "Développement d'applications mobiles cross-platform fluides et réactives pour iOS et Android.",
-      en: "Developing smooth and responsive cross-platform mobile applications for both iOS and Android."
+      en: "Developing smooth and responsive cross-platform mobile applications for both iOS and Android.",
     },
-    color: "#ff0080"
+    color: "#ff0080",
   },
   {
-    id: 'maintenance',
+    id: "maintenance",
     icon: ShieldCheck,
     title: {
       fr: "Maintenance & Optimisation",
-      en: "App Maintenance"
+      en: "App Maintenance",
     },
     description: {
       fr: "Audit, correction de bugs et amélioration continue de vos applications pour garantir sécurité et pérennité.",
-      en: "Auditing, bug fixing, and continuous improvement of your applications to ensure security and longevity."
+      en: "Auditing, bug fixing, and continuous improvement of your applications to ensure security and longevity.",
     },
-    color: "#50e3c2"
-  }
+    color: "#50e3c2",
+  },
 ];
 
 export const NAV_LINKS = [
   {
-        'id': 'home',
-        'path': '#hero'
-    },
-    
-    {
-        'id': 'services',
-        'path': '#services'
-    },
-    {
-        'id': 'projects',
-        'path': '#projects'
-    },
-    {
-        'id': 'skills',
-        'path': '#skills'
-    },
-    {
-        'id': 'contact',
-        'path': '#contact'
-    },
-]
+    id: "home",
+    path: "#hero",
+  },
+
+  {
+    id: "services",
+    path: "#services",
+  },
+  {
+    id: "projects",
+    path: "#projects",
+  },
+  {
+    id: "skills",
+    path: "#skills",
+  },
+  {
+    id: "contact",
+    path: "#contact",
+  },
+];
 
 export const CATEGORIES = ["Web", "Mobile", "Desktop", "Other"];
 
@@ -110,7 +109,7 @@ export const skillCategories: SkillCategory[] = [
       { name: "JavaScript", level: 90 },
       { name: "Python", level: 85 },
       { name: "PHP", level: 80 },
-    ]
+    ],
   },
   {
     id: "frontend",
@@ -121,7 +120,7 @@ export const skillCategories: SkillCategory[] = [
       { name: "Next.js", level: 85 },
       { name: "Tailwind CSS", level: 95 },
       { name: "Framer Motion", level: 70 },
-    ]
+    ],
   },
   {
     id: "backend",
@@ -132,7 +131,7 @@ export const skillCategories: SkillCategory[] = [
       { name: "Django", level: 85 },
       { name: "REST APIs", level: 95 },
       { name: "PostgreSQL", level: 80 },
-    ]
+    ],
   },
   {
     id: "tools",
@@ -143,7 +142,7 @@ export const skillCategories: SkillCategory[] = [
       { name: "Docker", level: 70 },
       { name: "Shell Scripting", level: 85 },
       { name: "PowerShell", level: 75 },
-    ]
+    ],
   },
   {
     id: "management",
@@ -153,7 +152,7 @@ export const skillCategories: SkillCategory[] = [
       { nameKey: "skills.agile", level: 85 },
       { nameKey: "skills.softwareDesign", level: 80 },
       { nameKey: "skills.technicalWriting", level: 75 },
-    ]
+    ],
   },
   {
     id: "quality",
@@ -164,110 +163,117 @@ export const skillCategories: SkillCategory[] = [
       { nameKey: "skills.unitTesting", level: 75 },
       { nameKey: "skills.teamwork", level: 95 },
       { nameKey: "skills.communication", level: 90 },
-    ]
-  }
+    ],
+  },
 ];
 
-
- export const socialLinks = [
-    { name: "LinkedIn", icon: FaLinkedinIn, href: "https://www.linkedin.com/in/franck-laurent-365a72279" },
-    { name: "GitHub", icon: FaGithub, href: "https://github.com/FranckRal" },
-    { name: "Facebook", icon: FaFacebook, href: "https://www.facebook.com/franck.laurent.9216" },
-    { name: "WhatsApp", icon: IoLogoWhatsapp, href: "https://wa.me/+261339325613" },
-  ];
+export const socialLinks = [
+  {
+    name: "LinkedIn",
+    icon: FaLinkedinIn,
+    href: "https://www.linkedin.com/in/franck-laurent-365a72279",
+  },
+  { name: "GitHub", icon: FaGithub, href: "https://github.com/FranckRal" },
+  {
+    name: "Facebook",
+    icon: FaFacebook,
+    href: "https://www.facebook.com/franck.laurent.9216",
+  },
+  {
+    name: "WhatsApp",
+    icon: IoLogoWhatsapp,
+    href: "https://wa.me/+261339325613",
+  },
+];
 
 export const SKILLCATEGORIES: SkillCategory2[] = [
-  
-    {
-      id: "frontend",
-      categoryName: "Frontend",
-      CategoryIcon: CodeXml,
-      skills: [
-        { skillName: "React.js", icon: "react" },
-        { skillName: "Next.js", icon: "nextjs" },
-        { skillName: "Tailwind CSS", icon: "tailwind" },
-        { skillName: "TypeScript", icon: "typescript" },
-      ]
-    },
+  {
+    id: "frontend",
+    categoryName: "Frontend",
+    CategoryIcon: CodeXml,
+    skills: [
+      { skillName: "React.js", icon: "react" },
+      { skillName: "Next.js", icon: "nextjs" },
+      { skillName: "Tailwind CSS", icon: "tailwind" },
+      { skillName: "TypeScript", icon: "typescript" },
+    ],
+  },
 
-    {
-      id: "Backend",
-      categoryName: "Backend",
-      CategoryIcon: Database,
-      skills: [
-        { skillName: "Django", icon: "django" },
-        { skillName: "Laravel", icon: "laravel" },
-        { skillName: "NestJS", icon: "nestjs" },
-        { skillName: "Express", icon: "express" },
-        { skillName: "Node.js", icon: "nodejs" },
-      ]
-    },
-    
-    {
-      id: "languages",
-      categoryName: "Languages",
-      CategoryIcon: CodeXml,
-      skills: [
-        { skillName: "Python", icon: "python" },
-        { skillName: "Java", icon: "java" },
-        { skillName: "PHP", icon: "php" },
-        { skillName: "Kotlin", icon: "kotlin" },
-      ]
-    },
-    {
-      id: "database",
-      categoryName: "Database & ORM",
-      CategoryIcon: Database,
-      skills: [
-        { skillName: "PostgreSQL", icon: "postgresql" },
-        { skillName: "MongoDB", icon: "mongo" },
-        { skillName: "MySQL", icon: "mysql" },
-        { skillName: "Prisma", icon: "prisma" },
-      ]
-    },
-    {
-      id: "mobile",
-      categoryName: "Mobile",
-      CategoryIcon: Smartphone,
-      skills: [
-        { skillName: "Flutter", icon: "flutter" },
-        { skillName: "Kotlin", icon: "kotlin" },
-      ]
-    },
+  {
+    id: "Backend",
+    categoryName: "Backend",
+    CategoryIcon: Database,
+    skills: [
+      { skillName: "Django", icon: "django" },
+      { skillName: "Laravel", icon: "laravel" },
+      { skillName: "NestJS", icon: "nestjs" },
+      { skillName: "Express", icon: "express" },
+      { skillName: "Node.js", icon: "nodejs" },
+    ],
+  },
 
-    {
-      id: "tools",
-      categoryName: "Tools",
-      CategoryIcon: Terminal,
-      skills: [
-        { skillName: "Figma", icon: "figma" },
-        { skillName: "Postman", icon: "postman" },
-        { skillName: "Docker", icon: "docker" },
-        { skillName: "Git/Github", icon: "git" },
-      ]
-    },
+  {
+    id: "languages",
+    categoryName: "Languages",
+    CategoryIcon: CodeXml,
+    skills: [
+      { skillName: "Python", icon: "python" },
+      { skillName: "Java", icon: "java" },
+      { skillName: "PHP", icon: "php" },
+      { skillName: "Kotlin", icon: "kotlin" },
+    ],
+  },
+  {
+    id: "database",
+    categoryName: "Database & ORM",
+    CategoryIcon: Database,
+    skills: [
+      { skillName: "PostgreSQL", icon: "postgresql" },
+      { skillName: "MongoDB", icon: "mongo" },
+      { skillName: "MySQL", icon: "mysql" },
+      { skillName: "Prisma", icon: "prisma" },
+    ],
+  },
+  {
+    id: "mobile",
+    categoryName: "Mobile",
+    CategoryIcon: Smartphone,
+    skills: [
+      { skillName: "Flutter", icon: "flutter" },
+      { skillName: "Kotlin", icon: "kotlin" },
+    ],
+  },
 
-]
-       
+  {
+    id: "tools",
+    categoryName: "Tools",
+    CategoryIcon: Terminal,
+    skills: [
+      { skillName: "Figma", icon: "figma" },
+      { skillName: "Postman", icon: "postman" },
+      { skillName: "Docker", icon: "docker" },
+      { skillName: "Git/Github", icon: "git" },
+    ],
+  },
+];
+
 export const SOFTSKILLS: SoftSkill[] = [
   {
     name: "continuous_learning",
-    Icon: BookOpen
+    Icon: BookOpen,
   },
   {
     name: "clean_code",
-    Icon: CodeXml
+    Icon: CodeXml,
   },
 
   {
     name: "performance_scalability",
-    Icon: Rocket
+    Icon: Rocket,
   },
 
   {
     name: "teamwork",
-    Icon: Users
+    Icon: Users,
   },
-
-]
-       
+];
