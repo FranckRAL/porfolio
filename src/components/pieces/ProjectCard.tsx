@@ -7,7 +7,6 @@ const ProjectCard = ({ project, onClick }: {project: ProjectView, onClick: () =>
   const locale = useLocale();
   
 const title = project.title[locale as keyof typeof project.title] || project.title['en'];
-console.log(project.stack)
 
   return (
     <div 
