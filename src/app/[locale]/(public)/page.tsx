@@ -13,7 +13,9 @@ import OceanBackground from "@/components/pieces/OceanBackground";
 
 export default async function Home() {
   const rawProjects = await prisma.project.findMany({
-    orderBy: { createdAt: "desc" },
+    orderBy: { year: "desc" },
+    take: 6,
+    where: {isActive: true}
   });
 
   const serializeProject = (project: Project): ProjectView => ({
@@ -22,7 +24,7 @@ export default async function Home() {
     category: project.category,
     role: project.role,
     imageUrl: project.imageUrl,
-    stack: project.stack as { slug: string; logoUrl: string }[],
+    stack: project.stack,
     liveUrl: project.liveUrl ?? null,
     githubUrl: project.githubUrl ?? null,
     title: project.title as Record<string, string>,

@@ -13,7 +13,7 @@ import {
 import { BiLoaderCircle } from "react-icons/bi";
 import { createProject, updateProject } from "@/actions/project";
 import { CldUploadWidget } from "next-cloudinary";
-import { ProjectFromDB as Project } from "@/types";
+import { ProjectView } from "@/types";
 import Image from "next/image";
 
 export default function ProjectModal({
@@ -23,7 +23,7 @@ export default function ProjectModal({
 }: {
   isOpen: boolean;
   onClose: () => void;
-  projectToEdit?: Project | null;
+  projectToEdit?: ProjectView | null;
 }) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [activeTab, setActiveTab] = useState<"fr" | "en">("en");
@@ -50,7 +50,7 @@ export default function ProjectModal({
           category: projectToEdit.category,
           role: projectToEdit.role,
           imageUrl: projectToEdit.imageUrl,
-          stackInput: projectToEdit.stack.map((s) => s.slug).join(", "),
+          stackInput: projectToEdit.stack.join(", "),
           githubUrl: projectToEdit.githubUrl || "",
           liveUrl: projectToEdit.liveUrl || "",
           title: { fr: projectToEdit.title.fr, en: projectToEdit.title.en },
@@ -102,13 +102,7 @@ export default function ProjectModal({
     e.preventDefault();
     setIsSubmitting(true);
 
-    const stack = formData.stackInput
-      .split(",")
-      .map((s) => ({
-        slug: s.trim(),
-        logoUrl: `/icons/${s.trim().toLowerCase()}.svg`,
-      }))
-      .filter((s) => s.slug !== "");
+    const stack = formData.stackInput.split(",").map(tech => tech.trim());
 
     const finalData = {
       ...formData,
@@ -147,7 +141,7 @@ export default function ProjectModal({
         <div className="p-6 border-b border-primary/10 flex justify-between items-center bg-abyss-900/50">
           <div className="flex items-center gap-6">
             <h2 className="font-title text-xl font-bold text-text-main">
-              Vessel Deployment
+              Projects onlines
             </h2>
             <div className="flex bg-abyss-950 p-1 rounded-xl border border-primary/10">
               {(["en", "fr"] as const).map((lang) => (
@@ -172,7 +166,7 @@ export default function ProjectModal({
 
         <form onSubmit={handleSubmit} className="p-8 overflow-y-auto space-y-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-            {/* LEFT: Core Data */}
+            
             <div className="lg:col-span-8 space-y-6">
               <div className="relative">
                 <input

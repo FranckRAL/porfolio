@@ -29,6 +29,7 @@ export type ProjectMinAggregateOutputType = {
   year: string | null
   category: string | null
   role: string | null
+  isActive: boolean | null
   imageUrl: string | null
   liveUrl: string | null
   githubUrl: string | null
@@ -41,6 +42,7 @@ export type ProjectMaxAggregateOutputType = {
   year: string | null
   category: string | null
   role: string | null
+  isActive: boolean | null
   imageUrl: string | null
   liveUrl: string | null
   githubUrl: string | null
@@ -53,6 +55,7 @@ export type ProjectCountAggregateOutputType = {
   year: number
   category: number
   role: number
+  isActive: number
   imageUrl: number
   stack: number
   liveUrl: number
@@ -72,6 +75,7 @@ export type ProjectMinAggregateInputType = {
   year?: true
   category?: true
   role?: true
+  isActive?: true
   imageUrl?: true
   liveUrl?: true
   githubUrl?: true
@@ -84,6 +88,7 @@ export type ProjectMaxAggregateInputType = {
   year?: true
   category?: true
   role?: true
+  isActive?: true
   imageUrl?: true
   liveUrl?: true
   githubUrl?: true
@@ -96,6 +101,7 @@ export type ProjectCountAggregateInputType = {
   year?: true
   category?: true
   role?: true
+  isActive?: true
   imageUrl?: true
   stack?: true
   liveUrl?: true
@@ -186,8 +192,9 @@ export type ProjectGroupByOutputType = {
   year: string
   category: string
   role: string
+  isActive: boolean | null
   imageUrl: string
-  stack: runtime.JsonValue
+  stack: string[]
   liveUrl: string | null
   githubUrl: string | null
   title: runtime.JsonValue
@@ -224,8 +231,9 @@ export type ProjectWhereInput = {
   year?: Prisma.StringFilter<"Project"> | string
   category?: Prisma.StringFilter<"Project"> | string
   role?: Prisma.StringFilter<"Project"> | string
+  isActive?: Prisma.BoolNullableFilter<"Project"> | boolean | null
   imageUrl?: Prisma.StringFilter<"Project"> | string
-  stack?: Prisma.JsonFilter<"Project">
+  stack?: Prisma.StringNullableListFilter<"Project">
   liveUrl?: Prisma.StringNullableFilter<"Project"> | string | null
   githubUrl?: Prisma.StringNullableFilter<"Project"> | string | null
   title?: Prisma.JsonFilter<"Project">
@@ -241,6 +249,7 @@ export type ProjectOrderByWithRelationInput = {
   year?: Prisma.SortOrder
   category?: Prisma.SortOrder
   role?: Prisma.SortOrder
+  isActive?: Prisma.SortOrderInput | Prisma.SortOrder
   imageUrl?: Prisma.SortOrder
   stack?: Prisma.SortOrder
   liveUrl?: Prisma.SortOrderInput | Prisma.SortOrder
@@ -261,8 +270,9 @@ export type ProjectWhereUniqueInput = Prisma.AtLeast<{
   year?: Prisma.StringFilter<"Project"> | string
   category?: Prisma.StringFilter<"Project"> | string
   role?: Prisma.StringFilter<"Project"> | string
+  isActive?: Prisma.BoolNullableFilter<"Project"> | boolean | null
   imageUrl?: Prisma.StringFilter<"Project"> | string
-  stack?: Prisma.JsonFilter<"Project">
+  stack?: Prisma.StringNullableListFilter<"Project">
   liveUrl?: Prisma.StringNullableFilter<"Project"> | string | null
   githubUrl?: Prisma.StringNullableFilter<"Project"> | string | null
   title?: Prisma.JsonFilter<"Project">
@@ -278,6 +288,7 @@ export type ProjectOrderByWithAggregationInput = {
   year?: Prisma.SortOrder
   category?: Prisma.SortOrder
   role?: Prisma.SortOrder
+  isActive?: Prisma.SortOrderInput | Prisma.SortOrder
   imageUrl?: Prisma.SortOrder
   stack?: Prisma.SortOrder
   liveUrl?: Prisma.SortOrderInput | Prisma.SortOrder
@@ -301,8 +312,9 @@ export type ProjectScalarWhereWithAggregatesInput = {
   year?: Prisma.StringWithAggregatesFilter<"Project"> | string
   category?: Prisma.StringWithAggregatesFilter<"Project"> | string
   role?: Prisma.StringWithAggregatesFilter<"Project"> | string
+  isActive?: Prisma.BoolNullableWithAggregatesFilter<"Project"> | boolean | null
   imageUrl?: Prisma.StringWithAggregatesFilter<"Project"> | string
-  stack?: Prisma.JsonWithAggregatesFilter<"Project">
+  stack?: Prisma.StringNullableListFilter<"Project">
   liveUrl?: Prisma.StringNullableWithAggregatesFilter<"Project"> | string | null
   githubUrl?: Prisma.StringNullableWithAggregatesFilter<"Project"> | string | null
   title?: Prisma.JsonWithAggregatesFilter<"Project">
@@ -318,8 +330,9 @@ export type ProjectCreateInput = {
   year: string
   category: string
   role: string
+  isActive?: boolean | null
   imageUrl: string
-  stack: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  stack?: Prisma.ProjectCreatestackInput | string[]
   liveUrl?: string | null
   githubUrl?: string | null
   title: Prisma.JsonNullValueInput | runtime.InputJsonValue
@@ -335,8 +348,9 @@ export type ProjectUncheckedCreateInput = {
   year: string
   category: string
   role: string
+  isActive?: boolean | null
   imageUrl: string
-  stack: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  stack?: Prisma.ProjectCreatestackInput | string[]
   liveUrl?: string | null
   githubUrl?: string | null
   title: Prisma.JsonNullValueInput | runtime.InputJsonValue
@@ -352,8 +366,9 @@ export type ProjectUpdateInput = {
   year?: Prisma.StringFieldUpdateOperationsInput | string
   category?: Prisma.StringFieldUpdateOperationsInput | string
   role?: Prisma.StringFieldUpdateOperationsInput | string
+  isActive?: Prisma.NullableBoolFieldUpdateOperationsInput | boolean | null
   imageUrl?: Prisma.StringFieldUpdateOperationsInput | string
-  stack?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  stack?: Prisma.ProjectUpdatestackInput | string[]
   liveUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   githubUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   title?: Prisma.JsonNullValueInput | runtime.InputJsonValue
@@ -369,8 +384,9 @@ export type ProjectUncheckedUpdateInput = {
   year?: Prisma.StringFieldUpdateOperationsInput | string
   category?: Prisma.StringFieldUpdateOperationsInput | string
   role?: Prisma.StringFieldUpdateOperationsInput | string
+  isActive?: Prisma.NullableBoolFieldUpdateOperationsInput | boolean | null
   imageUrl?: Prisma.StringFieldUpdateOperationsInput | string
-  stack?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  stack?: Prisma.ProjectUpdatestackInput | string[]
   liveUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   githubUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   title?: Prisma.JsonNullValueInput | runtime.InputJsonValue
@@ -386,8 +402,9 @@ export type ProjectCreateManyInput = {
   year: string
   category: string
   role: string
+  isActive?: boolean | null
   imageUrl: string
-  stack: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  stack?: Prisma.ProjectCreatestackInput | string[]
   liveUrl?: string | null
   githubUrl?: string | null
   title: Prisma.JsonNullValueInput | runtime.InputJsonValue
@@ -403,8 +420,9 @@ export type ProjectUpdateManyMutationInput = {
   year?: Prisma.StringFieldUpdateOperationsInput | string
   category?: Prisma.StringFieldUpdateOperationsInput | string
   role?: Prisma.StringFieldUpdateOperationsInput | string
+  isActive?: Prisma.NullableBoolFieldUpdateOperationsInput | boolean | null
   imageUrl?: Prisma.StringFieldUpdateOperationsInput | string
-  stack?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  stack?: Prisma.ProjectUpdatestackInput | string[]
   liveUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   githubUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   title?: Prisma.JsonNullValueInput | runtime.InputJsonValue
@@ -420,8 +438,9 @@ export type ProjectUncheckedUpdateManyInput = {
   year?: Prisma.StringFieldUpdateOperationsInput | string
   category?: Prisma.StringFieldUpdateOperationsInput | string
   role?: Prisma.StringFieldUpdateOperationsInput | string
+  isActive?: Prisma.NullableBoolFieldUpdateOperationsInput | boolean | null
   imageUrl?: Prisma.StringFieldUpdateOperationsInput | string
-  stack?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  stack?: Prisma.ProjectUpdatestackInput | string[]
   liveUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   githubUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   title?: Prisma.JsonNullValueInput | runtime.InputJsonValue
@@ -432,11 +451,20 @@ export type ProjectUncheckedUpdateManyInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
+export type StringNullableListFilter<$PrismaModel = never> = {
+  equals?: string[] | Prisma.ListStringFieldRefInput<$PrismaModel> | null
+  has?: string | Prisma.StringFieldRefInput<$PrismaModel> | null
+  hasEvery?: string[] | Prisma.ListStringFieldRefInput<$PrismaModel>
+  hasSome?: string[] | Prisma.ListStringFieldRefInput<$PrismaModel>
+  isEmpty?: boolean
+}
+
 export type ProjectCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   year?: Prisma.SortOrder
   category?: Prisma.SortOrder
   role?: Prisma.SortOrder
+  isActive?: Prisma.SortOrder
   imageUrl?: Prisma.SortOrder
   stack?: Prisma.SortOrder
   liveUrl?: Prisma.SortOrder
@@ -454,6 +482,7 @@ export type ProjectMaxOrderByAggregateInput = {
   year?: Prisma.SortOrder
   category?: Prisma.SortOrder
   role?: Prisma.SortOrder
+  isActive?: Prisma.SortOrder
   imageUrl?: Prisma.SortOrder
   liveUrl?: Prisma.SortOrder
   githubUrl?: Prisma.SortOrder
@@ -466,6 +495,7 @@ export type ProjectMinOrderByAggregateInput = {
   year?: Prisma.SortOrder
   category?: Prisma.SortOrder
   role?: Prisma.SortOrder
+  isActive?: Prisma.SortOrder
   imageUrl?: Prisma.SortOrder
   liveUrl?: Prisma.SortOrder
   githubUrl?: Prisma.SortOrder
@@ -473,8 +503,21 @@ export type ProjectMinOrderByAggregateInput = {
   updatedAt?: Prisma.SortOrder
 }
 
+export type ProjectCreatestackInput = {
+  set: string[]
+}
+
 export type StringFieldUpdateOperationsInput = {
   set?: string
+}
+
+export type NullableBoolFieldUpdateOperationsInput = {
+  set?: boolean | null
+}
+
+export type ProjectUpdatestackInput = {
+  set?: string[]
+  push?: string | string[]
 }
 
 export type NullableStringFieldUpdateOperationsInput = {
@@ -492,6 +535,7 @@ export type ProjectSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs 
   year?: boolean
   category?: boolean
   role?: boolean
+  isActive?: boolean
   imageUrl?: boolean
   stack?: boolean
   liveUrl?: boolean
@@ -509,6 +553,7 @@ export type ProjectSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Exten
   year?: boolean
   category?: boolean
   role?: boolean
+  isActive?: boolean
   imageUrl?: boolean
   stack?: boolean
   liveUrl?: boolean
@@ -526,6 +571,7 @@ export type ProjectSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Exten
   year?: boolean
   category?: boolean
   role?: boolean
+  isActive?: boolean
   imageUrl?: boolean
   stack?: boolean
   liveUrl?: boolean
@@ -543,6 +589,7 @@ export type ProjectSelectScalar = {
   year?: boolean
   category?: boolean
   role?: boolean
+  isActive?: boolean
   imageUrl?: boolean
   stack?: boolean
   liveUrl?: boolean
@@ -555,7 +602,7 @@ export type ProjectSelectScalar = {
   updatedAt?: boolean
 }
 
-export type ProjectOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "year" | "category" | "role" | "imageUrl" | "stack" | "liveUrl" | "githubUrl" | "title" | "description" | "features" | "challenges" | "createdAt" | "updatedAt", ExtArgs["result"]["project"]>
+export type ProjectOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "year" | "category" | "role" | "isActive" | "imageUrl" | "stack" | "liveUrl" | "githubUrl" | "title" | "description" | "features" | "challenges" | "createdAt" | "updatedAt", ExtArgs["result"]["project"]>
 
 export type $ProjectPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "Project"
@@ -565,8 +612,9 @@ export type $ProjectPayload<ExtArgs extends runtime.Types.Extensions.InternalArg
     year: string
     category: string
     role: string
+    isActive: boolean | null
     imageUrl: string
-    stack: runtime.JsonValue
+    stack: string[]
     liveUrl: string | null
     githubUrl: string | null
     title: runtime.JsonValue
@@ -1002,8 +1050,9 @@ export interface ProjectFieldRefs {
   readonly year: Prisma.FieldRef<"Project", 'String'>
   readonly category: Prisma.FieldRef<"Project", 'String'>
   readonly role: Prisma.FieldRef<"Project", 'String'>
+  readonly isActive: Prisma.FieldRef<"Project", 'Boolean'>
   readonly imageUrl: Prisma.FieldRef<"Project", 'String'>
-  readonly stack: Prisma.FieldRef<"Project", 'Json'>
+  readonly stack: Prisma.FieldRef<"Project", 'String[]'>
   readonly liveUrl: Prisma.FieldRef<"Project", 'String'>
   readonly githubUrl: Prisma.FieldRef<"Project", 'String'>
   readonly title: Prisma.FieldRef<"Project", 'Json'>

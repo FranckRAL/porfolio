@@ -18,10 +18,11 @@ model Project {
   category      String   
   role          String   
   
+  isActive      Boolean?   @default(true)
 
   imageUrl      String   
 
-  stack         Json     
+  stack         String[]     
   
   liveUrl       String?
   githubUrl     String?

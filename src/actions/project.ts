@@ -3,6 +3,7 @@
 import prisma from "@/lib/db";
 import { revalidatePath } from "next/cache";
 import { v2 as cloudinary } from "cloudinary";
+import { ProjectView } from "@/types";
 
 // Configuration Cloudinary
 cloudinary.config({
@@ -17,7 +18,8 @@ interface ProjectData {
   category: string;
   role: string;
   imageUrl: string;
-  stack: { slug: string; logoUrl: string }[]; 
+  isActive: boolean;
+  stack: string[]; 
   githubUrl?: string;
   liveUrl?: string;
   title: { fr: string; en: string };

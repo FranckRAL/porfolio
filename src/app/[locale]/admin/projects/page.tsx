@@ -2,6 +2,7 @@ import prisma from "@/lib/db";
 import ProjectManager from "@/components/admin/ProjectManager";
 import { ProjectView } from "@/types";
 import { Project } from "../../../../../generated/prisma/client";
+import { string } from "zod";
 
 export const dynamic = "force-dynamic";
 
@@ -16,8 +17,9 @@ export default async function ProjectsPage() {
     year: project.year,
     category: project.category,
     role: project.role,
+    isActive: project.isActive || false,
     imageUrl: project.imageUrl,
-    stack: project.stack as { slug: string; logoUrl: string }[],
+    stack: project.stack,
     liveUrl: project.liveUrl ?? null,
     githubUrl: project.githubUrl ?? null,
     title: project.title as Record<string, string>,

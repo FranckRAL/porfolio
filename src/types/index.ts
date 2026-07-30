@@ -24,8 +24,9 @@ export interface ProjectView {
   year: string;
   category: string;
   role: string;
+  isActive?: boolean
   imageUrl: string;
-  stack: { slug: string; logoUrl: string }[];
+  stack: string[];
   liveUrl?: string | null;
   githubUrl?: string | null;
   title: Record<string, string>;

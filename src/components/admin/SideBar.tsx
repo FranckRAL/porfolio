@@ -22,7 +22,7 @@ export default function Sidebar() {
   const pathname = usePathname();
 
   return (
-    <aside className="group h-screen w-20 hover:w-64 border-r border-abyss-800 bg-bg-card p-4 flex flex-col transition-all duration-500 ease-in-out z-50 overflow-hidden shadow-2xl">
+    <aside className="group h-screen w-20 hover:w-64 border-r border-primary/20 bg-bg-card/50 p-4 flex flex-col transition-all duration-500 ease-in-out z-50 overflow-hidden shadow-2xl">
       
       {/* Logo Section */}
       <div className="flex items-center gap-4 mb-10 pl-2">
@@ -37,15 +37,16 @@ export default function Sidebar() {
       {/* Navigation */}
       <nav className="space-y-4 flex-1">
         {navItems.map((item) => {
-          const isActive = pathname === item.href;
+          const isActive = pathname.includes(item.href);
+
           return (
             <Link
               key={item.name}
               href={item.href}
               className={`flex items-center gap-4 p-3 rounded-xl transition-all duration-300 relative ${
                 isActive 
-                  ? "text-abyss-900 bg-primary font-bold shadow-[0_0_20px_rgba(var(--primary-rgb),0.3)]" 
-                  : "hover:text-primary text-text-muted hover:bg-abyss-900"
+                  ? "text-white bg-primary font-bold shadow-[0_0_20px_rgba(var(--primary-rgb),0.3)]" 
+                  : "hover:text-white text-text-muted hover:bg-abyss-900"
               }`}
             >
               <div className="shrink-0 pl-1">

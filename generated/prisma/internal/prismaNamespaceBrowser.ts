@@ -77,6 +77,7 @@ export const ProjectScalarFieldEnum = {
   year: 'year',
   category: 'category',
   role: 'role',
+  isActive: 'isActive',
   imageUrl: 'imageUrl',
   stack: 'stack',
   liveUrl: 'liveUrl',

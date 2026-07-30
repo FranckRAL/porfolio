@@ -7,17 +7,17 @@ const ProjectCard = ({ project, onClick }: {project: ProjectView, onClick: () =>
   const locale = useLocale();
   
 const title = project.title[locale as keyof typeof project.title] || project.title['en'];
+console.log(project.stack)
 
   return (
     <div 
       onClick={onClick}
-      className="break-inside-avoid group relative cursor-pointer overflow-hidden rounded-4xl border border-primary/10 bg-abyss-900/20 backdrop-blur-sm transition-all hover:border-primary/40"
+      className="break-inside-avoid group relative cursor-pointer overflow-hidden rounded-4xl border border-primary/10 bg-abyss-900/10 dark:bg-bg-card/60 backdrop-blur-sm transition-all hover:border-primary/40"
     >
       <div className="relative aspect-video overflow-hidden">
         <Suspense fallback={<div className="animate-pulse bg-abyss-800 rounded-2xl h-64 w-full" />}>
         <Image 
-          // src={project.imageUrl} 
-          src="/images/project.png"
+          src={project.imageUrl}
           alt={title}
           width={800}
           height={800}
@@ -39,22 +39,15 @@ const title = project.title[locale as keyof typeof project.title] || project.tit
             {title}
         </h3>
         
-        {/* Stack Technique avec Logos du JSON */}
-        <div className="flex flex-wrap gap-3 pt-2">
+        {/* Stack */}
+        <div className="flex flex-wrap gap-2 pt-2 ">
           {project.stack.slice(0, 4).map((tech) => (
-            <div key={tech.slug} className="relative group/icon">
-                <Image 
-                    src={tech.logoUrl} 
-                    alt={tech.slug} 
-                    width={18} 
-                    height={18} 
-                    className="opacity-60 group-hover:opacity-100 grayscale group-hover:grayscale-0 transition-all"
-                />
-                {/* Tooltip simple au hover */}
-                <span className="absolute -top-6 left-1/2 -translate-x-1/2 text-[8px] bg-primary text-abyss-900 px-1 rounded opacity-0 group-hover/icon:opacity-100 transition-opacity">
-                    {tech.slug}
-                </span>
-            </div>
+            <p key={tech} className='px-2 py-1.5 rounded-full 
+                 border border-primary/30 bg-bg-card/50 backdrop-blur-md
+                 group-hover:border-primary group-hover:shadow-[0_0_15px_rgba(var(--color-primary),0.3)]
+                 transition-all duration-300 disabled:opacity-70 text-text-main text-xs overflow-hidden'>
+              {tech}
+            </p>
           ))}
         </div>
       </div>

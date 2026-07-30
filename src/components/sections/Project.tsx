@@ -2,25 +2,17 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ProjectView } from "@/types";
-import type { Project } from "@/../../generated/prisma/client";
 import ProjectCard from "@/components/pieces/ProjectCard";
 import ProjectModal from "@/components/pieces/ProjectModal";
-import ProjectFilter from "@/components/pieces/ProjectFilter";
-import { useTranslations, useLocale } from "next-intl";
-import prisma from "@/lib/db";
+import { useTranslations } from "next-intl";
 
 const Projects = ({projects}: {projects: ProjectView[]}) => {
 
   const t = useTranslations("Projects");
-  const locale = useLocale();
-  const [filter, setFilter] = useState("All");
   const [selectedProject, setSelectedProject] = useState<ProjectView | null>(
     null,
   );
 
-
-  const filteredProjects =
-    filter === "All" ? projects : projects.filter((p) => p.category === filter);
 
   return (
     <section
@@ -45,14 +37,12 @@ const Projects = ({projects}: {projects: ProjectView[]}) => {
           </p>
         </div>
 
-        <ProjectFilter filter={filter} setFilter={setFilter} />
-
         <motion.div
           layout
           className="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8"
         >
           <AnimatePresence mode="popLayout">
-            {filteredProjects.map((project) => (
+            {projects.map((project) => (
               <motion.div
                 layout
                 key={project.id}
