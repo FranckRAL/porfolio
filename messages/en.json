@@ -4,6 +4,7 @@
     "description": "Discover the portfolio of a passionate Fullstack Developer, showcasing expertise in web development, project management, and innovative solutions."
   },
   "Nav": {
+    "post_title": "Web & Mobile Developper",
     "home": "Home",
     "about": "About",
     "services": "Services",
@@ -21,6 +22,7 @@
   },
   "Hero": {
     "badge": "Available for new challenges",
+    "greeting": "Hello,",
     "person": "I'm",
     "title": "Explorer of the <span class='text-primary italic'>Code</span>",
     "subtitle": "A <em>Fullstack Web Developer</em> dedicated to crafting high-performance, scalable, and visually stunning digital solutions that solve real-world problems.",

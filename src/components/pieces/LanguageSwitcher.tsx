@@ -24,7 +24,7 @@ export default function LanguageSwitcher() {
     <button
       onClick={toggleLanguage}
       disabled={isPending}
-      className="relative flex items-center gap-2 px-3 py-1.5 rounded-full 
+      className="relative font-handwritten flex items-center gap-2 px-3 py-1.5 rounded-full 
                  border border-primary/30 bg-bg-card/50 backdrop-blur-md
                  hover:border-primary hover:shadow-[0_0_15px_rgba(var(--color-primary),0.3)]
                  transition-all duration-300 group disabled:opacity-70"

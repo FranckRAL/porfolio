@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Quicksand, Inter } from "next/font/google";
+import { Quicksand, Inter, Kalam } from "next/font/google";
 import "@/styles/globals.css";
 import { ThemeProvider } from "@/components/pieces/ThemeProvider";
 import BackToTop from "@/components/pieces/BackToTop";
@@ -20,6 +20,14 @@ const inter = Inter({
 const quicksand = Quicksand({
   subsets: ["latin"],
   variable: "--font-title",
+  display: "swap",
+  preload: true,
+});
+
+const kalam = Kalam({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-handwritten",
   display: "swap",
   preload: true,
 });
@@ -53,7 +61,7 @@ export default async function RootLayout({
     >
       <body
         suppressHydrationWarning
-        className={`${inter.variable} ${quicksand.variable} antialiased`}
+        className={`${inter.variable} ${quicksand.variable} ${kalam.variable} antialiased`}
       >
         <ThemeProvider initialTheme={theme}>
           <NextIntlClientProvider locale={locale}>

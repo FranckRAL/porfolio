@@ -1,27 +1,42 @@
-import Link from "next/link"
-import {useTranslations} from 'next-intl';
+"use client";
+import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { usePathname } from "@/i18n/navigation";
+import { boolean } from "zod";
 
 interface NavLinkProps {
-    id: string;
-    path: string;
-    isActive: boolean; 
+  id: string;
+  path: string;
+  Icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  isMobile?: boolean;
 }
 
-const NavLink = ({ id, path, isActive }: NavLinkProps) => {
-  const t = useTranslations('Nav')
-  return (
-    <Link 
-      href={path} 
-      className={`relative py-2 text-text-main hover:text-primary text-base transition-colors ${isActive ? 'text-primary ' : ''}`}
-    >
-      {t(id)}
-      
-      {isActive && (
-        <div className="absolute bottom-0 left-0 right-0 h-1 rounded bg-primary drop-shadow-lg drop-shadow-primary/30 transition-all duration-300"
-        ></div>
-      )}
+const NavLink = ({ id, path, Icon, isMobile }: NavLinkProps) => {
+  const t = useTranslations("Nav");
+  const pathname = usePathname();
+
+  const normalizedPathname = pathname.replace(/^\/(en|fr)/, "");
+  console.log("normalizedPathname", normalizedPathname);
+
+  const isActive =
+    normalizedPathname === path || normalizedPathname.startsWith(`${path}/`);
+  console.log(`isActive for path "${path}":`, isActive);
+
+  return isMobile ? (
+    <Link href={path} className={`flex justify-center rounded-md items-center hover:bg-primary/20 p-2 text-primary 
+    ${isActive ? "text-primary  bg-primary/20 " : "" }`} aria-label={t(id)}>
+      <Icon className="w-12 h-12 " />
     </Link>
-  )
-}
+  ) : (
+    <Link
+      href={path}
+      className={`relative p-4 flex gap-2 items-center text-text-main/80 rounded-md hover:text-primary hover:bg-primary/20 text-lg font-semibold transition-colors
+         ${isActive ? "text-primary  bg-primary/20 " : ""}`}
+    >
+      <Icon className="w-6 h-6 " />
+      {t(id)}
+    </Link>
+  );
+};
 
 export default NavLink;

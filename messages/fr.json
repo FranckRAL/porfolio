@@ -5,6 +5,7 @@
   },
 
   "Nav": {
+    "post_title": "Développeur Web & Mobile",
     "home": "Accueil",
     "about": "À propos",
     "services": "Services",
@@ -22,6 +23,7 @@
   },
   "Hero": {
     "badge": "Disponible pour de nouveaux défis",
+    "greeting": "Bonjour,",
     "person": "Je suis",
     "title": "Explorateur du <span class='text-primary italic'>Code</span>",
     "subtitle": "Un <em>Développeur Web Fullstack</em> dédié à la création de solutions numériques performantes, évolutives et visuellement percutantes pour répondre aux problématiques réelles.",

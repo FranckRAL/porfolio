@@ -11,12 +11,14 @@ import {
   Rocket,
   Users,
   BookOpen,
+  Home,
+  Mail,
+  Briefcase,
+  Toolbox,
 } from "lucide-react";
 import { FaFacebook, FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { IoLogoWhatsapp } from "react-icons/io";
-import { RiTwitterXFill } from "react-icons/ri";
 import { SkillCategory, Service, SkillCategory2, SoftSkill } from "@/types";
-import { TbUsersGroup } from "react-icons/tb";
 
 export const SERVICES: Service[] = [
   {
@@ -76,24 +78,29 @@ export const SERVICES: Service[] = [
 export const NAV_LINKS = [
   {
     id: "home",
-    path: "#hero",
+    path: "/",
+    Icon: Home,
   },
 
   {
     id: "services",
-    path: "#services",
+    path: "/services",
+    Icon: Toolbox,
   },
   {
     id: "projects",
-    path: "#projects",
+    path: "/projects",
+    Icon: Briefcase,
   },
   {
     id: "skills",
-    path: "#skills",
+    path: "/skills",
+    Icon: CodeXml,
   },
   {
     id: "contact",
-    path: "#contact",
+    path: "/contact",
+    Icon: Mail,
   },
 ];
 
