@@ -4,7 +4,6 @@ import ToggleTheme from "@/components/pieces/ToggleTheme";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { routing } from "@/i18n/routing";
 import {notFound} from 'next/navigation';
-import OceanBackground from '@/components/pieces/OceanBackground'
 
 export const metadata: Metadata = {
   title: {
@@ -35,7 +34,6 @@ export default async function AdminLayout({
   return (
     <>
       <div className="flex min-h-screen  text-text-main ">
-        <OceanBackground />
         <SideBar />
         <main className="container flex-1 p-8 overflow-y-auto mx-auto">
           <NextIntlClientProvider locale={locale}>
