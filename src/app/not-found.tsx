@@ -14,6 +14,7 @@ export default function NotFound() {
             width={500}
             height={450}
             className="rounded-xl"
+            loading="eager"
           />
         </Link>
       </div>

@@ -23,10 +23,51 @@ const NavLink = ({ id, path, Icon, isMobile }: NavLinkProps) => {
   console.log(`isActive for path "${path}":`, isActive);
 
   return isMobile ? (
-    <Link href={path} className={`flex justify-center rounded-md items-center hover:bg-primary/20 p-2 text-primary 
-    ${isActive ? "text-primary  bg-primary/20 " : "" }`} aria-label={t(id)}>
-      <Icon className="w-12 h-12 " />
-    </Link>
+    <Link
+        href={path}
+        className={`
+          group
+          flex min-w-16 flex-1
+          flex-col items-center justify-center
+          gap-1
+          py-1.5
+
+          text-xs font-medium
+          transition-all duration-200
+
+          ${isActive
+            ? "text-primary"
+            : "text-muted-foreground hover:text-foreground"
+          }
+        `}
+      >
+        {/* Active indicator */}
+        <span
+          className={`
+            flex h-8 min-w-16
+            items-center justify-center
+            rounded-full
+            transition-all duration-200
+
+            ${isActive
+              ? "bg-primary/15"
+              : "bg-transparent"
+            }
+          `}
+        >
+          <span
+            className={`
+              transition-transform duration-200
+              ${isActive ? "scale-110" : "group-hover:scale-105"}
+            `}
+          >
+            <Icon className="w-4 h-4"/>
+          </span>
+        </span>
+
+        {/* Label */}
+        <span>{t(id)}</span>
+      </Link>
   ) : (
     <Link
       href={path}

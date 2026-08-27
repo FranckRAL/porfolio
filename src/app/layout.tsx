@@ -58,6 +58,7 @@ export default async function RootLayout({
       lang={locale}
       suppressHydrationWarning
       className={`${theme === "dark" ? "dark" : ""} scroll-smooth`}
+      data-scroll-behavior="smooth"
     >
       <body
         suppressHydrationWarning
