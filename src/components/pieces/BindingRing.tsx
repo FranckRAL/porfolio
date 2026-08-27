@@ -21,7 +21,7 @@ const BindingRing = () => {
 
 
   return (
-    <div className="w-20 bg-gray-400 flex flex-col items-center justify-around py-8 z-20 shadow-inner overflow-hidden">
+    <div className="w-20 hidden  bg-gray-400 md:flex flex-col items-center justify-around py-8 z-20 shadow-inner overflow-hidden">
       {Array.from({ length: Math.ceil(screenHeight / 70) }).map((_, index) => (
         <svg
             key={index}

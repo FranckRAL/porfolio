@@ -39,7 +39,7 @@ export default async function PublicLayout({ children, params }: Props) {
   return (
     <NextIntlClientProvider locale={locale}>
       <LocaleSync />
-      <div className="bg-bg-page min-h-screen flex items-center justify-center p-2 md:p-8 lg:p-10">
+      <div className="bg-bg-page min-h-screen flex items-center justify-center p-1 md:p-8 lg:p-10">
         <div className="relative max-w-7xl  mx-auto bg-white shadow-2xl rounded-r-lg overflow-hidden flex">
           <BindingRing />
           <MobileNavigation />
