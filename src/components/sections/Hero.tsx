@@ -19,7 +19,7 @@ const Hero = () => {
             <p className="font-handwritten text-xl md:text-3xl text-primary mb-4">
               {t("greeting")} {t("person")}{" "}
             </p>
-            <h1 className="font-handwritten text-5xl md:text-7xl font-bold mb-2 leading-[1.1] text-balance inline-flex flex-nowrap gap-4">
+            <h1 className="font-handwritten text-4xl md:text-7xl font-bold mb-2 leading-[1.1] text-balance inline-flex flex-nowrap gap-4">
               <span className="text-primary drop-shadow-sm">Franck</span>
               <span className="text-text-main"> Andritina</span>
             </h1>

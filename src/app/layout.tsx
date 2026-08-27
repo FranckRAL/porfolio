@@ -70,7 +70,6 @@ export default async function RootLayout({
             clientId={process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID!}
           >
             {children}
-            <BackToTop />
           </GoogleOAuthProvider>
           </NextIntlClientProvider>
         </ThemeProvider>
