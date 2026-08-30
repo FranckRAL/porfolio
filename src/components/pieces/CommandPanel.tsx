@@ -17,17 +17,6 @@ const CommandPanel = () => {
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
-            fill="currentColor"
-            className="size-5"
-          >
-            <circle cx="5" cy="12" r="2" />
-            <circle cx="12" cy="12" r="2" />
-            <circle cx="19" cy="12" r="2" />
-          </svg>
-        ) : (
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
             strokeWidth="1.8"
@@ -36,10 +25,21 @@ const CommandPanel = () => {
             <line x1="6" y1="6" x2="18" y2="18" />
             <line x1="18" y1="6" x2="6" y2="18" />
           </svg>
+        ) : (
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            className="size-5"
+          >
+            <circle cx="5" cy="12" r="2" />
+            <circle cx="12" cy="12" r="2" />
+            <circle cx="19" cy="12" r="2" />
+          </svg>
         )}
       </button>
       <div
-        className={`flex gap-6 xl:gap-2 transition-all duration-300 ${isOpen ? " translate-x-[200%]" : " translatex-0"}`}
+        className={`flex gap-6 xl:gap-2 transition-all duration-300 ${isOpen ? " translatex-0" : " translate-x-[200%]"}`}
       >
         <a
           href="/assets/CV_RAKOTOMAVO_Franck_Developpeur_web_et_mobile.pdf"
