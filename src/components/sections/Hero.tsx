@@ -80,7 +80,7 @@ const Hero = () => {
                 width={300}
                 height={300}
                 priority
-                className="w-sm h-auto object-contain pt-4 rounded-full bg-primary/20  drop-shadow-2xl transition-transform duration-700 group-hover:scale-105 animate-float"
+                className="w-40 md:w-sm h-auto object-contain pt-4 rounded-full bg-primary/20  drop-shadow-2xl transition-transform duration-700 group-hover:scale-105 animate-float"
               />
               
             </div>
