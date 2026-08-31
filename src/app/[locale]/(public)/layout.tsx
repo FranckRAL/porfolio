@@ -43,6 +43,7 @@ export default async function PublicLayout({ children, params }: Props) {
         <div className="relative max-w-7xl  mx-auto bg-white shadow-2xl rounded-r-lg overflow-hidden flex">
           <BindingRing />
           <MobileNavigation />
+          
           <div className="flex justify-center items-center m-4 w-full relative overflow-hidden">
             <AsideNavigation/>
             <div className="flex-1 w-full h-full bg-white  shadow-md relative z-10 px-2 paper">

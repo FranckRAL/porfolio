@@ -2,6 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { Send } from "lucide-react";
+import maskImg from "@/../public/images/mask_img.png";
+import heroImg from "@/../public/images/franck_andritina_web_developpeur.webp";
 
 const Hero = () => {
   const t = useTranslations("Hero");
@@ -11,7 +13,6 @@ const Hero = () => {
       className="relative min-h-[90vh] flex items-center overflow-hidden py-16 md:py-24  "
       id="hero"
     >
-      
       <div className="container mx-auto px-6">
         <div className="flex flex-col-reverse lg:flex-row items-center gap-12 lg:gap-16">
           {/* --- CONTENT (LEFT) --- */}
@@ -73,18 +74,44 @@ const Hero = () => {
           </div>
 
           <div className="relative flex-1 w-full max-w-125 group ">
-            <div className="relative z-10 group rounded-full  flex justify-center items-center overflow-hidden">
+            <div className="relative z-10 group   flex justify-center items-center rotate-5 ">
+              {/* <div className="w-md h-md aspect-square bg-linear-0 from-blue-400 via-purple-500 to-pink-500 border border-primary rounded-md" /> */}
               <Image
                 src="/images/franck_andritina_web_developpeur.webp"
                 alt="Photo of Franck Andritina, web and mobile developer"
                 width={300}
                 height={300}
                 priority
-                className="w-40 md:w-sm h-auto object-contain pt-4 rounded-full bg-primary/20  drop-shadow-2xl transition-transform duration-700 group-hover:scale-105 animate-float"
+                
+                className="w-full md:w-sm h-auto object-contain shadow-xl  pt-4 border border-primary/20 bg-primary/20  drop-shadow-2xl transition-transform duration-700 group-hover:scale-105 animate-float "
               />
               
+              {/* Decorative stamp */}
+              <div className="absolute top-4 -right-10 md:-right-8 w-[40%] h-[10%] bg-yellow-200/95  shadow-md rotate-45 "/>
+              <div className="absolute top-4 -left-10 md:-left-8 w-[40%] h-[10%] bg-yellow-200/95  shadow-md -rotate-45 "/>
+              <div className="absolute bottom-4 -right-10 md:-right-8 w-[40%] h-[10%] bg-yellow-200/95  shadow-md -rotate-45 "/>
+              <div className="absolute bottom-4 -left-10 md:-left-8 w-[40%] h-[10%] bg-yellow-200/95  shadow-md rotate-45 "/>
+              
             </div>
-            <Image
+            
+            {/* <div className="relative z-10 group rounded-full  flex justify-center items-center overflow-hidden">
+              {/* <div className="w-md h-md aspect-square bg-linear-0 from-blue-400 via-purple-500 to-pink-500 border border-primary rounded-md" /> 
+              <Image
+                src="/images/franck_andritina_web_developpeur.webp"
+                alt="Photo of Franck Andritina, web and mobile developer"
+                width={300}
+                height={300}
+                priority
+                style={{
+                  maskImage: `url(${maskImg.src})`,
+                  
+                }}
+                className="w-full md:w-sm h-auto object-contain mask-cover mask-center  pt-4  bg-primary/20  drop-shadow-2xl transition-transform duration-700 group-hover:scale-105 animate-float "
+              />
+              
+            </div> */}
+            
+            {/* <Image
               src="icons/decorative_image.svg"
               alt="Decorative Image"
               width={80}
@@ -98,7 +125,7 @@ const Hero = () => {
               width={80}
               height={80}
               className="absolute -top-4 -right-4 z-0 rotate-180 group-hover:translate-x-1 group-hover:translate-y-1 transition-all duration-300"
-              />
+              /> */}
           </div>
         </div>
       </div>

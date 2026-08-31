@@ -37,7 +37,7 @@ export default function ServicesList() {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "-100px" }}
-      className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+      className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
     >
       {SERVICES.map((service) => {
         const Icon = service.icon;
@@ -45,7 +45,7 @@ export default function ServicesList() {
           <motion.div
             key={service.id}
             variants={itemVariants}
-            className="group p-8 rounded-4xl bg-abyss-900/10 border border-primary/5 hover:border-primary/20 dark:bg-bg-card/60 dark:border-primary/10 transition-all duration-300 backdrop-blur-sm relative overflow-hidden"
+            className="group p-8  bg-abyss-900/10 border border-primary/5 hover:border-primary/20 dark:bg-bg-card/60 dark:border-primary/10 transition-all duration-300 backdrop-blur-sm relative overflow-hidden shadow-lg"
           >
             {/* Effet de lueur bioluminescente au survol */}
             <div 
@@ -53,11 +53,14 @@ export default function ServicesList() {
               style={{ background: `radial-gradient(circle at center, ${service.color}, transparent 70%)` }}
             />
 
+            {/* Decorative stamp */}
+            <div className="absolute top-0 -right-12 md:-right-8 lg:-right-8 w-[40%] h-[10%] bg-yellow-200/95  shadow-md rotate-45 "/>
+
             <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-all duration-500">
               <Icon className="w-6 h-6" />
             </div>
 
-            <h3 className="text-xl font-bold mb-4 group-hover:text-primary transition-colors">
+            <h3 className="text-xl font-bold mb-4 group-hover:text-primary transition-colors font-handwritten">
               {service.title[locale]}
             </h3>
             <p className="text-text-muted text-sm leading-relaxed">
