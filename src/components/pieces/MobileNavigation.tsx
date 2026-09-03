@@ -7,7 +7,7 @@ const MobileNavigation = () => {
   return (
     <nav
       className="
-        fixed bottom-3 left-1/2 z-50
+        fixed bottom-0 left-1/2 z-50
         -translate-x-1/2
         w-[calc(100%-1.5rem)]
         max-w-md
@@ -16,12 +16,13 @@ const MobileNavigation = () => {
         flex items-center justify-around
         px-2 py-2
 
-        rounded-2xl
-        bg-background/95
+        bg-bg-page/80
         backdrop-blur-md
 
-        border border-border/60
-        shadow-lg shadow-black/10
+        border border-primary/50
+        rounded-t-2xl
+
+
 
         supports-[padding:max(0px)]:pb-[max(0.5rem,env(safe-area-inset-bottom))]
       "

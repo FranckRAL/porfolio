@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import { Quicksand, Inter, Kalam } from "next/font/google";
+import { Caveat, Inter, Kalam } from "next/font/google";
 import "@/styles/globals.css";
 import { ThemeProvider } from "@/components/pieces/ThemeProvider";
-import BackToTop from "@/components/pieces/BackToTop";
 import { headers } from "next/headers";
 import { cookies } from "next/headers";
 import { GoogleOAuthProvider } from "@react-oauth/google";
@@ -17,7 +16,7 @@ const inter = Inter({
   preload: true,
 });
 
-const quicksand = Quicksand({
+const caveat = Caveat({
   subsets: ["latin"],
   variable: "--font-title",
   display: "swap",
@@ -62,7 +61,7 @@ export default async function RootLayout({
     >
       <body
         suppressHydrationWarning
-        className={`${inter.variable} ${quicksand.variable} ${kalam.variable} antialiased`}
+        className={`${inter.variable} ${caveat.variable} ${kalam.variable} antialiased`}
       >
         <ThemeProvider initialTheme={theme}>
           <NextIntlClientProvider locale={locale}>

@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
 @theme {
-  --font-title: "Quicksand", sans-serif;
-  --font-body: "Inter", sans-serif;
+  --font-body: "Inter", cursive;
   --font-handwritten: "Kalam", cursive;
+  --font-decorative: "Caveat", cursive;
 
   --color-abyss-900: #001f3f; 
   --color-abyss-800: #003366; 

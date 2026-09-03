@@ -2,17 +2,18 @@ import Image from 'next/image';
 import { ProjectView} from '@/types';
 import { useLocale } from 'next-intl';
 import {Suspense} from 'react';
+import Link from 'next/link';
 
-const ProjectCard = ({ project, onClick }: {project: ProjectView, onClick: () => void}) => {
+const ProjectCard = ({ project }: {project: ProjectView}) => {
   const locale = useLocale();
   
 const title = project.title[locale as keyof typeof project.title] || project.title['en'];
 
   return (
-    <div 
-      onClick={onClick}
-      className="break-inside-avoid group relative cursor-pointer overflow-hidden rounded-4xl border border-primary/10 bg-abyss-900/10 dark:bg-bg-card/60 backdrop-blur-sm transition-all hover:border-primary/40"
+    <article 
+      className="break-inside-avoid group relative cursor-pointer overflow-hidden  border border-primary/10 bg-abyss-900/10 dark:bg-bg-card/60 backdrop-blur-sm transition-all hover:border-primary/40 shadow-md"
     >
+      <Link href={`/projects/${project.id}`}>
       <div className="relative aspect-video overflow-hidden">
         <Suspense fallback={<div className="animate-pulse bg-abyss-800 rounded-2xl h-64 w-full" />}>
         <Image 
@@ -31,15 +32,18 @@ const title = project.title[locale as keyof typeof project.title] || project.tit
           <span className="text-xs font-mono text-primary uppercase tracking-widest">
             {project.category}
           </span>
-          <span className="text-[10px] text-text-muted font-mono">{project.year}</span>
+          <time dateTime={project.year.toString()} className="text-[10px] text-text-muted font-mono">
+            {project.year}
+          </time>
         </div>
         
-        <h3 className="text-xl font-bold font-title text-text-main group-hover:text-primary transition-colors">
+        <h3 className="text-xl font-bold font-handwritten text-text-main group-hover:text-primary transition-colors">
             {title}
         </h3>
         
+        
         {/* Stack */}
-        <div className="flex flex-wrap gap-2 pt-2 ">
+        <div className="flex flex-wrap gap-2 pt-2">
           {project.stack.slice(0, 4).map((tech) => (
             <p key={tech} className='px-2 py-1.5 rounded-full 
                  border border-primary/30 bg-bg-card/50 backdrop-blur-md
@@ -50,7 +54,8 @@ const title = project.title[locale as keyof typeof project.title] || project.tit
           ))}
         </div>
       </div>
-    </div>
+      </Link>
+    </article>
   );
 };
 

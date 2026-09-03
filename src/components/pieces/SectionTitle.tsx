@@ -5,16 +5,20 @@ interface SectionTitleProps {
 }
 
 const SectionTitle = ({ translationContext }: SectionTitleProps) => {
+
   const t = useTranslations(translationContext);
 
   return (
-    <div className="max-w-3xl mx-auto mb-20">
+    <header className="max-w-3xl mx-auto mb-20">
       <div className=" flex flex-col lg:flex-row gap-4  items-center mb-4">
         <div className="w-4 h-4 shrink-0 rounded-full bg-primary hidden lg:block " />
         <h2 className="text-4xl md:text-6xl font-bold font-handwritten text-text-main text-nowrap">
           {t.rich("title", {
             span: (chunk) => (
               <span className="text-primary italic">{chunk}</span>
+            ),
+            em: (chunk) => (
+              <em className="text-primary italic">{chunk}</em>
             ),
           })}
         </h2>
@@ -42,7 +46,7 @@ const SectionTitle = ({ translationContext }: SectionTitleProps) => {
       <p className="text-text-muted text-lg leading-relaxed pt-4 text-center">
         {t("description")}
       </p>
-    </div>
+    </header>
   );
 };
 

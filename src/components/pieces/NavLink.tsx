@@ -35,9 +35,11 @@ const NavLink = ({ id, path, Icon, isMobile }: NavLinkProps) => {
           text-xs font-medium
           transition-all duration-200
 
+          dark:text-white
+
           ${isActive
             ? "text-primary"
-            : "text-muted-foreground hover:text-foreground"
+            : "text-muted hover:text-primary"
           }
         `}
       >
@@ -50,7 +52,7 @@ const NavLink = ({ id, path, Icon, isMobile }: NavLinkProps) => {
             transition-all duration-200
 
             ${isActive
-              ? "bg-primary/15"
+              ? "bg-primary/15 dark:bg-white/10"
               : "bg-transparent"
             }
           `}
@@ -71,7 +73,7 @@ const NavLink = ({ id, path, Icon, isMobile }: NavLinkProps) => {
   ) : (
     <Link
       href={path}
-      className={`relative p-4 flex gap-2 items-center text-text-main/80 rounded-md hover:text-primary hover:bg-primary/20 text-lg font-semibold transition-colors
+      className={`relative font-decorative p-4 flex gap-2 items-center text-text-main/80 rounded-md hover:text-primary hover:bg-primary/20 text-2xl font-semibold transition-colors
          ${isActive ? "text-primary  bg-primary/20 " : ""}`}
     >
       <Icon className="w-6 h-6 " />

@@ -25,7 +25,7 @@ const AsideNavigation = () => {
         
         <span className="relative inline-block max-w-50">
           <mark className="bg-yellow-300/50 rounded-md px-1 py-0.5 relative z-10">
-            <em className="relative z-10 font-handwritten text-wrap text-text-muted  text-center text-xs xl:text-sm">
+            <em className="relative z-10 font-decorative  text-wrap text-text-muted  text-center text-xs xl:text-lg">
               {t("post_title")}
             </em>
           </mark>
@@ -43,8 +43,8 @@ const AsideNavigation = () => {
       </nav>
 
       {/* footer and social links */}
-      <div className="absolute bottom-0 left-0 right-0 hidden xl:block">
-        <div className="flex justify-center items-center flex-nowrap gap-3 ">
+      <footer className="absolute bottom-0 left-0 right-0 hidden xl:block">
+        <address className="flex justify-center items-center flex-nowrap gap-3 ">
           {socialLinks.map((social) => {
             const Icon = social.icon;
             return (
@@ -61,11 +61,11 @@ const AsideNavigation = () => {
               </Link>
             );
           })}
-        </div>
-        <p className="text-gray-500 text-xs text-center">
-          © {currentYear} Franck Andritina. {t("copyright")}
+        </address>
+        <p className="text-text-muted text-md text-center font-decorative">
+          &copy;<time dateTime={currentYear.toString()}>{currentYear}</time> Franck Andritina. {t("copyright")}
         </p>
-      </div>
+      </footer>
       </div>
     </aside>
   );

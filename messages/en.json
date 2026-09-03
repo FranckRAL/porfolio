@@ -63,7 +63,19 @@
     "title": "Proven <em>Solutions</em>",
     "description": "A showcase of my recent projects, spanning from complex web architectures to intuitive mobile experiences. Each one is a balance of code quality and user impact.",
     "features_title": "Core Features",
-    "cta_contact": "Discuss Your Project"
+    "cta_contact": "Discuss Your Project",
+    "view_all_projects": "View All Projects"
+  },
+
+  "ProjectDetails": {
+    "backToProjects": "Back to Projects",
+    "project_description": "About the Project",
+    "project_challenges": "Challenges & Solutions",
+    "project_features": "Key Features",
+    "tech_stack": "Tech Stack",
+    "project_links": "Project Links",
+    "view_live": "View Live",
+    "view_github": "View GitHub"
   },
   "Skills": {
     "subtitle": "Technical Arsenal",

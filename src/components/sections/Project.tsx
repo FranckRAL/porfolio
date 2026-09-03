@@ -1,41 +1,27 @@
 "use client";
-import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ProjectView } from "@/types";
 import ProjectCard from "@/components/pieces/ProjectCard";
-import ProjectModal from "@/components/pieces/ProjectModal";
 import { useTranslations } from "next-intl";
+import SectionTitle from "../pieces/SectionTitle";
+import Link from "next/link";
 
 const Projects = ({projects}: {projects: ProjectView[]}) => {
 
   const t = useTranslations("Projects");
-  const [selectedProject, setSelectedProject] = useState<ProjectView | null>(
-    null,
-  );
+  
 
 
   return (
     <section
-      className="py-24  relative overflow-hidden"
+      className="pt-20 pb-30  relative overflow-hidden"
       id="projects"
     >
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_center,var(--tw-gradient-stops))] from-primary/5 via-transparent to-transparent -z-10" />
 
       <div className="container mx-auto px-6">
-        <div className="max-w-3xl mx-auto text-center mb-16 space-y-4">
-          <span className="text-primary font-mono text-sm tracking-[0.3em] uppercase">
-            {t("subtitle")}
-          </span>
-          <h2 className="text-4xl md:text-6xl font-bold font-title text-text-main">
-            {t.rich("title", {
-              em: (chunk) => <em className="text-primary italic">{chunk}</em>,
-            })}
-          </h2>
-          <div className="w-20 h-1 bg-primary/30 mx-auto rounded-full mt-4" />
-          <p className="text-text-muted text-lg leading-relaxed pt-4">
-            {t("description")}
-          </p>
-        </div>
+
+        <SectionTitle translationContext="Projects" />
 
         <motion.div
           layout
@@ -53,22 +39,18 @@ const Projects = ({projects}: {projects: ProjectView[]}) => {
               >
                 <ProjectCard
                   project={project}
-                  onClick={() => setSelectedProject(project)}
                 />
+                
               </motion.div>
             ))}
           </AnimatePresence>
         </motion.div>
+        <p className="flex justify-center items-center mt-8">
+          <Link href="/projects" className="inline-block  py-2 px-4 bg-primary text-white rounded-lg hover:bg-primary/80 transition duration-300">
+        {t("view_all_projects")}
+        </Link>
+        </p>
       </div>
-
-      <AnimatePresence>
-        {selectedProject && (
-          <ProjectModal
-            project={selectedProject}
-            onClose={() => setSelectedProject(null)}
-          />
-        )}
-      </AnimatePresence>
     </section>
   );
 };

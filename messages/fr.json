@@ -67,7 +67,18 @@
     "description": "Une sélection de mes projets récents, allant d'architectures web complexes aux expériences mobiles intuitives. Chaque réalisation est un équilibre entre qualité du code et impact utilisateur.",
 
     "features_title": "Fonctionnalités Clés",
-    "cta_contact": "Discuter de votre projet"
+    "cta_contact": "Discuter de votre projet",
+    "view_all_projects": "Voir Tous les Projets"
+  },
+  "ProjectDetails": {
+    "backToProjects": "Retour aux Projets",
+    "project_description": "À propos du projet",
+    "project_challenges": "Défis & Solutions",
+    "project_features": "Fonctionnalités Clés",
+    "tech_stack": "Pile Technologique",
+    "project_links": "Liens du Projet",
+    "view_live": "Voir en Live",
+    "view_github": "Voir sur GitHub"
   },
   "Skills": {
     "subtitle": "Arsenal Technique",
