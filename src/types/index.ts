@@ -45,9 +45,11 @@ export interface Skill {
 
 export interface SkillCategory {
   id: string;
-  titleKey: string;
-  icon: LucideIcon;
-  skills: Skill[];
+  category: string;
+  Icon: LucideIcon;
+  skills: {
+    name: string;
+  }[];
 }
 
 // fixed categoryIcon type to LucideIcon for consistency with Service interface

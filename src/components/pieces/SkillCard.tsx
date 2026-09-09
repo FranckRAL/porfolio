@@ -1,67 +1,31 @@
-"use client";
-import { motion } from "framer-motion";
-import { useState } from "react";
-import { SkillCategory } from "@/types";
-import { useTranslations } from "next-intl";
+import { SkillCategory } from "@/types"
 
-const SkillCard = ({ category }: { category: SkillCategory }) => {
-  const [isHovered, setIsHovered] = useState(false);
-  const t = useTranslations("Skills");
+interface SkillCardProps extends SkillCategory {}
 
+const SkillCard = ({ id, category, Icon, skills }: SkillCardProps) => {
   return (
-    <motion.div
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      className="p-8 rounded-4xl bg-abyss-900/20 border border-primary/10 backdrop-blur-md hover:border-primary/40 transition-all duration-500 group relative overflow-hidden"
-    >
-      <div className="flex items-center gap-4 mb-8">
-        <div className="p-3 rounded-xl bg-primary/10 group-hover:bg-primary group-hover:text-abyss-950 transition-all duration-500">
-          <category.icon size={24} />
+    <div className="flex gap-4 items-center p-4 border border-primary/10 bg-primary/5 backdrop-blur-[1px] group hover:bg-primary/10  rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+      <div className="h-full self-start">
+          <Icon className="w-8 h-8 p-2 bg-primary/10 group-hover:bg-primary/20 rounded text-primary transition-all duration-300" />
+      </div>
+      <div className="flex flex-col gap-2 h-full self-start">
+        <h3 className="font-handwritten text-xl font-bold">{id.charAt(0).toUpperCase() + id.slice(1)}</h3>
+        <ul className="list-disc list-inside text-text-muted py-1 text-sm">
+          {skills.map((skill, index) => (
+            <li key={index} className="py-1">{skill.name}</li>
+          ))}
+        </ul>
+        <div className="flex gap-1 items-end mt-auto">
+          {
+            Array.from({ length: 5 }, (_, index) => (
+              <span key={index} className="block w-2.5 h-2.5 bg-yellow-500/50 rounded-full" />
+            ))
+          }
+          <span className="block w-2.5 h-2.5 bg-gray-300 rounded-full mr-1" />
         </div>
-        <h3 className="font-title text-xl font-bold">{t(category.titleKey)}</h3>
       </div>
+    </div>
+  )
+}
 
-      <div className="space-y-6">
-        {category.skills.map((skill, idx) => (
-          <div key={idx} className="space-y-2">
-            <div className="flex justify-between items-end">
-              <span className="text-sm font-medium text-text-main/80">
-                {skill.nameKey ? t(skill.nameKey) : skill.name}
-              </span>
-              <span className="text-xs font-mono text-primary font-bold">
-                {skill.level}%
-              </span>
-            </div>
-
-            <div className="h-1.5 w-full bg-primary/5 rounded-full overflow-hidden">
-              <motion.div
-                style={{ width: `${skill.level}%` }}
-                animate={{
-                  scaleY: isHovered ? 1.2 : 1,
-                }}
-                transition={{
-                  duration: 0.3,
-                }}
-                className="h-full bg-linear-to-r from-primary/40 to-primary rounded-full relative origin-center"
-              >
-                <motion.div
-                  animate={{
-                    x: isHovered ? ["-100%", "300%"] : "-100%",
-                  }}
-                  transition={{
-                    duration: 1.2,
-                    repeat: isHovered ? Infinity : 0,
-                    ease: "linear",
-                  }}
-                  className="absolute top-0 h-full w-6 bg-white/50 blur-sm"
-                />
-              </motion.div>
-            </div>
-          </div>
-        ))}
-      </div>
-    </motion.div>
-  );
-};
-
-export default SkillCard;
+export default SkillCard

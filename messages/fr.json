@@ -3,7 +3,6 @@
     "title": "Développeur Web et Ingénieur Logiciel",
     "description": "Découvrez le portfolio d'un passionné Développeur Fullstack, mettant en avant son expertise en développement web, gestion de projets et solutions innovantes."
   },
-
   "Nav": {
     "post_title": "Développeur Web & Mobile",
     "home": "Accueil",
@@ -32,8 +31,7 @@
     "stat_success_projects": "Projets réussis",
     "stat_technologies": "Technologies",
     "stat_year_of_experience": "Années d'expérience"
-  
-},
+  },
   "About": {
     "years_experience": "2+ Years",
     "experience_domain": "Expérience dans la Tech",
@@ -54,7 +52,6 @@
         "desc": "Axé sur les objectifs"
       }
     }
-
   },
   "Services": {
     "subtitle": "Solutions Spécialisées",
@@ -65,7 +62,6 @@
     "subtitle": "Travaux Sélectionnés",
     "title": "<em>Solutions</em> Éprouvées",
     "description": "Une sélection de mes projets récents, allant d'architectures web complexes aux expériences mobiles intuitives. Chaque réalisation est un équilibre entre qualité du code et impact utilisateur.",
-
     "features_title": "Fonctionnalités Clés",
     "cta_contact": "Discuter de votre projet",
     "view_all_projects": "Voir Tous les Projets"
@@ -81,49 +77,20 @@
     "view_github": "Voir sur GitHub"
   },
   "Skills": {
-    "subtitle": "Arsenal Technique",
-    "title": "Compétences & <em>Expertise</em>",
-    "description": "Un ensemble de technologies et d'outils que j'utilise pour concevoir, développer et déployer des solutions performantes et modernes",
-    "soft_skills": {
-      "education": {
-        "title": "Ingenieur Logiciel",
-        "description": "Diplômé en Informatique et passionné par le développement logiciel"
-      },
-      "continuous_learning": {
-        "title": "Apprentissage Continu",
-        "description": "Toujours curieux aux nouvelles technologies"
-      },
-      "clean_code": {
-        "title": "Code Propre et maintenable",
-        "description": "J'ai écris un code lisible, modulaire et bien structuré"
-      },
-      "performance_scalability": {
-        "title": "Performance et Scalabilité",
-        "description": "Je conçois des applications rapide et performantes"
-      },
-      "teamwork": {
-        "title": "Travail en équipe",
-        "description": "Bonne communication et esprit collaboratif"
-      }
-
-    },
-    "categories": {
-      "programming": "Langages de Programmation",
-      "frontend": "Excellence Frontend",
-      "backend": "Backend & Systèmes",
-      "tools": "Outils & DevOps",
-      "management": "Gestion de Projet",
-      "quality": "Qualité & Soft Skills"
-    },
-    "skills": {
-      "agile": "Agile / Scrum",
-      "softwareDesign": "Architecture Logicielle",
-      "technicalWriting": "Rédaction Technique",
-      "codeReview": "Revue de Code",
-      "unitTesting": "Tests Unitaires",
-      "teamwork": "Travail d'Équipe",
-      "communication": "Communication"
-    }
+    "title": "Mon arsenal <em>technique</em>",
+    "description": "Un ensemble de technologies et d’outils que j’utilise pour concevoir, développer et déployer des applications modernes et performantes.",
+    "continuous_learning": "Apprentissage continu",
+    "continuous_learning_description": "Je suis toujours curieux et j’explore régulièrement de nouvelles technologies.",
+    "webdev_subtitle": "Développement web",
+    "mobiledev_subtitle": "Développement mobile",
+    "otherskills_subtitle": "Autres compétences",
+    "methodologie_subtitle": "Méthodologies",
+    "ui_ux": "Design UI/UX (Figma)",
+    "responsive": "Design responsive",
+    "seo": "Optimisation SEO",
+    "testing": "Tests",
+    "code_review": "Revue de code",
+    "good_tech": "La bonne technologie est celle qui résout les problèmes d’aujourd’hui sans en créer de nouveaux demain."
   },
   "Contact": {
     "subtitle": "Contactez-moi",

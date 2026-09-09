@@ -45,7 +45,7 @@ export default async function PublicLayout({ children, params }: Props) {
           <div className="flex justify-center items-center m-4 w-full relative overflow-hidden">
             <AsideNavigation/>
             <MobileNavigation />
-            <main className="flex-1 w-full h-full bg-white  shadow-md relative z-10 px-2 paper">
+            <main className="flex-1 w-full h-full bg-white  shadow-md relative z-10 px-2 paper overflow-y-auto max-h-screen">
               <CommandPanel/>
               {children}
             </main>

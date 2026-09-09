@@ -1,12 +1,13 @@
 import {
-  Database,
+  Globe2,
   CodeXml,
-  LayoutDashboard,
-  Terminal,
-  Workflow,
-  Wrench,
-  Layout,
+  Database,
+  Cloud,
   Smartphone,
+  Apple,
+  Wrench,
+  Terminal,
+  Layout,
   ShieldCheck,
   Rocket,
   Users,
@@ -15,6 +16,7 @@ import {
   Mail,
   Briefcase,
   Toolbox,
+  Book,
 } from "lucide-react";
 import { FaFacebook, FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { IoLogoWhatsapp } from "react-icons/io";
@@ -106,73 +108,119 @@ export const NAV_LINKS = [
 
 export const CATEGORIES = ["Web", "Mobile", "Desktop", "Other"];
 
-export const skillCategories: SkillCategory[] = [
-  {
-    id: "programming",
-    titleKey: "categories.programming",
-    icon: CodeXml,
-    skills: [
-      { name: "TypeScript", level: 85 },
-      { name: "JavaScript", level: 90 },
-      { name: "Python", level: 85 },
-      { name: "PHP", level: 80 },
-    ],
-  },
+
+export const SKILLS: SkillCategory[] = [
+  // ─────────────────────────────────────
+  // DÉVELOPPEMENT WEB
+  // ─────────────────────────────────────
+
   {
     id: "frontend",
-    titleKey: "categories.frontend",
-    icon: LayoutDashboard,
+    category: "web",
+    Icon: Globe2,
     skills: [
-      { name: "React.js", level: 90 },
-      { name: "Next.js", level: 85 },
-      { name: "Tailwind CSS", level: 95 },
-      { name: "Framer Motion", level: 70 },
+      { name: "HTML5" },
+      { name: "CSS3 / SCSS" },
+      { name: "JavaScript (ES6+)" },
+      { name: "TypeScript" },
+      { name: "React.js" },
+      { name: "Next.js" },
+      { name: "Tailwind CSS" },
     ],
   },
+
   {
     id: "backend",
-    titleKey: "categories.backend",
-    icon: Database,
+    category: "web",
+    Icon: CodeXml,
     skills: [
-      { name: "Node.js & Express", level: 88 },
-      { name: "Django", level: 85 },
-      { name: "REST APIs", level: 95 },
-      { name: "PostgreSQL", level: 80 },
+      { name: "Node.js" },
+      { name: "Express.js" },
+      { name: "NestJS" },
+      { name: "PHP" },
+      { name: "Laravel" },
+      { name: "RESTful API" },
     ],
   },
+
   {
-    id: "tools",
-    titleKey: "categories.tools",
-    icon: Terminal,
+    id: "databases",
+    category: "web",
+    Icon: Database,
     skills: [
-      { name: "Git & GitHub", level: 90 },
-      { name: "Docker", level: 70 },
-      { name: "Shell Scripting", level: 85 },
-      { name: "PowerShell", level: 75 },
+      { name: "MySQL" },
+      { name: "PostgreSQL" },
+      { name: "MongoDB" },
+      { name: "SQLite" },
+      { name: "Prisma ORM" },
     ],
   },
+
   {
-    id: "management",
-    titleKey: "categories.management",
-    icon: Workflow,
+    id: "devops",
+    category: "web",
+    Icon: Cloud,
     skills: [
-      { nameKey: "skills.agile", level: 85 },
-      { nameKey: "skills.softwareDesign", level: 80 },
-      { nameKey: "skills.technicalWriting", level: 75 },
+      { name: "Git / GitHub" },
+      { name: "Docker" },
+      { name: "Vercel" },
+      { name: "CI / CD" },
+      { name: "Postman" },
     ],
   },
+
+  // ─────────────────────────────────────
+  // DÉVELOPPEMENT MOBILE
+  // ─────────────────────────────────────
+
   {
-    id: "quality",
-    titleKey: "categories.quality",
-    icon: Wrench,
+    id: "android",
+    category: "mobile",
+    Icon: Smartphone,
     skills: [
-      { nameKey: "skills.codeReview", level: 90 },
-      { nameKey: "skills.unitTesting", level: 75 },
-      { nameKey: "skills.teamwork", level: 95 },
-      { nameKey: "skills.communication", level: 90 },
+      { name: "Kotlin" },
+      { name: "Jetpack Compose" },
+      { name: "MVVM / Clean Architecture" },
+      { name: "Coroutines / Flow" },
     ],
   },
+
+  {
+    id: "Cross-platform",
+    category: "mobile",
+    Icon: Apple,
+    skills: [
+      { name: "Flutter" },
+      { name: "React Native" },
+      { name: "Xamarin" },
+      { name: "Ionic" },
+    ],
+  },
+
+  {
+    id: "mobile-tools",
+    category: "mobile",
+    Icon: Wrench,
+    skills: [
+      { name: "Android Studio" },
+      { name: "Xcode" },
+      { name: "Firebase" },
+      { name: "REST API" },
+    ],
+  },
+
+
 ];
+
+export const METHODOLOGIES: string[] = [  "Agile/Scrum", "Kanban", "TDD", "Clean Code", ]
+
+export const OTHER_SKILLS: string[] = [
+  "ui_ux",
+  "responsive",
+  "seo",
+  "testing",
+  "code_review"
+]
 
 export const socialLinks = [
   {
@@ -193,94 +241,4 @@ export const socialLinks = [
   },
 ];
 
-export const SKILLCATEGORIES: SkillCategory2[] = [
-  {
-    id: "frontend",
-    categoryName: "Frontend",
-    CategoryIcon: CodeXml,
-    skills: [
-      { skillName: "React.js", icon: "react" },
-      { skillName: "Next.js", icon: "nextjs" },
-      { skillName: "Tailwind CSS", icon: "tailwind" },
-      { skillName: "TypeScript", icon: "typescript" },
-    ],
-  },
 
-  {
-    id: "Backend",
-    categoryName: "Backend",
-    CategoryIcon: Database,
-    skills: [
-      { skillName: "Django", icon: "django" },
-      { skillName: "Laravel", icon: "laravel" },
-      { skillName: "NestJS", icon: "nestjs" },
-      { skillName: "Express", icon: "express" },
-      { skillName: "Node.js", icon: "nodejs" },
-    ],
-  },
-
-  {
-    id: "languages",
-    categoryName: "Languages",
-    CategoryIcon: CodeXml,
-    skills: [
-      { skillName: "Python", icon: "python" },
-      { skillName: "Java", icon: "java" },
-      { skillName: "PHP", icon: "php" },
-      { skillName: "Kotlin", icon: "kotlin" },
-    ],
-  },
-  {
-    id: "database",
-    categoryName: "Database & ORM",
-    CategoryIcon: Database,
-    skills: [
-      { skillName: "PostgreSQL", icon: "postgresql" },
-      { skillName: "MongoDB", icon: "mongo" },
-      { skillName: "MySQL", icon: "mysql" },
-      { skillName: "Prisma", icon: "prisma" },
-    ],
-  },
-  {
-    id: "mobile",
-    categoryName: "Mobile",
-    CategoryIcon: Smartphone,
-    skills: [
-      { skillName: "Flutter", icon: "flutter" },
-      { skillName: "Kotlin", icon: "kotlin" },
-    ],
-  },
-
-  {
-    id: "tools",
-    categoryName: "Tools",
-    CategoryIcon: Terminal,
-    skills: [
-      { skillName: "Figma", icon: "figma" },
-      { skillName: "Postman", icon: "postman" },
-      { skillName: "Docker", icon: "docker" },
-      { skillName: "Git/Github", icon: "git" },
-    ],
-  },
-];
-
-export const SOFTSKILLS: SoftSkill[] = [
-  {
-    name: "continuous_learning",
-    Icon: BookOpen,
-  },
-  {
-    name: "clean_code",
-    Icon: CodeXml,
-  },
-
-  {
-    name: "performance_scalability",
-    Icon: Rocket,
-  },
-
-  {
-    name: "teamwork",
-    Icon: Users,
-  },
-];

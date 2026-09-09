@@ -16,11 +16,9 @@ const NavLink = ({ id, path, Icon, isMobile }: NavLinkProps) => {
   const pathname = usePathname();
 
   const normalizedPathname = pathname.replace(/^\/(en|fr)/, "");
-  console.log("normalizedPathname", normalizedPathname);
 
   const isActive =
     normalizedPathname === path || normalizedPathname.startsWith(`${path}/`);
-  console.log(`isActive for path "${path}":`, isActive);
 
   return isMobile ? (
     <Link
